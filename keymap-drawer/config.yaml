@@ -1,0 +1,17 @@
+parse_config:
+  raw_binding_map:
+    '&sys_reset': Reset
+    '&bootloader': Boot
+    '&caps_word': Caps Word
+
+  zmk_keycode_map:
+    # Symbols
+    EXCLAMATION: "!"
+    EXCL: "!"
+    C_PLAY_PAUSE: "▷||"
+
+
+draw_config:
+  dark_mode: auto
+  glyph_tap_size: 18
+  footer_text: 'GeasonMKB KEYMAPS | Created with keymap-drawer' 

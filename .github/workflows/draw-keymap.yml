@@ -1,0 +1,24 @@
+name: Draw ZMK keymaps
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*"
+      - "keymap-drawer/config.yaml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
+      amend_commit: false
+      install_branch: "main"
+      keymap_patterns: "config/*.keymap"
+      json_path: "config"
+      config_path: keymap-drawer/config.yaml
+      output_folder: keymap-drawer
+      destination: "both"
+      parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
+      draw_args: "MKB:'-j config/MKB.json'"

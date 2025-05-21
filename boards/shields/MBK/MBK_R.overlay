@@ -1,0 +1,97 @@
+#include <dt-bindings/zmk/bt.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include "MKB_pinctrl_R.dtsi"
+#include "MKB.dtsi"
+
+&default_transform {
+    col-offset = <8>;
+};
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-composite";
+        matrix {
+            kscan = <&kscan1>;
+        };
+        direct {
+            kscan = <&kscan2>;
+        };
+    };
+
+    kscan1: kscan1 {
+        compatible = "zmk,kscan-gpio-charlieplex";
+        interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW)>;
+        gpios
+            = <&xiao_d 6 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 7 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 8 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 9 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
+            , <&gpio0 9 GPIO_ACTIVE_LOW>
+            , <&gpio0 10 GPIO_ACTIVE_LOW>
+            ;
+    };
+
+    kscan2: kscan2 {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&gpio0 16 (GPIO_ACTIVE_LOW)>
+            , <&gpio1 0 (GPIO_ACTIVE_LOW)>
+            , <&gpio1 10 (GPIO_ACTIVE_LOW)>
+            ;
+    };
+};
+
+&spi0 {
+    status = "okay";
+    cs-gpios =  <&xiao_d 0 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    compatible = "nordic,nrf-spim";
+
+    trackball: pd@0 {
+        status = "disabled";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+/*input-split*/
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_split: trackball_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split>;
+    };
+};
+
+&trackball {
+    status = "okay";
+	irq-gpios = <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	cpi = <800>;
+	evt-type = <INPUT_EV_REL>;
+	x-input-code = <INPUT_REL_X>;
+	y-input-code = <INPUT_REL_Y>;
+};
+
+&trackball_split {
+    device = <&trackball>;
+};
+
+&xiao_serial { status = "disabled"; };
+&xiao_i2c { status = "disabled"; };
+&uart0 { status = "disabled";};
