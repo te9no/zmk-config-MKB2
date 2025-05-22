@@ -18,10 +18,10 @@
         src = nixpkgs.lib.sourceFilesBySuffices self [ ".board" ".cmake" ".conf" ".defconfig" ".dts" ".dtsi" ".json" ".keymap" ".overlay" ".shield" ".yml" "_defconfig" ];
         board = "seeeduino_xiao_ble";
         shield = "MKB_%PART%";
-        parts = [ "L rgbled_adapter" "R rgbled_adapter" ];
+        parts = [ "L rgbled_adapter" "R" ];
         snippets = [ "zmk-usb-logging" ];
         enableZmkStudio = true;
-        zephyrDepsHash = "sha256-YkNPlLZcCguSYdNGWzFNfZbJgmZUhvpB7DRnj++XKqQ=";
+        zephyrDepsHash = "sha256-0vLyjaO05FOiXaTC0YoNiWRnwdIrr4xen2e1p/Qi0QQ=";
         meta = {
           description = "ZMK firmware";
           license = nixpkgs.lib.licenses.mit;

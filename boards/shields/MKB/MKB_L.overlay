@@ -10,10 +10,6 @@
 };
 
 / {
-    chosen {
-        zephyr,display = &oled;
-    };
-    
     anin0: analog_input_0 {
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
