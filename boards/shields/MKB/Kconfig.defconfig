@@ -19,4 +19,3 @@ if SHIELD_MKB_L
     config ZMK_SPLIT
         default y
 endif
-
