@@ -51,6 +51,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
@@ -106,6 +108,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
@@ -161,6 +165,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
@@ -216,6 +222,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
@@ -271,6 +279,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
@@ -326,6 +336,8 @@ layers:
   - PG UP
   - PG DN
   - END
+  - ENTER
+  - ENTER
   - HOME
   - PG UP
   - PG DN
