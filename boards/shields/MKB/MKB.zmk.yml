@@ -1,0 +1,8 @@
+file_format: "1"
+id: MKB
+name: MKB
+type: shield
+url: https://github.com/Modulable-Keyboard-Developer/zmk-config-MKB
+requires: [seeeduino_xiao_ble]
+features:
+  - keys

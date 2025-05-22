@@ -145,60 +145,60 @@
 		default_layer {
 			label="Def";
 			bindings = <
-			&kp TAB          &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
-			&lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
-			&kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp ENTER
-			&mt LCTL ESC     &kp LGUI          &kp LALT                          &kp SPACE        &lt 2 SPACE          &lt 2 SPACE      &kp SPACE                          &kp LEFT         &kp DOWN        &kp RIGHT
+&kp TAB          &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
+&lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
+&kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp ENTER
+&mt LCTL ESC     &kp LGUI          &kp LALT                          &kp SPACE        &lt 2 SPACE          &lt 2 SPACE      &kp SPACE                          &kp LEFT         &kp DOWN        &kp RIGHT
 			>;
 		};
 		
 		function_layer {
 			label="Fnc";
 			bindings = <
-			&kp GRAVE        &kp PG_UP         &kp UP           &kp PG_DN        &kp HOME         &trans               &kp F1            &kp F2           &kp F3           &kp F4            &kp F5         &trans
-			&trans           &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
-			&trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
-			&trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
+&kp GRAVE        &kp PG_UP         &kp UP           &kp PG_DN        &kp HOME         &trans               &kp F1            &kp F2           &kp F3           &kp F4            &kp F5         &trans
+&trans           &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
+&trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
+&trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
 			>;
 		};
 		
 		num_layer {
 			label="Num";
 			bindings = <
-            &kp ESC           &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6           &kp N7           &kp N8           &kp N9            &kp N0          &trans
-            &trans            &trans           &trans           &trans           &trans           &trans               &kp MINUS        &kp EQUAL        &kp LBKT         &kp RBKT          &kp BSLH        &trans
-            &mt LSHFT SPACE   &kp BACKSPACE    &kp DEL          &trans           &trans           &trans               &trans           &kp FSLH         &kp SEMI         &kp SQT           &trans          &trans  
-            &trans            &kp ENTER        &kp ENTER                         &trans           &trans               &trans           &trans                            &trans            &trans          &trans
+&kp ESC           &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6           &kp N7           &kp N8           &kp N9            &kp N0          &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &kp MINUS        &kp EQUAL        &kp LBKT         &kp RBKT          &kp BSLH        &trans
+&mt LSHFT SPACE   &kp BACKSPACE    &kp DEL          &trans           &trans           &trans               &trans           &kp FSLH         &kp SEMI         &kp SQT           &trans          &trans  
+&trans            &kp ENTER        &kp ENTER                         &trans           &trans               &trans           &trans                            &trans            &trans          &trans
 			>;
 		};
 		
 		mouse_layer {
 			label="Mouse";
 			bindings = <
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
-			&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
+&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 			>;
 		};
 		
 		scroll_layer {
 			label="Scr";
 			bindings = <
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
-			&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
+&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 			>;
 		};
 		
 		bt_layer {
 			label="BT";
 			bindings = <
-			&bt BT_CLR        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4         &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
-			&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
+&bt BT_CLR        &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4         &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
+&trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 			>;
 		};
 	};

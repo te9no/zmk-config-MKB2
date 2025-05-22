@@ -13,8 +13,8 @@
     anin0: analog_input_0 {
         compatible = "zmk,analog-input";
         sampling-hz = <100>;
-        y-ch {
-            io-channels = <&adc 2>;
+        x-ch {
+            io-channels = <&adc 0>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
@@ -24,8 +24,8 @@
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
         };
-        x-ch {
-            io-channels = <&adc 3>;
+        y-ch {
+            io-channels = <&adc 1>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
@@ -59,37 +59,17 @@
         status = "disabled";
         device = <&trackball_split>;
     };
-    
+
     kscan0: kscan0 {
-        compatible = "zmk,kscan-composite";
-        matrix {
-            kscan = <&kscan1>;
-        };
-        direct {
-            kscan = <&kscan2>;
-        };
-    };
-
-    kscan1: kscan1 {
         compatible = "zmk,kscan-gpio-charlieplex";
-        interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_LOW)>;
+        interrupt-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW)>;
         gpios
-            = <&xiao_d 6 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d 7 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d 8 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d 9 (GPIO_ACTIVE_LOW)>
+            = <&gpio0   9 (GPIO_ACTIVE_LOW)>
+            , <&gpio0  10 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d  7 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d  8 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d  9 (GPIO_ACTIVE_LOW)>
             , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
-            , <&gpio0 9 GPIO_ACTIVE_LOW>
-            , <&gpio0 10 GPIO_ACTIVE_LOW>
-            ;
-    };
-
-    kscan2: kscan2 {
-        compatible = "zmk,kscan-gpio-direct";
-        input-gpios
-            = <&gpio0 16 (GPIO_ACTIVE_LOW)>
-            , <&gpio1 0 (GPIO_ACTIVE_LOW)>
-            , <&gpio1 10 (GPIO_ACTIVE_LOW)>
             ;
     };
 };
@@ -102,6 +82,10 @@
         layers = <2>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
+};
+
+&left_encoder {
+    status = "okay";
 };
 
 &xiao_i2c { status = "disabled"; };
