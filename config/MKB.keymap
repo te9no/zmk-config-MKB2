@@ -157,7 +157,7 @@
 &lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
 &kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp ENTER
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &lt 1 SPACE      &lt 2 SPACE          &lt 2 SPACE       &lt 1 SPACE                       &kp LEFT         &kp DOWN        &kp RIGHT
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -168,7 +168,7 @@
 &trans           &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
 &trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
 &trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -179,7 +179,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &kp MINUS        &kp EQUAL        &kp LBKT         &kp RBKT          &kp BSLH        &trans
 &mt LSHFT SPACE   &kp BACKSPACE    &kp DEL          &trans           &trans           &trans               &trans           &kp FSLH         &kp SEMI         &kp SQT           &trans          &trans  
 &trans            &kp ENTER        &kp ENTER                         &trans           &trans               &trans           &trans                            &trans            &trans          &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -190,7 +190,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -201,7 +201,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -212,7 +212,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+                 &kp HOME          &kp PG_UP        &kp PG_DN        &kp END          &kp ENTER            &kp ENTER         &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
 			>;
 		};
 	};
