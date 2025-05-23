@@ -49,12 +49,12 @@ layers:
   - RIGHT
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
   Fnc:
@@ -106,12 +106,12 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
   Num:
@@ -163,12 +163,12 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
   Mouse:
@@ -220,12 +220,12 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
   Scr:
@@ -277,12 +277,12 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
   BT:
@@ -334,11 +334,11 @@ layers:
   - {t: ▽, type: trans}
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
-  - ENTER
-  - ENTER
   - HOME
   - PG UP
+  - ENTER
   - PG DN
   - END
