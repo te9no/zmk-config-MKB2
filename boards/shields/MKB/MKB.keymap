@@ -30,54 +30,56 @@
             , <&key_physical_attrs 100 100  300    0       0     0     0>
             , <&key_physical_attrs 100 100  400    0       0     0     0>
             , <&key_physical_attrs 100 100  500    0       0     0     0>
-            , <&key_physical_attrs 100 100 1050    0       0     0     0>
-            , <&key_physical_attrs 100 100 1150    0       0     0     0>
-            , <&key_physical_attrs 100 100 1250    0       0     0     0>
-            , <&key_physical_attrs 100 100 1350    0       0     0     0>
-            , <&key_physical_attrs 100 100 1450    0       0     0     0>
-            , <&key_physical_attrs 100 100 1550    0       0     0     0>
+            , <&key_physical_attrs 100 100 1100    0       0     0     0>
+            , <&key_physical_attrs 100 100 1200    0       0     0     0>
+            , <&key_physical_attrs 100 100 1300    0       0     0     0>
+            , <&key_physical_attrs 100 100 1400    0       0     0     0>
+            , <&key_physical_attrs 100 100 1500    0       0     0     0>
+            , <&key_physical_attrs 100 100 1600    0       0     0     0>
             , <&key_physical_attrs 100 100    0  100       0     0     0>
             , <&key_physical_attrs 100 100  100  100       0     0     0>
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             , <&key_physical_attrs 100 100  300  100       0     0     0>
             , <&key_physical_attrs 100 100  400  100       0     0     0>
             , <&key_physical_attrs 100 100  500  100       0     0     0>
-            , <&key_physical_attrs 100 100 1050  100       0     0     0>
-            , <&key_physical_attrs 100 100 1150  100       0     0     0>
-            , <&key_physical_attrs 100 100 1250  100       0     0     0>
-            , <&key_physical_attrs 100 100 1350  100       0     0     0>
-            , <&key_physical_attrs 100 100 1450  100       0     0     0>
-            , <&key_physical_attrs 100 100 1550  100       0     0     0>
+            , <&key_physical_attrs 100 100 1100  100       0     0     0>
+            , <&key_physical_attrs 100 100 1200  100       0     0     0>
+            , <&key_physical_attrs 100 100 1300  100       0     0     0>
+            , <&key_physical_attrs 100 100 1400  100       0     0     0>
+            , <&key_physical_attrs 100 100 1500  100       0     0     0>
+            , <&key_physical_attrs 100 100 1600  100       0     0     0>
             , <&key_physical_attrs 100 100    0  200       0     0     0>
             , <&key_physical_attrs 100 100  100  200       0     0     0>
             , <&key_physical_attrs 100 100  200  200       0     0     0>
             , <&key_physical_attrs 100 100  300  200       0     0     0>
             , <&key_physical_attrs 100 100  400  200       0     0     0>
             , <&key_physical_attrs 100 100  500  200       0     0     0>
-            , <&key_physical_attrs 100 100 1050  200       0     0     0>
-            , <&key_physical_attrs 100 100 1150  200       0     0     0>
-            , <&key_physical_attrs 100 100 1250  200       0     0     0>
-            , <&key_physical_attrs 100 100 1350  200       0     0     0>
-            , <&key_physical_attrs 100 100 1450  200       0     0     0>
-            , <&key_physical_attrs 100 100 1550  200       0     0     0>
+            , <&key_physical_attrs 100 100 1100  200       0     0     0>
+            , <&key_physical_attrs 100 100 1200  200       0     0     0>
+            , <&key_physical_attrs 100 100 1300  200       0     0     0>
+            , <&key_physical_attrs 100 100 1400  200       0     0     0>
+            , <&key_physical_attrs 100 100 1500  200       0     0     0>
+            , <&key_physical_attrs 100 100 1600  200       0     0     0>
             , <&key_physical_attrs 100 100    0  300       0     0     0>
             , <&key_physical_attrs 100 100  100  300       0     0     0>
             , <&key_physical_attrs 100 100  200  300       0     0     0>
             , <&key_physical_attrs 100 100  475  300       0     0     0>
             , <&key_physical_attrs 100 100  575  325       0     0     0>
-            , <&key_physical_attrs 100 100  975  325       0     0     0>
-            , <&key_physical_attrs 100 100 1075  300       0     0     0>
-            , <&key_physical_attrs 100 100 1350  300       0     0     0>
-            , <&key_physical_attrs 100 100 1450  300       0     0     0>
-            , <&key_physical_attrs 100 100 1550  300       0     0     0>
+            , <&key_physical_attrs 100 100 1025  325       0     0     0>
+            , <&key_physical_attrs 100 100 1125  300       0     0     0>
+            , <&key_physical_attrs 100 100 1400  300       0     0     0>
+            , <&key_physical_attrs 100 100 1500  300       0     0     0>
+            , <&key_physical_attrs 100 100 1600  300       0     0     0>
             , <&key_physical_attrs  50  50  675  375       0     0     0>
-            , <&key_physical_attrs  50  50  700  325       0     0     0>
-            , <&key_physical_attrs  50  50  725  400       0     0     0>
-            , <&key_physical_attrs  50  50  750  350       0     0     0>
-            , <&key_physical_attrs  50  50  850  350       0     0     0>
-            , <&key_physical_attrs  50  50  900  325       0     0     0>
-            , <&key_physical_attrs  50  50  875  400       0     0     0>
+            , <&key_physical_attrs  50  50  725  325       0     0     0>
+            , <&key_physical_attrs  50  50  725  375       0     0     0>
+            , <&key_physical_attrs  50  50  725  425       0     0     0>
+            , <&key_physical_attrs  50  50  775  375       0     0     0>
+            , <&key_physical_attrs  50  50  875  375       0     0     0>
+            , <&key_physical_attrs  50  50  925  325       0     0     0>
             , <&key_physical_attrs  50  50  925  375       0     0     0>
+            , <&key_physical_attrs  50  50  925  425       0     0     0>
+            , <&key_physical_attrs  50  50  975  375       0     0     0>
             ;
 	};
 		
@@ -157,7 +159,8 @@
 &lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
 &kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp ENTER
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &lt 1 SPACE      &lt 2 SPACE          &lt 2 SPACE       &lt 1 SPACE                       &kp LEFT         &kp DOWN        &kp RIGHT
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -168,7 +171,8 @@
 &trans           &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
 &trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
 &trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -179,7 +183,8 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &kp MINUS        &kp EQUAL        &kp LBKT         &kp RBKT          &kp BSLH        &trans
 &mt LSHFT SPACE   &kp BACKSPACE    &kp DEL          &trans           &trans           &trans               &trans           &kp FSLH         &kp SEMI         &kp SQT           &trans          &trans  
 &trans            &kp ENTER        &kp ENTER                         &trans           &trans               &trans           &trans                            &trans            &trans          &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -190,7 +195,8 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -201,7 +207,8 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -212,7 +219,8 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
-                                   &kp HOME         &kp PG_UP        &kp PG_DN        &kp END              &kp HOME         &kp PG_UP        &kp PG_DN        &kp END
+//<              ^                 +                _                >                                     <                 ^                +                _                >
+&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 	};
