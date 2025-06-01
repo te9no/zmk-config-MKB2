@@ -47,11 +47,11 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
@@ -104,11 +104,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
@@ -161,11 +161,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
@@ -218,11 +218,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
@@ -275,11 +275,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
@@ -332,11 +332,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - PG UP
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
-  - END
   - HOME
   - PG UP
   - ENTER
