@@ -11,15 +11,15 @@
 / {
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
-        interrupt-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW)>;
+        interrupt-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH)>;
         gpios
-            = <&xiao_d  1 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d  2 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d  3 (GPIO_ACTIVE_LOW)>
-            , <&gpio0   9 (GPIO_ACTIVE_LOW)>
-            , <&gpio0  10 (GPIO_ACTIVE_LOW)>
-            , <&gpio0   9 (GPIO_ACTIVE_LOW)>
-            , <&xiao_d 10 (GPIO_ACTIVE_LOW)>
+            = <&xiao_d  1 (GPIO_ACTIVE_HIGH)>
+            , <&xiao_d  2 (GPIO_ACTIVE_HIGH)>
+            , <&xiao_d  3 (GPIO_ACTIVE_HIGH)>
+            , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
+            , <&gpio0  10 (GPIO_ACTIVE_HIGH)>
+            , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
+            , <&xiao_d 10 (GPIO_ACTIVE_HIGH)>
             ;
     };
 };
