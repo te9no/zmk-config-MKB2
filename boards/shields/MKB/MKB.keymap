@@ -160,7 +160,7 @@
 &kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp ENTER
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &lt 1 SPACE      &lt 2 SPACE          &lt 2 SPACE       &lt 1 SPACE                       &kp LEFT         &kp DOWN        &kp RIGHT
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -172,7 +172,7 @@
 &trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
 &trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -184,7 +184,7 @@
 &mt LSHFT SPACE   &kp BACKSPACE    &kp DEL          &trans           &trans           &trans               &trans           &kp FSLH         &kp SEMI         &kp SQT           &trans          &trans  
 &trans            &kp ENTER        &kp ENTER                         &trans           &trans               &trans           &trans                            &trans            &trans          &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -196,7 +196,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -208,7 +208,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 		
@@ -220,7 +220,7 @@
 &trans            &trans           &trans           &trans           &trans           &trans               &trans           &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans                            &trans           &trans               &trans           &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
-&kp HOME         &kp PG_UP         &kp ENTER        &kp PG_DN        &kp END                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
+&kp RIGHT        &kp DOWN          &kp UP          &kp LEFT        &kp ENTER                               &kp HOME          &kp PG_UP        &kp ENTER        &kp PG_DN        &kp END
 			>;
 		};
 	};
