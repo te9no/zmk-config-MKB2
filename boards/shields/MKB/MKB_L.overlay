@@ -117,7 +117,7 @@
     };
 
     magnet: tlx493d@c {
-        compatible = "zmk,tlx493d";
+        compatible = "infineon,tlx493d";
         reg = <0x0C>;
         status = "okay";
         hysteresis = <100>;
