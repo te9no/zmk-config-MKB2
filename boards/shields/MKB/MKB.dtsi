@@ -36,6 +36,10 @@
       };
    };
    
+   left_encoder: encoder_left {
+      status = "disabled";
+   };
+
    right_encoder: encoder_right {
       status = "disabled";
    };
