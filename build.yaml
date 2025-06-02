@@ -4,19 +4,19 @@ include:
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
-    cmake-args: -MKB_L_MODULE_TB=y
+    cmake-args: -DMKB_L_MODULE_TB=y
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY
-    cmake-args: -MKB_L_MODULE_JOY=y
+    cmake-args: -DMKB_L_MODULE_JOY=y
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC
-    cmake-args: -MKB_L_MODULE_ENC=y
+    cmake-args: -DMKB_L_MODULE_ENC=y
 
   - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
