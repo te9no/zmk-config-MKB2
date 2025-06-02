@@ -4,6 +4,8 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
+
+// Available modules:
 // #include "MKB_L_TB.dtsi"
 // #include "MKB_L_JS_Enc.dtsi"
 #include "MKB_L_Enc.dtsi"
