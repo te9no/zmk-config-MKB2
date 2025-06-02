@@ -4,49 +4,12 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
-
-&adc {
-	status = "disabled";
-};
+#include "MKB_L_TB.dtsi"
 
 / {
     chosen {
         zephyr,display = &oled;
     };
-
-    // anin0: analog_input_0 {
-    //     compatible = "zmk,analog-input";
-    //     sampling-hz = <100>;
-    //     x-ch {
-    //         io-channels = <&adc 2>;
-    //         mv-mid = <1600>;
-    //         mv-min-max = <1600>;
-    //         mv-deadzone = <88>;
-    //         scale-multiplier = <1>;
-    //         scale-divisor = <800>;
-    //         invert;
-    //         evt-type = <INPUT_EV_REL>;
-    //         input-code = <INPUT_REL_X>;
-    //     };
-    //     y-ch {
-    //         io-channels = <&adc 3>;
-    //         mv-mid = <1600>;
-    //         mv-min-max = <1600>;
-    //         mv-deadzone = <88>;
-    //         scale-multiplier = <1>;
-    //         scale-divisor = <800>;
-    //         invert;
-    //         evt-type = <INPUT_EV_REL>;
-    //         input-code = <INPUT_REL_Y>;
-    //     };
-    // };
-    
-    // analog_input_listener {
-    //     status = "okay";
-    //     compatible = "zmk,input-listener";
-    //     device = <&anin0>;
-    //     input-processors = <&zip_xy_to_scroll_mapper>;
-    // };
 
     split_inputs {
         #address-cells = <1>;
@@ -60,24 +23,8 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
+        status = "disabled";
         device = <&trackball_split>;
-        status = "okay";
-        input-processors = <&zip_temp_layer 3 700>;
-
-        scroll {
-            layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-        };
-    };
-
-    trackball_listener2 {
-        compatible = "zmk,input-listener";
-        device = <&trackball2>;
-        scroll {
-            layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
-            process-next;
-        };
     };
 
     kscan0: kscan0 {
@@ -94,28 +41,13 @@
     };
 };
 
-&left_encoder {
-    status = "disabled";
-};
-
-&spi0 {
+&trackball_listener {
     status = "okay";
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+    input-processors = <&zip_temp_layer 3 700>;
 
-    trackball2: trackball@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+    scroll {
+        layers = <1>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
     };
 };
 

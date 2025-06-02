@@ -1,0 +1,40 @@
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&adc {
+	status = "disabled";
+};
+
+/ {
+    trackball_listener2 {
+        compatible = "zmk,input-listener";
+        device = <&trackball2>;
+        scroll {
+            layers = <1>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
+            process-next;
+        };
+    };
+};
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+
+    trackball2: trackball@0 {
+        status = "okay";
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <600>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+    };
+};
