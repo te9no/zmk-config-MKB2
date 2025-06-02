@@ -5,7 +5,8 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 // #include "MKB_L_TB.dtsi"
-#include "MKB_L_JS_Enc.dtsi"
+// #include "MKB_L_JS_Enc.dtsi"
+#include "MKB_L_Enc.dtsi"
 
 / {
     chosen {
