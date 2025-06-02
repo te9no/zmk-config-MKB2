@@ -42,3 +42,15 @@ if SHIELD_MKB_L
         endchoice
     endif # LVGL
 endif
+
+config MKB_L_MODULE_TB
+    bool "Enable Left Module TrackBall"
+    depends on SHIELD_MKB_L
+
+config MKB_L_MODULE_JOY
+    bool "Enable Left Module Joystick and Encoder"
+    depends on SHIELD_MKB_L
+
+config MKB_L_MODULE_ENC
+    bool "Enable Left Module EC12 Encoder"
+    depends on SHIELD_MKB_L
