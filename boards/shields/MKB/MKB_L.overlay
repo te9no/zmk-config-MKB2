@@ -14,39 +14,39 @@
         zephyr,display = &oled;
     };
 
-    anin0: analog_input_0 {
-        compatible = "zmk,analog-input";
-        sampling-hz = <100>;
-        x-ch {
-            io-channels = <&adc 2>;
-            mv-mid = <1600>;
-            mv-min-max = <1600>;
-            mv-deadzone = <88>;
-            scale-multiplier = <1>;
-            scale-divisor = <800>;
-            invert;
-            evt-type = <INPUT_EV_REL>;
-            input-code = <INPUT_REL_X>;
-        };
-        y-ch {
-            io-channels = <&adc 3>;
-            mv-mid = <1600>;
-            mv-min-max = <1600>;
-            mv-deadzone = <88>;
-            scale-multiplier = <1>;
-            scale-divisor = <800>;
-            invert;
-            evt-type = <INPUT_EV_REL>;
-            input-code = <INPUT_REL_Y>;
-        };
-    };
+    // anin0: analog_input_0 {
+    //     compatible = "zmk,analog-input";
+    //     sampling-hz = <100>;
+    //     x-ch {
+    //         io-channels = <&adc 2>;
+    //         mv-mid = <1600>;
+    //         mv-min-max = <1600>;
+    //         mv-deadzone = <88>;
+    //         scale-multiplier = <1>;
+    //         scale-divisor = <800>;
+    //         invert;
+    //         evt-type = <INPUT_EV_REL>;
+    //         input-code = <INPUT_REL_X>;
+    //     };
+    //     y-ch {
+    //         io-channels = <&adc 3>;
+    //         mv-mid = <1600>;
+    //         mv-min-max = <1600>;
+    //         mv-deadzone = <88>;
+    //         scale-multiplier = <1>;
+    //         scale-divisor = <800>;
+    //         invert;
+    //         evt-type = <INPUT_EV_REL>;
+    //         input-code = <INPUT_REL_Y>;
+    //     };
+    // };
     
-    analog_input_listener {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&anin0>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
+    // analog_input_listener {
+    //     status = "okay";
+    //     compatible = "zmk,input-listener";
+    //     device = <&anin0>;
+    //     input-processors = <&zip_xy_to_scroll_mapper>;
+    // };
 
     split_inputs {
         #address-cells = <1>;
