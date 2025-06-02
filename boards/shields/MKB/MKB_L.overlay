@@ -119,6 +119,7 @@
     magnet: tlx493d@c {
         compatible = "infineon,tlx493d";
         reg = <0x0C>;
+        int-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
         hysteresis = <100>;
         center-threshold = <400>;
         calibration-samples = <300>;
