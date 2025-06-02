@@ -1,7 +1,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter
+    shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
