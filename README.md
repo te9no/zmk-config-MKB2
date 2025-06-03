@@ -76,6 +76,36 @@ The name "MeKaBu" encompasses multiple meanings:
 - Mechanical Components (メカニカルな部品群)
 - Sprouting Stock - branching growth structure (芽株 - 分岐して増殖する構造)
 
+## Local Build Instructions | ローカルビルド手順
+
+### Prerequisites
+```bash
+# Install West (ZMK build tool)
+pip3 install --user -U west
+
+# Initialize and update ZMK
+west init -l config
+west update
+```
+
+### Build Commands
+```bash
+# Left side with TrackBall module
+west build -d build/left_tb -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_TB=y
+
+# Left side with Joystick module
+west build -d build/left_joy -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_JOY=y
+
+# Left side with Encoder module
+west build -d build/left_enc -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_ENC=y
+
+# Right side
+west build -d build/right -b seeeduino_xiao_ble -- -DSHIELD_MKB_R=y
+```
+
+The compiled firmware (.uf2) will be located in the respective build directories.
+ビルドされたファームウェア（.uf2）は各buildディレクトリに生成されます。
+
 ---
 *This configuration exists in the liminal space between reality and digital dreams.*  
 *この設定は、現実とデジタルの夢の間の境界に存在する。*
