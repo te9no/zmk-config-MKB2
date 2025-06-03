@@ -72,7 +72,7 @@
 
     magnet: tlx493d@c {
         compatible = "infineon,tlx493d";
-        reg = <0x0C>;
+        reg = <0x5e>;
         status = "okay";
         hysteresis = <100>;
         center-threshold = <400>;
