@@ -5,129 +5,6 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
-// Available modules:
-#ifdef CONFIG_MKB_L_MODULE_TB
-    &pinctrl {
-        spi0_default: spi0_default {
-            group1 {
-                psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                        <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                        <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            };
-        };
-
-        spi0_sleep: spi0_sleep {
-            group1 {
-                psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                        <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                        <NRF_PSEL(SPIM_MISO, 0, 4)>;
-                low-power-enable;
-            };
-        };
-    };
-
-    / {
-        trackball_listener2 {
-            status = "okay";
-            device = <&trackball2>;
-            scroll {
-                layers = <1>;
-                input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
-                process-next;
-            };
-        };
-    };
-
-    &spi0 {
-        status = "okay";
-        compatible = "nordic,nrf-spim";
-        pinctrl-0 = <&spi0_default>;
-        pinctrl-1 = <&spi0_sleep>;
-        pinctrl-names = "default", "sleep";
-        cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
-
-        trackball2: trackball@0 {
-            status = "okay";
-            compatible = "pixart,pmw3610";
-            reg = <0>;
-            spi-max-frequency = <2000000>;
-            irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-            cpi = <600>;
-            evt-type = <INPUT_EV_REL>;
-            x-input-code = <INPUT_REL_X>;
-            y-input-code = <INPUT_REL_Y>;
-        };
-    };
-#endif
-#ifdef CONFIG_MKB_L_MODULE_JOY
-    &adc {
-        status = "okay";
-    };
-
-    / {
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
-        status = "disabled";
-    };
-
-        anin0: analog_input_0 {
-            compatible = "zmk,analog-input";
-            sampling-hz = <100>;
-            x-ch {
-                io-channels = <&adc 2>;
-                mv-mid = <1600>;
-                mv-min-max = <1600>;
-                mv-deadzone = <88>;
-                scale-multiplier = <1>;
-                scale-divisor = <800>;
-                invert;
-                evt-type = <INPUT_EV_REL>;
-                input-code = <INPUT_REL_X>;
-            };
-            y-ch {
-                io-channels = <&adc 3>;
-                mv-mid = <1600>;
-                mv-min-max = <1600>;
-                mv-deadzone = <88>;
-                scale-multiplier = <1>;
-                scale-divisor = <800>;
-                invert;
-                evt-type = <INPUT_EV_REL>;
-                input-code = <INPUT_REL_Y>;
-            };
-        };
-        
-        analog_input_listener {
-            status = "okay";
-            compatible = "zmk,input-listener";
-            device = <&anin0>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
-    };
-
-    &left_encoder {
-        status = "okay";
-    };
-#endif
-#ifdef CONFIG_MKB_L_MODULE_ENC
-    / {
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
-        status = "disabled";
-    };
-    };
-
-    &left_encoder {
-        status = "okay";
-    };
-#endif
-
 / {
     chosen {
         zephyr,display = &oled;
@@ -204,5 +81,16 @@
 };
 
 &xiao_serial { status = "disabled"; };
-&uart0 { status = "disabled";};
+&uart0 { status = "disabled"; };
+
+// {
+    // #include "MKB_L_base.dtsi"
+    #if CONFIG_MKB_L_MODULE_TB
+    #include "modules/MKB_L_TB.dtsi"
+    #elif CONFIG_MKB_L_MODULE_JOY
+    #include "modules/MKB_L_JS_Enc.dtsi"
+    #elif CONFIG_MKB_L_MODULE_ENC
+    #include "modules/MKB_L_Enc.dtsi"
+    #endif
+// };
 

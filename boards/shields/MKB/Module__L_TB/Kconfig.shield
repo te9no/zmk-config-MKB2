@@ -1,9 +1,0 @@
-config SHIELD_MKB_L_ENC
-    def_bool $(shields_list_contains,SHIELD_MKB_L_Encoder)
-
-config SHIELD_MKB_L_JOY
-    def_bool $(shields_list_contains,SHIELD_MKB_L_JS_Enc)
-
-config SHIELD_MKB_L_TB
-    def_bool $(shields_list_contains,SHIELD_MKB_L_Trackball)
-    
