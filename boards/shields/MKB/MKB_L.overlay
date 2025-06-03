@@ -70,7 +70,7 @@
         prechargep = <0x22>;
     };
 
-    magnet: tlx493d@c {
+    magnet: tlx493d@5e {
         compatible = "infineon,tlx493d";
         reg = <0x5e>;
         status = "okay";
