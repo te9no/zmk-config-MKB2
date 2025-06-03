@@ -32,6 +32,25 @@
         };
     };
 
+    // 磁気センサー用のリスナーを追加
+    magnet_listener: magnet_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet>;
+
+        cursor {
+            layers = <0>;  // レイヤー0でマウス移動
+            input-processors = <&zip_xy_scaler 1 8>,
+                             <&zip_xy_to_mouse_mapper>;
+        };
+
+        scroll {
+            layers = <1>;  // レイヤー1でスクロール
+            input-processors = <&zip_xy_scaler 1 16>,
+                             <&zip_xy_to_scroll_mapper>;
+        };
+    };
+
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
@@ -77,6 +96,9 @@
         hysteresis = <100>;
         center-threshold = <400>;
         calibration-samples = <300>;
+        evt-type = <INPUT_EV_REL>;  // 相対値として入力を扱う
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
