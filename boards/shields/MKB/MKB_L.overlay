@@ -7,11 +7,11 @@
 
 // Available modules:
 #if defined(CONFIG_MKB_L_MODULE_TB)
-    #include "MKB_L_TB.dtsi"
+    #include "./MKB_L_TB.dtsi"
 #elif defined(CONFIG_MKB_L_MODULE_JOY)
-    #include "MKB_L_JS_Enc.dtsi"
+    #include "./MKB_L_JS_Enc.dtsi"
 #elif defined(CONFIG_MKB_L_MODULE_ENC)
-    #include "MKB_L_Enc.dtsi"
+    #include "./MKB_L_Enc.dtsi"
 #endif
 
 / {
