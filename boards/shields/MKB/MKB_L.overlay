@@ -45,19 +45,6 @@
         };
     };
 
-    fusion_view_listener: fusion_view_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&magnet>;
-
-        cursor {
-            layers = <2>;  // Layer 2 for Fusion 360 view control
-            input-processors = <&zip_xy_scaler 1 8>,
-                             <&zip_combo_trigger &kp LSHIFT &mkp MB2>,  // Hold Shift + RMB
-                             <&zip_xy_to_mouse_mapper>;
-        };
-    };
-
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
