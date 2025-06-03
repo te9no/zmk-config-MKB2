@@ -61,18 +61,6 @@
     };
 };
 
-/ {
-    trackball_listener2 {
-        compatible = "zmk,input-listener";
-        device = <&trackball2>;
-        scroll {
-            layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
-            process-next;
-        };
-    };
-};
-
 &xiao_i2c {
     status = "okay";
     compatible = "nordic,nrf-twi";
