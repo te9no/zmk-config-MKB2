@@ -34,7 +34,6 @@
 
     trackball_listener2: trackball_listener2 {
         compatible = "zmk,input-listener";
-        status = "disabled";
     };
 
     kscan0: kscan0 {
@@ -52,7 +51,6 @@
 };
 
 &spi0 {
-    status = "disabled";
     compatible = "nordic,nrf-spim";
 };
 
