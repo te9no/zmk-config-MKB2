@@ -93,8 +93,6 @@
         evt-type = <INPUT_EV_REL>;  // 相対値として入力を扱う
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        deadzone = <50>;         // Ignore small movements
-        exponential = <1>;       // Smooth acceleration
     };
 };
 
