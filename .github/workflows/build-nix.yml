@@ -5,6 +5,7 @@ on:
     paths:
       - config/**
       - boards/**
+      - snippets/**
       - build.yaml
     inputs:
       amend_commit:
