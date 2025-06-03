@@ -6,6 +6,8 @@
 #include "MKB.dtsi"
 
 // Available modules:
+#include "../MKB/MKB_L_TB.dtsi"
+
 #if CONFIG_MKB_L_MODULE_TB
     #include "../MKB/MKB_L_TB.dtsi"
 #elif CONFIG_MKB_L_MODULE_JOY
