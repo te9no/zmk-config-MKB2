@@ -80,9 +80,6 @@
     };
 };
 
-&xiao_serial { status = "disabled"; };
-&uart0 { status = "disabled"; };
-
 // {
     // #include "MKB_L_base.dtsi"
     #if CONFIG_MKB_L_MODULE_TB
