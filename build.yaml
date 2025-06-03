@@ -4,22 +4,19 @@ include:
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
-    # cmake-args: -DCONFIG_MKB_L_MODULE_TB=y
-    cmake-args:  -DEXTRA_DTC_OVERLAY_FILE="${PWD}/boards/shields/MKB/MKB_L_TB.dtsi"
+    cmake-args: "-DZMK_CONFIG=${GITHUB_WORKSPACE} -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_TB=y"
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY
-    # cmake-args: -DCONFIG_MKB_L_MODULE_JOY=y
-    cmake-args: -DEXTRA_DTC_OVERLAY_FILE="${PWD}/boards/shields/MKB/MKB_L_JS_Enc.dtsi"
+    cmake-args: "-DZMK_CONFIG=${GITHUB_WORKSPACE} -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_JOY=y"
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC
-    # cmake-args: -DCONFIG_MKB_L_MODULE_ENC=y
-    cmake-args: -DEXTRA_DTC_OVERLAY_FILE="${PWD}/boards/shields/MKB/MKB_L_Enc.dtsi"
+    cmake-args: "-DZMK_CONFIG=${GITHUB_WORKSPACE} -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_ENC=y"
 
   - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
