@@ -6,7 +6,7 @@
 #include "MKB.dtsi"
 
 // Available modules:
-#if CONFIG_MKB_L_MODULE_TB
+#ifdef CONFIG_MKB_L_MODULE_TB
     &pinctrl {
         spi0_default: spi0_default {
             group1 {
@@ -58,7 +58,8 @@
             y-input-code = <INPUT_REL_Y>;
         };
     };
-#elif CONFIG_MKB_L_MODULE_JOY
+#endif
+#ifdef CONFIG_MKB_L_MODULE_JOY
     &adc {
         status = "okay";
     };
@@ -110,7 +111,8 @@
     &left_encoder {
         status = "okay";
     };
-#elif CONFIG_MKB_L_MODULE_ENC
+#endif
+#ifdef CONFIG_MKB_L_MODULE_ENC
     / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
