@@ -82,11 +82,11 @@
 
 // {
     // #include "MKB_L_base.dtsi"
-    #if CONFIG_MKB_L_MODULE_TB
+    #ifdef MKB_L_MODULE_TB_ENABLED 
     #include "modules/MKB_L_TB.dtsi"
-    #elif CONFIG_MKB_L_MODULE_JOY
+    #elif defined(MKB_L_MODULE_JOY_ENABLED)
     #include "modules/MKB_L_JS_Enc.dtsi"
-    #elif CONFIG_MKB_L_MODULE_ENC
+    #elif defined(MKB_L_MODULE_ENC_ENABLED)
     #include "modules/MKB_L_Enc.dtsi"
     #endif
 // };
