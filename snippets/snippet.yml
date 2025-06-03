@@ -1,14 +1,14 @@
 name: MKB_L_MODULE_TB
 append:
-  EXTRA_DTC_OVERLAY_FILE: ./boards/shields/modules/MKB_L_TB.dtsi
+  EXTRA_DTC_OVERLAY_FILE: ../boards/shields/modules/MKB_L_TB.dtsi
 
 name: MKB_L_MODULE_JOY_ENABLED
 append:
-  EXTRA_DTC_OVERLAY_FILE: ./boards/shields/modules/MKB_L_JS_Enc.dtsi
+  EXTRA_DTC_OVERLAY_FILE: ../boards/shields/modules/MKB_L_JS_Enc.dtsi
 
 name: MKB_L_MODULE_ENC_ENABLED
 append:
-  EXTRA_DTC_OVERLAY_FILE: ./boards/shields/modules/MKB_L_Enc.dtsi
+  EXTRA_DTC_OVERLAY_FILE: ../boards/shields/modules/MKB_L_Enc.dtsi
   
 
   
