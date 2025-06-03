@@ -37,11 +37,24 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&magnet>;
-        input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_transform>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
 
         scroll {
             layers = <1>;  // レイヤー1でスクロール
-            input-processors = <&zip_xy_scaler 1 16>, <&zip_xy_transform>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
+        };
+    };
+
+    fusion_view_listener: fusion_view_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet>;
+
+        cursor {
+            layers = <2>;  // Layer 2 for Fusion 360 view control
+            input-processors = <&zip_xy_scaler 1 8>,
+                             <&zip_combo_trigger &kp LSHIFT &mkp MB2>,  // Hold Shift + RMB
+                             <&zip_xy_to_mouse_mapper>;
         };
     };
 
@@ -93,6 +106,8 @@
         evt-type = <INPUT_EV_REL>;  // 相対値として入力を扱う
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+        deadzone = <50>;         // Ignore small movements
+        exponential = <1>;       // Smooth acceleration
     };
 };
 
