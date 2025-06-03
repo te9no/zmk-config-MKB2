@@ -46,7 +46,7 @@
     };
 };
 
-&xiao_i2c {
+&i2c1 {
     status = "okay";
     compatible = "nordic,nrf-twi";
     pinctrl-0 = <&i2c0_default>;
