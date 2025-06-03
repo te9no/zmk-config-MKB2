@@ -31,8 +31,8 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball_split>;
         status = "okay";
+        device = <&trackball_split>;
         input-processors = <&zip_temp_layer 3 700>;
 
         scroll {
@@ -41,7 +41,7 @@
         };
     };
 
-    trackball_listener2 {
+    trackball_listener2: trackball_listener2 {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackball2>;
