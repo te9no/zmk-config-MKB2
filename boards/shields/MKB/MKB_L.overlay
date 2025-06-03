@@ -37,11 +37,7 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&magnet>;
-
-        cursor {
-            layers = <0>;  // レイヤー0でマウス移動
-            input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_transform>;
-        };
+        input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_transform>;
 
         scroll {
             layers = <1>;  // レイヤー1でスクロール
