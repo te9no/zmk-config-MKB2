@@ -31,8 +31,25 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
         device = <&trackball_split>;
+        status = "okay";
+        input-processors = <&zip_temp_layer 3 700>;
+
+        scroll {
+            layers = <1>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
+    };
+
+    trackball_listener2 {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball2>;
+        scroll {
+            layers = <1>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
+            process-next;
+        };
     };
 
     kscan0: kscan0 {
@@ -49,14 +66,10 @@
     };
 };
 
-&trackball_listener {
-    status = "okay";
-    input-processors = <&zip_temp_layer 3 700>;
+&spi0 {
+    status = "disabled";
+    compatible = "nordic,nrf-spim";
 
-    scroll {
-        layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-    };
 };
 
 &xiao_i2c {
