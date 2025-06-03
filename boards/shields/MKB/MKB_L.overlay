@@ -6,11 +6,11 @@
 #include "MKB.dtsi"
 
 // Available modules:
-#if defined(CONFIG_MKB_L_MODULE_TB)
+#if CONFIG_MKB_L_MODULE_TB=y
     #include "../MKB/MKB_L_TB.dtsi"
-#elif defined(CONFIG_MKB_L_MODULE_JOY)
+#elif CONFIG_MKB_L_MODULE_JOY=y
     #include "../MKB/MKB_L_JS_Enc.dtsi"
-#elif defined(CONFIG_MKB_L_MODULE_ENC)
+#elif CONFIG_MKB_L_MODULE_ENC=y
     #include "../MKB/MKB_L_Enc.dtsi"
 #endif
 
