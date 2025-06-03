@@ -5,15 +5,6 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
-// Available modules:
-#if CONFIG_MKB_L_MODULE_TB
-#include "../MKB/MKB_L_TB.dtsi"
-#elif CONFIG_MKB_L_MODULE_JOY
-#include "../MKB/MKB_L_JS_Enc.dtsi"
-#elif CONFIG_MKB_L_MODULE_ENC
-#include "../MKB/MKB_L_Enc.dtsi"
-#endif
-
 / {
     chosen {
         zephyr,display = &oled;
@@ -63,7 +54,6 @@
 &spi0 {
     status = "disabled";
     compatible = "nordic,nrf-spim";
-
 };
 
 &xiao_i2c {
@@ -102,3 +92,12 @@
 
 &xiao_serial { status = "disabled"; };
 &uart0 { status = "disabled";};
+
+// Available modules:
+#if CONFIG_MKB_L_MODULE_TB
+#include "../MKB/MKB_L_TB.dtsi"
+#elif CONFIG_MKB_L_MODULE_JOY
+#include "../MKB/MKB_L_JS_Enc.dtsi"
+#elif CONFIG_MKB_L_MODULE_ENC
+#include "../MKB/MKB_L_Enc.dtsi"
+#endif
