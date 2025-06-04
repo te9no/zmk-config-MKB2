@@ -39,10 +39,6 @@
         device = <&magnet>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
 
-        scroll {
-            layers = <1>;  // レイヤー1でスクロール
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
-        };
     };
 
     kscan0: kscan0 {
@@ -87,13 +83,7 @@
         compatible = "infineon,tlx493d";
         reg = <0x5e>;
         status = "okay";
-        hysteresis = <100>;
-        center-threshold = <400>;
-        calibration-samples = <300>;
-        polling-interval = <20>; // ポーリング間隔 (ミリ秒)
-        evt-type = <INPUT_EV_REL>;  // 相対値として入力を扱う
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        polling-interval-ms = <20>; // ポーリング間隔 (ミリ秒)
     };
 };
 
