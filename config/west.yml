@@ -22,7 +22,7 @@ manifest:
     - name: zmk-pmw3610-driver
       # remote: badjeff
       remote: kot149
-      revision: main
+      revision: fix/scroll-acceleration
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
