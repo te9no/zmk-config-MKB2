@@ -6,7 +6,7 @@ if SHIELD_MKB_R
         default y
 endif 
 
-if SHIELD_MKB_L
+if SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB
     config ZMK_KEYBOARD_NAME
         default "MKB_L"
 
