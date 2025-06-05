@@ -1,3 +1,5 @@
+#include <input/processors.dtsi>
+
 / {
    left_encoder: encoder_left {
       compatible = "alps,ec11";
@@ -10,4 +12,12 @@
 
 &left_encoder {
     status = "okay";
+};
+
+/ {
+    trackball_listener2 {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        };
+    };
 };
