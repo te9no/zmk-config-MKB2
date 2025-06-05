@@ -9,7 +9,7 @@ manifest:
     - name: te9no
       url-base: https://github.com/te9no
     - name: kot149
-      url-base: https://github.com/kot149/zmk-pmw3610-driver
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       #remote: zmkfirmware
