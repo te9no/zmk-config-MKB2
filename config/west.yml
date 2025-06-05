@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
-    - name: kot149
-      url-base: https://github.com/kot149
+    - name: kumamuk-git
+      url-base: https://github.com/kumamuk-git
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -21,8 +21,8 @@ manifest:
       revision: main
     - name: zmk-pmw3610-driver
       # remote: badjeff
-      remote: kot149
-      revision: fix/scroll-acceleration
+      remote: kumamuk-git
+      revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
