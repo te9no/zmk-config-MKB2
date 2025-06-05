@@ -1,22 +1,19 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter dongle_display
+    shield: MKB_L_TB rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
-    cmake-args: "-DEXTRA_DTC_OVERLAY_FILE='/workspaces/zmk-config/zmk-config-MKB-1/boards/shields/MKB/MKB_L_TB.overlay' -DEXTRA_CONF_FILE='/workspaces/zmk-config/zmk-config-MKB-1/boards/shields/MKB/MKB_L_TB.conf'"
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter dongle_display
+    shield: MKB_L_JOY rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY
-    cmake-args: "-DEXTRA_DTC_OVERLAY_FILE='./boards/shields/MKB/MKB_L_JS_Enc.overlay' -DEXTRA_CONF_FILE='./boards/shields/MKB/MKB_L_JS_Enc.conf'"
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter dongle_display
+    shield: MKB_L_ENC rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC
-    cmake-args: "-DEXTRA_DTC_OVERLAY_FILE='./boards/shields/MKB/MKB_L_Enc.overlay' -DEXTRA_CONF_FILE='./boards/shields/MKB/MKB_L_Enc.conf'"
 
   - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
