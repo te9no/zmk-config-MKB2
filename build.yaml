@@ -4,7 +4,7 @@ include:
     shield: MKB_L rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
-    cmake-args: "-DDTS_EXTRA_CPPFLAGS='-DMKB_L_MODULE_TB_ENABLED'"
+    cmake-args: "-DEXTRA_DTC_OVERLAY_FILE='MKB_L_TB.overlay' -DEXTRA_CONF_FILE='MKB_L_TB.conf'"
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
