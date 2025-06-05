@@ -5,6 +5,14 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
+#ifdef MKB_L_MODULE_TB_ENABLED 
+#include "modules/MKB_L_TB.dtsi"
+#elif defined(MKB_L_MODULE_JOY_ENABLED)
+#include "modules/MKB_L_JS_Enc.dtsi"
+#elif defined(MKB_L_MODULE_ENC_ENABLED)
+#include "modules/MKB_L_Enc.dtsi"
+#endif
+
 / {
     chosen {
         zephyr,display = &oled;
@@ -86,12 +94,3 @@
         polling-interval-ms = <20>; // ポーリング間隔 (ミリ秒)
     };
 };
-
-// #include "MKB_L_base.dtsi"
-#ifdef MKB_L_MODULE_TB_ENABLED 
-#include "modules/MKB_L_TB.dtsi"
-#elif defined(MKB_L_MODULE_JOY_ENABLED)
-#include "modules/MKB_L_JS_Enc.dtsi"
-#elif defined(MKB_L_MODULE_ENC_ENABLED)
-#include "modules/MKB_L_Enc.dtsi"
-#endif

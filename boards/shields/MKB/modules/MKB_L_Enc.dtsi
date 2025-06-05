@@ -17,10 +17,7 @@
     status = "okay";
 };
 
-/ {
-    trackball_listener2 {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        };
-    };
+&trackball_listener2 {
+    compatible = "zmk,input-listener";
+    status = "disabled";
 };
