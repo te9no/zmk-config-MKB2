@@ -16,8 +16,3 @@
 &left_encoder {
     status = "okay";
 };
-
-&trackball_listener2 {
-    compatible = "zmk,input-listener";
-    status = "disabled";
-};
