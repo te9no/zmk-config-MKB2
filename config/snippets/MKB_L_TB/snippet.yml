@@ -1,0 +1,4 @@
+name: "MKB_L_TB"
+append:
+  EXTRA_CONF_FILE: MKB_L_TB.conf
+  EXTRA_DTC_OVERLAY_FILE: MKB_L_TB.dtsi

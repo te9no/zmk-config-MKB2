@@ -2,19 +2,19 @@
 include:
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
-    snippet: zmk-usb-logging studio-rpc-usb-uart
+    snippet: zmk-usb-logging studio-rpc-usb-uart MKB_L_TB
     artifact-name: MKB_L_MODULE_TB
     cmake-args: "-DDTS_EXTRA_CPPFLAGS='-DMKB_L_MODULE_TB_ENABLED'"
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
-    snippet: zmk-usb-logging studio-rpc-usb-uart
+    snippet: zmk-usb-logging studio-rpc-usb-uart MKB_L_JS_Enc
     artifact-name: MKB_L_MODULE_JOY
     cmake-args: "-DDTS_EXTRA_CPPFLAGS='-DMKB_L_MODULE_JOY_ENABLED'"
 
   - board: seeeduino_xiao_ble
     shield: MKB_L rgbled_adapter dongle_display
-    snippet: zmk-usb-logging studio-rpc-usb-uart
+    snippet: zmk-usb-logging studio-rpc-usb-uart MKB_L_Enc
     artifact-name: MKB_L_MODULE_ENC
     cmake-args: "-DDTS_EXTRA_CPPFLAGS='-DMKB_L_MODULE_ENC_ENABLED'"
 
