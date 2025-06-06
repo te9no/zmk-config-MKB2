@@ -25,6 +25,7 @@
         status = "okay";
         device = <&trackball2>;
         input-processors = <&zip_temp_layer 3 700>;
+
         scroll {
             layers = <1>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, 
@@ -49,5 +50,10 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <800>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        force-awake;
     };
 };
