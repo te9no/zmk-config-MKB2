@@ -43,10 +43,12 @@
 /*input-split*/
 / {
     split_inputs {
+        status = "okay";
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
+            status = "okay";
             compatible = "zmk,input-split";
             device = <&trackball>;
             reg = <0>;
