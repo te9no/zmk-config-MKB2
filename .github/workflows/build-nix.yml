@@ -96,8 +96,7 @@ jobs:
           name: '${{ inputs.artifact_name }}'
           path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
 
-
-  upload-firmware:
+  notify:
     needs: build
     runs-on: ubuntu-latest
     steps:
