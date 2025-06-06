@@ -25,14 +25,6 @@
         status = "okay";
         device = <&trackball2>;
         input-processors = <&zip_temp_layer 3 700>;
-
-        scroll {
-            layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, 
-                              <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>, 
-                              <&zip_xy_scaler 1 20>, 
-                              <&zip_xy_to_scroll_mapper>;
-        };
     };
 };
 
@@ -50,5 +42,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        automouse-layer = <4>;
+        scroll-layers = <5>;
     };
 };
