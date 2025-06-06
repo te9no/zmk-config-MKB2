@@ -32,6 +32,7 @@
     compatible = "nordic,nrf-spim";
 
     trackball: pd@0 {
+        status = "okay";
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -48,6 +49,7 @@
 
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
+            device = <&trackball>;
             reg = <0>;
         };
     };
@@ -57,16 +59,6 @@
         status = "disabled";
         device = <&trackball_split>;
     };
-};
-
-&trackball {
-    status = "okay";
-	evt-type = <INPUT_EV_REL>;
-    force-awake;
-};
-
-&trackball_split {
-    device = <&trackball>;
 };
 
 &xiao_serial { status = "disabled"; };
