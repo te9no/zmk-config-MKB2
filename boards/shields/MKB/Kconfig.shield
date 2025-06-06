@@ -2,7 +2,7 @@ config SHIELD_MKB_R
     def_bool $(shields_list_contains,MKB_R)
 
 config SHIELD_MKB_L_ENC
-    def_bool $(shields_list_contains,MKB_L_Enc)
+    def_bool $(shields_list_contains,MKB_L_ENC)
 
 config SHIELD_MKB_L_JOY
     def_bool $(shields_list_contains,MKB_L_JOY)

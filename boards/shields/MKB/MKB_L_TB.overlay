@@ -1,5 +1,3 @@
-#include <input/processors.dtsi>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "MKB_L_Base.dtsi"
 
 &pinctrl {

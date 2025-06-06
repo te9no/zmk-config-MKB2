@@ -1,4 +1,3 @@
-#include <input/processors.dtsi>
 #include "MKB_L_Base.dtsi"
 
 &adc {
