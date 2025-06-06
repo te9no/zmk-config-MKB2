@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - config/**
+      - boards/**
+      - snippets/**
+      - build.yaml
+
+steps:
+  - uses: stegzilla/discord-notify@v2
+    with:
+      webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      title: Completed
+      message: Completed
+    if: ${{ always() }}
