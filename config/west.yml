@@ -18,7 +18,7 @@ manifest:
       remote: caksoylar
       revision: main
     - name: zmk-pmw3610-driver
-      remote: badjeff
+      remote: te9no
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
