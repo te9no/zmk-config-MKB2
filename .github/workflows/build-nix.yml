@@ -95,3 +95,15 @@ jobs:
         with:
           name: '${{ inputs.artifact_name }}'
           path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
+
+
+  upload-firmware:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: stegzilla/discord-notify@v2
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          title: Completed
+          message: Completed
+        if: ${{ always() }}
