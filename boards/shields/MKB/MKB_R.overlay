@@ -1,7 +1,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "MKB_pinctrl_R.dtsi"
 #include "MKB.dtsi"
 
@@ -33,7 +32,7 @@
     compatible = "nordic,nrf-spim";
 
     trackball: pd@0 {
-        status = "okay";
+        status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
@@ -44,23 +43,28 @@
 /*input-split*/
 / {
     split_inputs {
-        status = "okay";
         #address-cells = <1>;
         #size-cells = <0>;
 
         trackball_split: trackball_split@0 {
-            status = "okay";
             compatible = "zmk,input-split";
-            device = <&trackball>;
             reg = <0>;
         };
     };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "okay";
+        status = "disabled";
         device = <&trackball_split>;
     };
+};
+
+&trackball {
+    status = "okay";
+};
+
+&trackball_split {
+    device = <&trackball>;
 };
 
 &xiao_serial { status = "disabled"; };
