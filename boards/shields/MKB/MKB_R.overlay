@@ -32,7 +32,7 @@
     compatible = "nordic,nrf-spim";
 
     trackball: pd@0 {
-        status = "disabled";
+        status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
@@ -48,19 +48,16 @@
 
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
+            status = "okay";
             reg = <0>;
         };
     };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
+        status = "okay";
         device = <&trackball_split>;
     };
-};
-
-&trackball {
-    status = "okay";
 };
 
 &trackball_split {
