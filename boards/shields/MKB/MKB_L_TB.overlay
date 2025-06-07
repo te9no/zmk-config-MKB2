@@ -29,31 +29,6 @@
     };
 
     behaviors {
-        ba_layer1: ball_action_1 {
-            compatible = "zmk,behavior-ball-action";
-            label = "BALL_ACTION_1";
-            layers = <1>;
-            #ball-action-cells = <0>;
-            bindings = <&kp LEFT 
-                       &kp RIGHT
-                       &kp UP
-                       &kp DOWN>;
-            tick = <20>;
-            wait-ms = <50>;
-            tap-ms = <10>;
-        };
-
-        ba_layer2: ball_action_2 {
-            compatible = "zmk,behavior-ball-action";
-            label = "BALL_ACTION_2";
-            layers = <2>;
-            #ball-action-cells = <0>;
-            bindings = <&kp HOME 
-                       &kp END
-                       &kp PG_UP
-                       &kp PG_DN>;
-            tick = <30>;
-        };
     };
 };
 
@@ -80,5 +55,31 @@
     ball-actions = <&ba_layer1 &ba_layer2>;  // 定義したball-actionを参照
 
         force-awake;
+        
+        ba_layer1: ball_action_1 {
+            compatible = "zmk,behavior-ball-action";
+            label = "BALL_ACTION_1";
+            layers = <1>;
+            #ball-action-cells = <0>;
+            bindings = <&kp LEFT 
+                       &kp RIGHT
+                       &kp UP
+                       &kp DOWN>;
+            tick = <20>;
+            wait-ms = <50>;
+            tap-ms = <10>;
+        };
+
+        ba_layer2: ball_action_2 {
+            compatible = "zmk,behavior-ball-action";
+            label = "BALL_ACTION_2";
+            layers = <2>;
+            #ball-action-cells = <0>;
+            bindings = <&kp HOME 
+                       &kp END
+                       &kp PG_UP
+                       &kp PG_DN>;
+            tick = <30>;
+        };
     };
 };
