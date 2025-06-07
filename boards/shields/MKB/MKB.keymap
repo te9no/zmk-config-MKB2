@@ -91,8 +91,13 @@
             positions = <>;
         };
     };
-	
-	// behaviors {
+
+	behaviors {
+        // ball_up: ball_up { label = "BALL_UP"; bindings = <&kp UP>; };
+        // ball_down: ball_down { label = "BALL_DOWN"; bindings = <&kp DOWN>; };
+        // ball_left: ball_left { label = "BALL_LEFT"; bindings = <&kp LEFT>; };
+        // ball_right: ball_right { label = "BALL_RIGHT"; bindings = <&kp RIGHT>; };
+
 	// 	leader1: leader1 {
     //         compatible = "zmk,behavior-leader-key";
     //         #binding-cells = <0>;
@@ -148,7 +153,7 @@
     //         bindings = <&macro_tap &kp F18>
     //                 , <&leader4>;
     //     };
-	//};
+	};
 	
 	keymap {
 		compatible = "zmk,keymap";

@@ -91,27 +91,12 @@
             positions = <>;
         };
     };
-	
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&trackball2>;
-        ball-action;  // Enable ball action
-        ball-threshold-up = <15>;
-        ball-threshold-down = <15>;
-        ball-threshold-left = <15>;
-        ball-threshold-right = <15>;
-    };
 
 	behaviors {
-        ba_cursor: ball_action_cursor {
-            compatible = "zmk,behavior-ball-action";
-            bindings = <&kp>, <&kp>, <&kp>, <&kp>;
-            up-keycode = <UP>;
-            down-keycode = <DOWN>;
-            left-keycode = <LEFT>;
-            right-keycode = <RIGHT>;
-            threshold = <10>;
-        };
+        // ball_up: ball_up { label = "BALL_UP"; bindings = <&kp UP>; };
+        // ball_down: ball_down { label = "BALL_DOWN"; bindings = <&kp DOWN>; };
+        // ball_left: ball_left { label = "BALL_LEFT"; bindings = <&kp LEFT>; };
+        // ball_right: ball_right { label = "BALL_RIGHT"; bindings = <&kp RIGHT>; };
 
 	// 	leader1: leader1 {
     //         compatible = "zmk,behavior-leader-key";
