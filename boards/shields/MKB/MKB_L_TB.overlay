@@ -1,6 +1,5 @@
 #include "MKB_L_Base.dtsi"
 #include <dt-bindings/zmk/keys.h>
-#include <input/processors/zmk-input-processor-keybind.dtsi>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -27,6 +26,17 @@
         status = "okay";
         device = <&trackball2>;
         input-processors = <&zip_keybind_keys>;
+    };
+    
+    zip_keybind_keys: zip_keybind_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        track-remainders;
+        bindings = <&kp RIGHT>,
+                  <&kp LEFT>,
+                  <&kp UP>,
+                  <&kp DOWN>;
     };
 };
 

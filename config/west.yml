@@ -30,7 +30,7 @@ manifest:
       remote: te9no
       revision: main
     - name: zmk-input-processor-keybind
-      remote: badjeff
+      remote: te9no
       revision: main
       
     # - name: zmk-leader-key
