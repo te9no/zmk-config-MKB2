@@ -29,6 +29,9 @@ manifest:
     - name: zmk-driver-tlx493d-2
       remote: te9no
       revision: main
+    - name: zmk-input-processor-keybind
+      remote: badjeff
+      revision: main
       
     # - name: zmk-leader-key
     #   remote: urob

@@ -1,5 +1,6 @@
 #include "MKB_L_Base.dtsi"
 #include <dt-bindings/zmk/keys.h>
+#include <input/processors/zmk-input-processor-keybind.dtsi>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -25,10 +26,7 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball2>;
-        input-processors = <&zip_temp_layer 3 700>;
-    };
-
-    behaviors {
+        input-processors = <&zip_keybind_keys>;
     };
 };
 
@@ -50,36 +48,6 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-    scroll-layers = <3>;           // レイヤー3でスクロールモード
-    snipe-layers = <4>;           // レイヤー4でスナイプモード（低CPI）
-    ball-actions = <&ba_layer1 &ba_layer2>;  // 定義したball-actionを参照
-
         force-awake;
-        
-        ba_layer1: ball_action_1 {
-            compatible = "zmk,behavior-ball-action";
-            label = "BALL_ACTION_1";
-            layers = <1>;
-            #ball-action-cells = <0>;
-            bindings = <&kp LEFT 
-                       &kp RIGHT
-                       &kp UP
-                       &kp DOWN>;
-            tick = <20>;
-            wait-ms = <50>;
-            tap-ms = <10>;
-        };
-
-        ba_layer2: ball_action_2 {
-            compatible = "zmk,behavior-ball-action";
-            label = "BALL_ACTION_2";
-            layers = <2>;
-            #ball-action-cells = <0>;
-            bindings = <&kp HOME 
-                       &kp END
-                       &kp PG_UP
-                       &kp PG_DN>;
-            tick = <30>;
-        };
     };
 };
