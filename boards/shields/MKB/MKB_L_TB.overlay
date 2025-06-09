@@ -41,7 +41,7 @@
     trackball_listener2 {
         compatible = "zmk,input-listener";
         device = <&trackball2>;
-        input-processors = <&keybind>;
+        input-processors =  <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&keybind>;
     };
 };
 
