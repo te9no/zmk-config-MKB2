@@ -26,6 +26,23 @@
 };
 
 / {
+    keybind: keybind {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        status = "okay";
+        type = <INPUT_EV_REL>;
+        track_remainders;
+        bindings = <&kp RIGHT_ARROW>,
+                  <&kp LEFT_ARROW>,
+                  <&kp UP_ARROW>,
+                  <&kp DOWN_ARROW>;
+    };
+    
+    trackball_listener2 {
+        compatible = "zmk,input-listener";
+        device = <&trackball2>;
+        input-processors = <&keybind>;
+    };
 };
 
 &spi0 {
@@ -47,24 +64,5 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake;
-    };
-    
-    trackball_listener2 {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&trackball2>;
-        input-processors = <&keybind>;
-    };
-    
-    keybind: keybind {
-        compatible = "zmk,input-processor-keybind";
-        #input-processor-cells = <0>;
-        status = "okay";
-        type = <INPUT_EV_REL>;
-        track_remainders;
-        bindings = <&kp RIGHT_ARROW>,
-                  <&kp LEFT_ARROW>,
-                  <&kp UP_ARROW>,
-                  <&kp DOWN_ARROW>;
     };
 };

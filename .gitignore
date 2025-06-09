@@ -2,7 +2,5 @@
 /modules
 /zmk
 /build
+/zmk-input-processor-keybind
 result
-.vscode/c_cpp_properties.json
-.vscode/launch.json
-.vscode/settings.json
