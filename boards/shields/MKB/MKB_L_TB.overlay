@@ -49,8 +49,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        /
-        *   optional: ball action on specific layers  */
+        /*   optional: ball action on specific layers  */
         arrows {
             layers = <3>;
             bindings =
