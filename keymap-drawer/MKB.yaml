@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: MKB, layout_name: layout_MKB}
+layout: {zmk_keyboard: MKB}
 layers:
   Def:
   - TAB
