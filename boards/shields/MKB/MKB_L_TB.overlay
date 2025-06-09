@@ -45,14 +45,24 @@
 
     trackball2: trackball2@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "pixart,pmw3610_kuma";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <800>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        force-awake;
+        /
+        *   optional: ball action on specific layers  */
+        arrows {
+            layers = <3>;
+            bindings =
+                <&kp RIGHT_ARROW>,
+                <&kp LEFT_ARROW>,
+                <&kp UP_ARROW>,
+                <&kp DOWN_ARROW>;
+        
+            /*   optional: ball action configuration  */
+            tick = <10>;
+            // wait-ms = <5>;
+            // tap-ms = <5>;
+        };
     };
 };
