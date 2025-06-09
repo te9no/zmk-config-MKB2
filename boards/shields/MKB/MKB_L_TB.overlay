@@ -44,7 +44,7 @@
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         /*   optional: ball action on specific layers  */
         arrows {
-            layers = <3>;
+            layers = <0>;
             bindings =
                 <&kp RIGHT>,
                 <&kp LEFT>,
