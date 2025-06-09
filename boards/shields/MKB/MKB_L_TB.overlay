@@ -1,4 +1,5 @@
 #include "MKB_L_Base.dtsi"
+#include <dt-bindings/zmk/keys.h>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -53,10 +54,10 @@
         arrows {
             layers = <3>;
             bindings =
-                <&kp RIGHT_ARROW>,
-                <&kp LEFT_ARROW>,
-                <&kp UP_ARROW>,
-                <&kp DOWN_ARROW>;
+                <&kp RIGHT>,
+                <&kp LEFT>,
+                <&kp UP>,
+                <&kp DOWN>;
         
             /*   optional: ball action configuration  */
             tick = <10>;
