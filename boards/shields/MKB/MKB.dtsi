@@ -86,7 +86,7 @@
             , <&key_physical_attrs  50  50  975  375       0     0     0>
             ;
 	};
-		
+
     position_map {
         compatible = "zmk,physical-layout-position-map";
 
