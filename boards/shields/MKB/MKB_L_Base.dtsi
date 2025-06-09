@@ -22,7 +22,7 @@
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
-        status = "disabled";
+        status = "okay";
         device = <&trackball_split>;
         input-processors = <&zip_temp_layer 3 700>;
 
