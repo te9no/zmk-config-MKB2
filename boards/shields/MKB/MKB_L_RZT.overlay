@@ -1,0 +1,23 @@
+#include "MKB_L_Base.dtsi"
+
+&i2c1 {
+    magnet: tlx493d@5e {
+        compatible = "infineon,tlx493d";
+        reg = <0x5e>;
+        status = "okay";
+        polling-interval-ms = <20>;
+        label = "TLX493D_SENSOR";
+    };
+};
+
+/ {
+    tlx493d_listener: tlx493d_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet>;
+        move {
+            layers = <0>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
+        };
+    };
+};
