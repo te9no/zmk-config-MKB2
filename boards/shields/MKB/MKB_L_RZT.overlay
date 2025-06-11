@@ -1,4 +1,15 @@
 #include "MKB_L_Base.dtsi"
+#include <dt-bindings/zmk/input-processor-keytoggle.h>
+
+/ {
+    input_processors {
+        zip_keytoggle: zip_keytoggle {
+            compatible = "zmk,input-processor-keytoggle";
+            #input-processor-cells = <0>;
+            keycode = <LS(MCLK)>; // Example keycode, replace with your desired keycode
+        };
+    };
+};
 
 &i2c1 {
     magnet: tlx493d@5e {
@@ -17,7 +28,9 @@
         device = <&magnet>;
         move {
             layers = <0>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
+            input-processors = <&zip_keytoggle>, 
+                               <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
+                               <&zip_xy_scaler 1 8>;
         };
     };
 };
