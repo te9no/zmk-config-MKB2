@@ -16,6 +16,11 @@ include:
     artifact-name: MKB_L_MODULE_ENC
 
   - board: seeeduino_xiao_ble
+    shield: MKB_L_RZT rgbled_adapter dongle_display
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_RZT
+
+  - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
 

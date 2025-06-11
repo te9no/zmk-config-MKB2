@@ -28,14 +28,6 @@
         inversion-on;
         prechargep = <0x22>;
     };
-
-    magnet: tlx493d@5e {
-        compatible = "infineon,tlx493d";
-        reg = <0x5e>;
-        status = "okay";
-        polling-interval-ms = <20>;
-        label = "TLX493D_SENSOR";
-    };
 };
 
 / {
@@ -62,16 +54,6 @@
         scroll {
             layers = <1>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
-        };
-    };
-
-    tlx493d_listener: tlx493d_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&magnet>;
-        move {
-            layers = <0>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
         };
     };
 
