@@ -1,10 +1,28 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: MKB_L rgbled_adapter
+    shield: MKB_L_TB rgbled_adapter dongle_display
     snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_TB
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_L_JOY rgbled_adapter dongle_display
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_JOY
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_L_ENC rgbled_adapter dongle_display
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_ENC
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_L_RZT rgbled_adapter dongle_display
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_RZT
+
   - board: seeeduino_xiao_ble
     shield: MKB_R rgbled_adapter
     snippet: zmk-usb-logging studio-rpc-usb-uart
+
   - board: seeeduino_xiao_ble
     shield: settings_reset
