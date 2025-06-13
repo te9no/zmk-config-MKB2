@@ -27,15 +27,13 @@
 / {
     trackball_listener2 {
         compatible = "zmk,input-listener";
-        status = "okay";
         device = <&trackball2>;
-        input-processors = <&zip_keybind_keys>;
     };
     
 	zip_keybind_keys: zip_keybind_keys {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
-		track_remainders;
+		    track_remainders;
 	        bindings = <&kp RIGHT>,
 	                  <&kp LEFT>,
 	                  <&kp UP>,
@@ -49,6 +47,12 @@
 	        // max_pending_activations = <10>
     	};
 	
+};
+
+
+&trackball_listener2 {
+    status = "okay";
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_keybind_keys>;
 };
 
 &spi0 {
