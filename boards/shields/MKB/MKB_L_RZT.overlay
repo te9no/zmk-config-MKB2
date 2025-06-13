@@ -1,13 +1,12 @@
 #include "MKB_L_Base.dtsi"
-#include <dt-bindings/zmk/input-processor-keytoggle.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
-    input_processors {
-        zip_keytoggle: zip_keytoggle {
-            compatible = "zmk,input-processor-keytoggle";
-            #input-processor-cells = <0>;
-            keycode = <LS(MCLK)>; // Example keycode, replace with your desired keycode
-        };
+    zip_keytoggle: zip_keytoggle {
+        compatible = "zmk,input-processor-keytoggle";
+        #input-processor-cells = <0>;
+        bindings = <&kp RIGHT>;
     };
 };
 
