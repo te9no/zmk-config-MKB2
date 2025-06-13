@@ -17,10 +17,7 @@
         device = <&magnet>;
         move {
             layers = <0>;
-            input-processors = <&zip_x_scaler 1 8>,
-                                <&zip_y_scaler 1 8>,
-                                <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
-                                 <&zip_xy_scaler 1 8>;
+            input-processors = <&zip_xy_scaler 1 8>;
         };
     };
 };
