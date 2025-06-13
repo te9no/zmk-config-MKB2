@@ -24,17 +24,13 @@
     };
 };
 
-
 / {
     trackball_listener2: trackball_listener2 {
         compatible = "zmk,input-listener";
+        device = <&trackball2>;
+        status = "okay";
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_keybind_keys>;
     };
-};
-
-&trackball_listener2 {
-    device = <&trackball2>;
-    status = "okay";
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_keybind_keys>;
 };
 
 &spi0 {
