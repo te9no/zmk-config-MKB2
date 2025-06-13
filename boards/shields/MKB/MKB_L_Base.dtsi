@@ -73,7 +73,6 @@
     
     trackball_listener2: trackball_listener2 {
         compatible = "zmk,input-listener";
-        status = "okay";
     };
 
 	zip_keybind_keys: zip_keybind_keys {
