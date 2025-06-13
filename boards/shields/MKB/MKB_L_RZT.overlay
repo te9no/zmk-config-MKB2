@@ -6,7 +6,7 @@
     zip_keytoggle: zip_keytoggle {
         compatible = "zmk,input-processor-keytoggle";
         #input-processor-cells = <0>;
-        bindings = <&kp RIGHT>;
+        bindings = <&kp LS(MCLK)>;
     };
 };
 
