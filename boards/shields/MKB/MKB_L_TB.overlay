@@ -24,16 +24,8 @@
     };
 };
 
-/ {
-    trackball_listener2: trackball_listener2 {
-        compatible = "zmk,input-listener";
-        device = <&trackball2>;
-    };
-};
-
-
 &trackball_listener2 {
-    status = "okay";
+    device = <&trackball2>;
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>, <&zip_keybind_keys>;
 };
 
