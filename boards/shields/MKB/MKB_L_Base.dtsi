@@ -71,10 +71,6 @@
             ;
     };
     
-    trackball_listener2: trackball_listener2 {
-        compatible = "zmk,input-listener";
-    };
-
 	zip_keybind_keys: zip_keybind_keys {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
