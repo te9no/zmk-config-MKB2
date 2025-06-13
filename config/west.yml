@@ -8,6 +8,9 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
+    - name: zettaface
+      url-base: https://github.com/zettaface
+
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -20,8 +23,8 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-    - name: zmk-pmw3610-driver-kuma
-      remote: te9no
+    - name: zmk-input-processor-keybind
+      remote: zettaface
       revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
