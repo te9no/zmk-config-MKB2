@@ -1,5 +1,6 @@
 #include "MKB_L_Base.dtsi"
 #include <dt-bindings/zmk/keys.h>
+#include <input/processors/zmk-input-processor-keybind.dtsi>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -25,6 +26,24 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball2>;
+        input-processors = <&zip_keybind_keys>;
+    };
+    
+    zip_keybind_keys: zip_keybind_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp RIGHT>,
+                  <&kp LEFT>,
+                  <&kp UP>,
+                  <&kp DOWN>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        // mode = <1>
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10>
     };
 };
 
@@ -42,19 +61,10 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        /*   optional: ball action on specific layers  */
-        arrows {
-            layers = <0>;
-            bindings =
-                <&kp RIGHT>,
-                <&kp LEFT>,
-                <&kp UP>,
-                <&kp DOWN>;
-        
-            /*   optional: ball action configuration  */
-            tick = <10>;
-            // wait-ms = <5>;
-            // tap-ms = <5>;
-        };
+        cpi = <800>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        force-awake;
     };
 };
