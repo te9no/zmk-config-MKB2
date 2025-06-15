@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory=$false)]
-    [ValidateSet('L', 'R')]
-    [string]$Side = 'R'
+    [ValidateSet('JOY', 'R')]
+    [string]$Side = 'JOY'
 )
 
 # --------------------------------------------
@@ -61,6 +61,7 @@ gh run download $latestRunId --repo "$repoOwner/$repoName" --dir $artifactsDownl
 # --------------------------------------------
 # Find uf2 file
 # --------------------------------------------
+# $uf2FilePattern = "*_$($Side)*.uf2"
 $uf2FilePattern = "*_$($Side)*.uf2"
 $firmwareFile = Get-ChildItem -Path $artifactsDownloadDir -Filter $uf2FilePattern | Select-Object -First 1
 

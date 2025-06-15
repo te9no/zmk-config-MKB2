@@ -62,7 +62,6 @@
         layer1 {
             layers = <1>;
             input-processors = <&zip_keybind_keys>
-                             , <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
                              ;
         };
     };

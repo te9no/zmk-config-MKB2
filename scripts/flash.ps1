@@ -1,7 +1,6 @@
 # コマンドライン引数を取得
 param(
     [Parameter(Mandatory=$false)]
-    [ValidateSet('')]
     [string]$Side = '',
     [Parameter(Mandatory=$false)]
     [string]$BuildDir = "C:\Users\tatuy\Documents\zmk\app\build\MKB\zephyr", # デフォルトのビルドディレクトリ
