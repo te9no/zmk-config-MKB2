@@ -59,7 +59,7 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        layer1 {
+        layer0 {
             layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
