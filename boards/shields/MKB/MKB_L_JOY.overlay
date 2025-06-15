@@ -58,14 +58,11 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        layer0 {
-            layers = <0>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
-        };
+        input-processors = <&zip_xy_to_scroll_mapper>;
         layer1 {
             layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-                             , <&zip_keybind_keys>
+            input-processors = <&zip_keybind_keys>
+                             , <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
                              ;
         };
     };
