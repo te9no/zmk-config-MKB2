@@ -14,6 +14,7 @@
                 <&kp LEFT>,
                 <&kp UP>,
                 <&kp DOWN>;
+        mode = <1>;
         tick = <40>;
         wait-ms = <0>;
         tap-ms = <10>;
@@ -61,7 +62,8 @@
         input-processors = <&zip_xy_to_scroll_mapper>;
         layer1 {
             layers = <1>;
-            input-processors = <&zip_keybind_keys>
+            input-processors = <&zip_xy_scaler 1 16>
+                             , <&zip_keybind_keys>
                              ;
         };
     };
