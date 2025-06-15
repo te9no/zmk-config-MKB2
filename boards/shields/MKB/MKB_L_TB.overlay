@@ -29,8 +29,8 @@
         compatible = "zmk,input-listener";
         device = <&trackball2>;
         status = "okay";
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                        //    <&zip_keybind_keys>
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+                         //, <&zip_keybind_keys>
                            ;
     };
 };
