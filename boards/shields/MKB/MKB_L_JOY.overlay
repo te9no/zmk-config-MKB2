@@ -63,11 +63,11 @@
         compatible = "zmk,input-listener";
         device = <&anin0>;
         layer0 {
-            layers = <0>;
+            layers = <1>;
             input-processors = <&zip_xy_to_scroll_mapper>;
         };
         layer1 {
-            layers = <1>;
+            layers = <2>;
             input-processors = <&zip_xy_scaler 1 16>
                              , <&zip_keybind_keys>
                              ;
