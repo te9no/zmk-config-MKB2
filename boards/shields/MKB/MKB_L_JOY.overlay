@@ -10,13 +10,10 @@
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
-        arrows {
-            layers = <1>;
-            bindings = <&kp RIGHT>,
-                    <&kp LEFT>,
-                    <&kp UP>,
-                    <&kp DOWN>;
-        };
+        bindings = <&kp RIGHT>,
+                <&kp LEFT>,
+                <&kp UP>,
+                <&kp DOWN>;
         tick = <40>;
         wait-ms = <0>;
         tap-ms = <10>;
@@ -61,8 +58,14 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&anin0>;
-        input-processors =  <&zip_xy_to_scroll_mapper>,
-                            <&zip_keybind_keys>;
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_keybind_keys>;
+        };
     };
 };
 
