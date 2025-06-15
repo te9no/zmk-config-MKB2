@@ -4,7 +4,7 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
@@ -12,7 +12,7 @@
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK, 0, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
@@ -41,7 +41,7 @@
         compatible = "pixart,pmw3610_kuma";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         /*   optional: ball action on specific layers  */
         arrows {
             layers = <0>;
