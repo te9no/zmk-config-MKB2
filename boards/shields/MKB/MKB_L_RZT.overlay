@@ -3,6 +3,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    
     magnet: tlx493d@5e {
         compatible = "infineon,tlx493d";
         reg = <0x5e>;
