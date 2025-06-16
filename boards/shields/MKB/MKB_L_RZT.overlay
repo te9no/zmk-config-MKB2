@@ -2,13 +2,32 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-&i2c1 {
+&i2c0 {
     magnet: tlx493d@5e {
         compatible = "infineon,tlx493d";
         reg = <0x5e>;
         status = "okay";
         polling-interval-ms = <20>;
         label = "TLX493D_SENSOR";
+    };
+};
+
+&pinctrl {    
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
+                    <NRF_PSEL(TWIM_SCL, 0,  4)>;
+            bias-pull-up;
+        };
+    };
+      
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
+                    <NRF_PSEL(TWIM_SCL, 0,  4)>;
+            low-power-enable;
+            bias-pull-up;
+        };
     };
 };
 
