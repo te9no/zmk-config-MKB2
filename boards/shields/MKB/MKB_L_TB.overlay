@@ -30,8 +30,8 @@
         device = <&trackball2>;
         status = "okay";
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-                           , <&zip_keybind_keys>
-                           ;
+                         , <&zip_keybind_keys>
+                         ;
     };
 };
 
@@ -41,9 +41,9 @@
         #input-processor-cells = <0>;
         track_remainders;
         bindings = <&kp RIGHT>,
-                  <&kp LEFT>,
-                  <&kp UP>,
-                  <&kp DOWN>;
+                   <&kp LEFT>,
+                   <&kp UP>,
+                   <&kp DOWN>;
         tick = <40>;
         wait-ms = <0>;
         tap-ms = <10>;

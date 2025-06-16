@@ -12,64 +12,6 @@
 #define BT 5
 
 / {
-	// behaviors {
-	// 	leader1: leader1 {
-    //         compatible = "zmk,behavior-leader-key";
-    //         #binding-cells = <0>;
-    //         leftdown { sequence = <F14 F15>; bindings = <&kp PG_DN>; };
-    //         out { sequence = <O U T>; bindings = <&out OUT_TOG>; };
-    //     };
-    //     leader2: leader2 {
-    //         compatible = "zmk,behavior-leader-key";
-    //         #binding-cells = <0>;
-    //         leftup   { sequence = <F14 F13>; bindings = <&kp PG_UP>; };
-    //     };
-    //     leader3: leader3 {
-    //         compatible = "zmk,behavior-leader-key";
-    //         #binding-cells = <0>;
-    //         rightdown { sequence = <F17 F18>; bindings = <&kp END>; };
-    //     };
-    //     leader4: leader4 {
-    //         compatible = "zmk,behavior-leader-key";
-    //         #binding-cells = <0>;
-    //         rightup   { sequence = <F17 F16>; bindings = <&kp HOME>; };
-    //     };
-	// 	mF13: mF13 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F13>
-    //                  , <&leader1>;
-    //     };
-    //     mF14: mF14 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F14>;
-    //     };
-    //     mF15: mF15 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F15>
-    //                  , <&leader2>;
-    //     };
-    //     mF16: mF16 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F16>
-    //                 , <&leader3>;
-    //     };
-    //     mF17: mF17 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F17>;
-    //     };
-    //     mF18: mF18 {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&macro_tap &kp F18>
-    //                 , <&leader4>;
-    //     };
-	//};
-	
 	keymap {
 		compatible = "zmk,keymap";
 		default_layer {
@@ -144,4 +86,62 @@
 			>;
 		};
 	};
+
+    // behaviors {
+	// 	leader1: leader1 {
+    //         compatible = "zmk,behavior-leader-key";
+    //         #binding-cells = <0>;
+    //         leftdown { sequence = <F14 F15>; bindings = <&kp PG_DN>; };
+    //         out { sequence = <O U T>; bindings = <&out OUT_TOG>; };
+    //     };
+    //     leader2: leader2 {
+    //         compatible = "zmk,behavior-leader-key";
+    //         #binding-cells = <0>;
+    //         leftup   { sequence = <F14 F13>; bindings = <&kp PG_UP>; };
+    //     };
+    //     leader3: leader3 {
+    //         compatible = "zmk,behavior-leader-key";
+    //         #binding-cells = <0>;
+    //         rightdown { sequence = <F17 F18>; bindings = <&kp END>; };
+    //     };
+    //     leader4: leader4 {
+    //         compatible = "zmk,behavior-leader-key";
+    //         #binding-cells = <0>;
+    //         rightup   { sequence = <F17 F16>; bindings = <&kp HOME>; };
+    //     };
+	// 	mF13: mF13 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F13>
+    //                  , <&leader1>;
+    //     };
+    //     mF14: mF14 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F14>;
+    //     };
+    //     mF15: mF15 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F15>
+    //                  , <&leader2>;
+    //     };
+    //     mF16: mF16 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F16>
+    //                 , <&leader3>;
+    //     };
+    //     mF17: mF17 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F17>;
+    //     };
+    //     mF18: mF18 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&macro_tap &kp F18>
+    //                 , <&leader4>;
+    //     };
+	//};
 };
