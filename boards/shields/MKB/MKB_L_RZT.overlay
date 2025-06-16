@@ -44,9 +44,10 @@
             layers = <0>;
             input-processors = 
                                 // <&zip_keytoggle>, 
-                                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                                 <&zip_xy_scaler 1 2>;
         };
     };
 };
+
 
