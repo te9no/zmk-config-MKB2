@@ -1,4 +1,4 @@
-#include <layout_shift.dtsi>
+// #include <layout_shift.dtsi>
 #include <layout_shift_kp_override.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -12,6 +12,13 @@
 #define MOUSE 3
 #define SCROLL 4
 #define BT 5
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+};
 
 / {
 	keymap {

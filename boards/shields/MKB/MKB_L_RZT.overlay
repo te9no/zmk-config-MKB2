@@ -9,13 +9,13 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <400000>; 
+    clock-frequency = <I2C_BITRATE_FAST>; 
     
     magnet: tlx493d@5e {
         compatible = "infineon,tlx493d";
         reg = <0x5e>;
         status = "okay";
-        polling-interval-ms = <20>;
+        polling-interval-ms = <100>;
         label = "TLX493D_SENSOR";
     };
 };
