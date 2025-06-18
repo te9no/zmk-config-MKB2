@@ -10,7 +10,8 @@ manifest:
       url-base: https://github.com/te9no
     - name: zettaface
       url-base: https://github.com/zettaface
-
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -38,6 +39,9 @@ manifest:
     - name: zmk-input-processor-keytoggle
       remote: te9no
       revision: main
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
     # - name: zmk-leader-key
     #   remote: urob
     #   revision: v0.2.1 # set to same as ZMK version above
