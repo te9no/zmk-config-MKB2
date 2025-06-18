@@ -18,7 +18,7 @@
 		default_layer {
 			label="Def";
 			bindings = <
-&mt tog_ls TAB       &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
+&mt &tog_ls TAB       &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
 &lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
 &kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp FSLH
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &mo 1            &lt 2 SPACE          &lt 2 SPACE       &lt 1 SPACE                       &kp LEFT         &kp DOWN        &kp RIGHT
