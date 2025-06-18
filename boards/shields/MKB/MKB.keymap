@@ -1,4 +1,5 @@
 #include <layout_shift.dtsi>
+#include <layout_shift_kp_override.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -18,7 +19,7 @@
 		default_layer {
 			label="Def";
 			bindings = <
-&mt &tog_ls TAB       &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
+&kp TAB          &kp Q             &kp W            &kp E            &kp R            &kp T                &kp Y             &kp U            &kp I            &kp O            &kp P           &kp BKSP
 &lt 5 ESC        &kp A             &mt LEFT_ALT S   &mt LEFT_WIN D   &mt LCTRL F      &kp G                &kp H             &mt RCTRL J      &mt RIGHT_WIN K  &mt RIGHT_ALT L  &kp SEMI        &kp SQT
 &kp LSHFT        &kp Z             &kp X            &kp C            &kp V            &kp B                &kp N             &kp M            &kp COMMA        &kp DOT          &kp UP          &kp FSLH
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &mo 1            &lt 2 SPACE          &lt 2 SPACE       &lt 1 SPACE                       &kp LEFT         &kp DOWN        &kp RIGHT
@@ -31,7 +32,7 @@
 			label="Fnc";
 			bindings = <
 &kp GRAVE        &kp PG_UP         &kp UP           &kp PG_DN        &kp HOME         &trans               &kp F1            &kp F2           &kp F3           &kp F4            &kp F5         &trans
-&trans           &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
+&tog_ls          &kp LEFT          &kp DOWN         &kp RIGHT        &kp END          &trans               &kp F6            &mt RCTRL F7     &mt RIGHT_WIN F8 &mt RIGHT_ALT F9  &kp F10        &trans
 &trans           &kp BKSP          &kp DEL          &trans           &trans           &trans               &kp F11           &kp F12          &trans           &trans            &trans         &trans
 &trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
@@ -96,7 +97,6 @@
 		// 	quick-tap-ms = <0>;
 		// 	bindings = <&tog_ls>, <&kp>;
 		// };
-
 	// 	leader1: leader1 {
     //         compatible = "zmk,behavior-leader-key";
     //         #binding-cells = <0>;
