@@ -11,12 +11,10 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_FAST>; 
     
-    magnet: tlx493d@5e {
-        compatible = "infineon,tlx493d";
-        reg = <0x5e>;
+    magnet: hmc5883l@1e {
+        compatible = "honeywell,hmc5883l";
+        reg = <0x1e>;
         status = "okay";
-        polling-interval-ms = <100>;
-        label = "TLX493D_SENSOR";
     };
 };
 
@@ -63,7 +61,7 @@
         // max_pending_activations = <10>
     };
 
-    tlx493d_listener: tlx493d_listener {
+    magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&magnet>;
