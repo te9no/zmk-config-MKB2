@@ -33,7 +33,7 @@ manifest:
     - name: zmk-dongle-display
       remote: te9no
       revision: main
-    - name: zmk-driver-tlx493d-2
+    - name: zmk-driver-hmc5883l
       remote: te9no
       revision: main
     - name: zmk-input-processor-keytoggle
