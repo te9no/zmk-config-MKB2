@@ -1,7 +1,7 @@
 #include "MKB_L_Base.dtsi"
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-
+#include <dts/input/processors/input-processor-keytoggle.dtsi>
 
 &i2c0 {
     status = "okay";
