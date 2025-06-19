@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - BKSP
-  - {t: ESC, h: BT}
+  - {t: CAPS, h: BT}
   - A
   - {t: S, h: LEFT ALT}
   - {t: D, h: LEFT WIN}
@@ -36,27 +36,27 @@ layers:
   - COMMA
   - DOT
   - UP
-  - ENTER
+  - FSLH
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
-  - {t: SPACE, h: Fnc}
+  - Fnc
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Fnc}
   - LEFT
   - DOWN
   - RIGHT
-  - LEFT
+  - RIGHT
+  - DOWN
   - UP
+  - LEFT
   - ENTER
-  - DOWN
-  - RIGHT
-  - HOME
   - PG UP
-  - ENTER
-  - PG DN
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Fnc:
   - GRAVE
   - PG UP
@@ -70,7 +70,7 @@ layers:
   - F4
   - F5
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&tog_ls'
   - LEFT
   - DOWN
   - RIGHT
@@ -104,16 +104,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Num:
   - ESC
   - '1'
@@ -161,16 +161,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -218,16 +218,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -275,16 +275,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -332,13 +332,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
