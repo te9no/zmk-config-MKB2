@@ -12,7 +12,7 @@
     clock-frequency = <I2C_BITRATE_FAST>; 
     
     magnet: hmc5883l@1e {
-        compatible = "honeywell,hmc5883l";
+        compatible = "zmk,hmc5883l-input";
         reg = <0x1e>;
         status = "okay";
     };
