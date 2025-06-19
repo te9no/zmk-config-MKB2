@@ -36,9 +36,6 @@ manifest:
     - name: zmk-driver-hmc5883l
       remote: te9no
       revision: main
-    - name: zmk-input-processor-keytoggle
-      remote: te9no
-      revision: main
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
