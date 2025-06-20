@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - BKSP
-  - {t: CAPS, h: BT}
+  - {t: ESC, h: BT}
   - A
   - {t: S, h: LEFT ALT}
   - {t: D, h: LEFT WIN}
@@ -28,7 +28,7 @@ layers:
   - LSHFT
   - Z
   - X
-  - C
+  - {t: C, h: Sft+MCLK}
   - V
   - B
   - N
