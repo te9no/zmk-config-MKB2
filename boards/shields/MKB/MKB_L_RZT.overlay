@@ -25,7 +25,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
                     <NRF_PSEL(TWIM_SCL, 0,  4)>;
-            bias-pull-up;
+            // bias-pull-up;
         };
     };
       
@@ -34,18 +34,12 @@
             psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
                     <NRF_PSEL(TWIM_SCL, 0,  4)>;
             low-power-enable;
-            bias-pull-up;
+            // bias-pull-up;
         };
     };
 };
 
 / {
-    zip_keytoggle: zip_keytoggle {
-        compatible = "zmk,input-processor-keytoggle";
-        #input-processor-cells = <0>;
-        bindings = <&kp LS(MCLK)>;
-    };
-    
 	zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
@@ -70,7 +64,6 @@
         move {
             layers = <0>;
             input-processors = 
-                                // <&zip_keytoggle>, 
                                 // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                                 <&zip_xy_scaler 1 2>;
         };
