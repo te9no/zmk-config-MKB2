@@ -30,8 +30,11 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    - name: zmk-dongle-display
-      remote: te9no
+    # - name: zmk-dongle-display
+    #   remote: te9no
+    #   revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
       revision: main
     - name: zmk-driver-hmc5883l
       remote: te9no
