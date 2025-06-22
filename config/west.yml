@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/zettaface
     - name: kot149
       url-base: https://github.com/kot149
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       #remote: zmkfirmware
