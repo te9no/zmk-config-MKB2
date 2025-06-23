@@ -154,10 +154,10 @@ layers:
   - {t: ▽, type: trans}
   - ENTER
   - ENTER
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ENTER
+  - {t: ENTER, type: held}
+  - ENTER
+  - ENTER
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
