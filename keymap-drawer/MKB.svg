@@ -300,8 +300,9 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(294, 196)" class="key keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">SPACE</text>
 <a href="#Fnc">
-<text x="0" y="0" class="key tap layer-activator">Fnc</text>
+<text x="0" y="24" class="key hold layer-activator">Fnc</text>
 </a></g>
 <g transform="translate(350, 210)" class="key keypos-40">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

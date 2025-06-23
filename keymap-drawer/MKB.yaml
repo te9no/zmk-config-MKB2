@@ -40,7 +40,7 @@ layers:
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
-  - Fnc
+  - {t: SPACE, h: Fnc}
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Fnc}
