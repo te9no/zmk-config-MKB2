@@ -115,7 +115,7 @@ layers:
   - PG DN
   - ENTER
   Num:
-  - ESC
+  - CAPS
   - '1'
   - '2'
   - '3'
