@@ -64,7 +64,7 @@
 			bindings = <
 &trans            &trans           &trans           &trans           &trans           &trans               &trans            &trans           &trans           &trans           &trans           &trans
 &trans            &trans           &trans           &trans           &trans           &trans               &trans            &trans           &trans           &trans           &trans           &trans
-&trans            &trans           &trans           &trans           &trans           &trans               &trans            &mkp MB1         &mkp MB3         &mkp MB2         &trans           &trans
+&trans            &trans           &trans           &trans           &trans           &trans               &trans            &trans           &mkp MB1         &mkp MB3         &mkp MB2         &trans
 &trans            &trans           &trans                            &trans           &trans               &trans            &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
