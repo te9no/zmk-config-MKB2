@@ -1,7 +1,4 @@
 if SHIELD_MKB_R
-    config ZMK_KEYBOARD_NAME
-        default "MKB_R"
-
     config ZMK_SPLIT
         default y
         

@@ -44,6 +44,10 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
+    - name: zmk-input-processor-keybind
+      # remote: zettaface
+      remote: te9no
+      revision: main
     # - name: zmk-leader-key
     #   remote: urob
     #   revision: v0.2.1 # set to same as ZMK version above
