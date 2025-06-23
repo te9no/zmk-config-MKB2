@@ -26,9 +26,6 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-    - name: zmk-input-processor-keybind
-      remote: zettaface
-      revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
