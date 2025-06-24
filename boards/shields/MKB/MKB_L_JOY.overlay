@@ -55,9 +55,7 @@
         };
         layer1 {
             layers = <1>;
-            input-processors = <&zip_xy_scaler 1 16>
-                             , <&zip_keybind_keys>
-                             ;
+            input-processors = <&zip_xy_scaler 1 16>;
         };
     };
 };
