@@ -15,20 +15,20 @@ layers:
   - BKSP
   - {t: ESC, h: BT}
   - A
-  - {t: S, h: LEFT ALT}
-  - {t: D, h: LEFT WIN}
-  - {t: F, h: LCTRL}
+  - S
+  - D
+  - F
   - G
   - H
-  - {t: J, h: RCTRL}
-  - {t: K, h: RIGHT WIN}
-  - {t: L, h: RIGHT ALT}
+  - J
+  - K
+  - L
   - SEMI
   - SQT
   - LSHFT
   - Z
   - X
-  - C
+  - {t: C, h: Sft+MCLK}
   - V
   - B
   - N
@@ -36,7 +36,7 @@ layers:
   - COMMA
   - DOT
   - UP
-  - ENTER
+  - FSLH
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
@@ -47,16 +47,16 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Fnc:
   - GRAVE
   - PG UP
@@ -70,16 +70,16 @@ layers:
   - F4
   - F5
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&tog_ls'
   - LEFT
   - DOWN
   - RIGHT
   - END
   - {t: ▽, type: trans}
   - F6
-  - {t: F7, h: RCTRL}
-  - {t: F8, h: RIGHT WIN}
-  - {t: F9, h: RIGHT ALT}
+  - F7
+  - F8
+  - F9
   - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -104,18 +104,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Num:
-  - ESC
+  - CAPS
   - '1'
   - '2'
   - '3'
@@ -154,23 +154,23 @@ layers:
   - {t: ▽, type: trans}
   - ENTER
   - ENTER
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - UP
   - ENTER
-  - DOWN
+  - {t: ENTER, type: held}
+  - ENTER
+  - ENTER
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -203,6 +203,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
@@ -217,17 +218,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -260,6 +260,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&mkp MB1'
   - '&mkp MB3'
   - '&mkp MB2'
@@ -274,17 +275,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -332,13 +332,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT
-  - UP
-  - ENTER
-  - DOWN
   - RIGHT
-  - HOME
-  - PG UP
+  - DOWN
+  - UP
+  - LEFT
   - ENTER
-  - PG DN
+  - PG UP
   - END
+  - HOME
+  - PG DN
+  - ENTER

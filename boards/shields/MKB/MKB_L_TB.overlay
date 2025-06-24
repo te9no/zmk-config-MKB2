@@ -1,10 +1,14 @@
 #include "MKB_L_Base.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
+
 
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
@@ -12,7 +16,7 @@
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 4)>,
                     <NRF_PSEL(SPIM_MISO, 0, 4)>;
             low-power-enable;
@@ -21,10 +25,13 @@
 };
 
 / {
-    trackball_listener2 {
+    trackball_listener2: trackball_listener2 {
         compatible = "zmk,input-listener";
-        status = "okay";
         device = <&trackball2>;
+        status = "okay";
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+                         , <&zip_keybind_keys>
+                         ;
     };
 };
 
@@ -38,23 +45,13 @@
 
     trackball2: trackball2@0 {
         status = "okay";
-        compatible = "pixart,pmw3610_kuma";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        /*   optional: ball action on specific layers  */
-        arrows {
-            layers = <0>;
-            bindings =
-                <&kp RIGHT>,
-                <&kp LEFT>,
-                <&kp UP>,
-                <&kp DOWN>;
-        
-            /*   optional: ball action configuration  */
-            tick = <10>;
-            // wait-ms = <5>;
-            // tap-ms = <5>;
-        };
+        irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        cpi = <800>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };

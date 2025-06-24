@@ -10,6 +10,10 @@
 };
 
 / {
+    chosen {
+        zephyr,display = &oled;
+    };
+
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
@@ -36,13 +40,38 @@
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;
+        spi-max-frequency = <1500000>;
         irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <800>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         force-awake;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>; 
+    
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
 

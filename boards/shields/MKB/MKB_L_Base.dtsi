@@ -1,7 +1,7 @@
-#include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/keys.h>
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
@@ -11,8 +11,8 @@
     pinctrl-0 = <&i2c1_default>;
     pinctrl-1 = <&i2c1_sleep>;
     pinctrl-names = "default", "sleep";
-    
     clock-frequency = <100000>; 
+    
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
@@ -22,8 +22,8 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        // segment-remap;
-        // com-invdir;
+        segment-remap;
+        com-invdir;
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
@@ -33,6 +33,19 @@
 / {
     chosen {
         zephyr,display = &oled;
+    };
+
+    zip_keybind_keys: zip_keybind_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp RIGHT>,
+                   <&kp LEFT>,
+                   <&kp UP>,
+                   <&kp DOWN>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
     };
 
     split_inputs {
@@ -49,11 +62,22 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball_split>;
-        input-processors = <&zip_temp_layer 3 700>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 700>;
 
         scroll {
             layers = <1>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
+
+        arrow {
+            layers = <2>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_keybind_keys>;
+            process-next;
+        };
+        
+        arrow-prevent-move {
+            layers = <2>;
+            input-processors = <&zip_xy_scaler 0 1>;
         };
     };
 

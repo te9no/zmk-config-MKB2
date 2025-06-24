@@ -8,6 +8,12 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
+    - name: zettaface
+      url-base: https://github.com/zettaface
+    - name: kot149
+      url-base: https://github.com/kot149
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -20,17 +26,23 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: main
-    - name: zmk-pmw3610-driver-kuma
-      remote: te9no
-      revision: main
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    - name: zmk-dongle-display
+    # - name: zmk-dongle-display
+    #   remote: te9no
+    #   revision: main
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+    - name: zmk-driver-hmc5883l
       remote: te9no
       revision: main
-    - name: zmk-driver-tlx493d-2
-      remote: te9no
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
+    - name: zmk-input-processor-keybind
+      remote: zettaface
       revision: main
     # - name: zmk-leader-key
     #   remote: urob

@@ -1,23 +1,69 @@
 #include "MKB_L_Base.dtsi"
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
-&i2c1 {
-    magnet: tlx493d@5e {
-        compatible = "infineon,tlx493d";
-        reg = <0x5e>;
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>; 
+    
+    magnet: hmc5883l@0d {
+        compatible = "zmk,hmc5883l-input";
+        // compatible = "honeywell,hmc5883l";
+        reg = <0x0d>;
         status = "okay";
-        polling-interval-ms = <20>;
-        label = "TLX493D_SENSOR";
+    };
+};
+
+&pinctrl {    
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
+                    <NRF_PSEL(TWIM_SCL, 0,  4)>;
+            // bias-pull-up;
+        };
+    };
+      
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
+                    <NRF_PSEL(TWIM_SCL, 0,  4)>;
+            low-power-enable;
+            // bias-pull-up;
+        };
     };
 };
 
 / {
-    tlx493d_listener: tlx493d_listener {
+	zip_keybind_keys: zip_keybind_keys {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        bindings = <&kp RIGHT>,
+                    <&kp LEFT>,
+                    <&kp UP>,
+                    <&kp DOWN>;
+        tick = <40>;
+        wait-ms = <0>;
+        tap-ms = <10>;
+        // mode = <0>
+        // threshold = <10>
+        // max_threshold = <200>
+        // max_pending_activations = <10>
+    };
+
+    magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&magnet>;
         move {
             layers = <0>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 8>;
+            input-processors = 
+                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                                <&zip_xy_scaler 1 2>;
         };
     };
 };
