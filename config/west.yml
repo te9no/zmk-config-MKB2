@@ -42,7 +42,7 @@ manifest:
       remote: kot149
       revision: v1
     - name: zmk-input-processor-keybind
-      remote: zettaface
+      remote: te9no
       revision: main
     # - name: zmk-leader-key
     #   remote: urob
