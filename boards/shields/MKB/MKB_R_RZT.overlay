@@ -16,8 +16,7 @@
         status = "okay";
         z-press-threshold = <50>;
         z-hysteresis = <10>;
-        normal-binding = <&mkp MCLK>;           // 中ボタン
-        pressed-binding = <&mkp MCLK &kp LSHIFT>; // SHIFT+中ボタン
+        enable-z-state-bindings;
     };
 };
 
