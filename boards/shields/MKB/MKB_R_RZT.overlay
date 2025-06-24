@@ -40,16 +40,23 @@
     };
 };
 
+/*input-split*/
 / {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        magnet_split: magnet_split@1 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&magnet>;
+            reg = <1>;
+        };
+    };
+
     magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&magnet>;
-        move {
-            layers = <0>;
-            input-processors = 
-                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                                <&zip_xy_scaler 1 2>;
-        };
     };
 };

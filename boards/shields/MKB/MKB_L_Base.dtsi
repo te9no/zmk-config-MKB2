@@ -10,19 +10,6 @@
         zephyr,display = &oled;
     };
 
-    zip_keybind_keys: zip_keybind_keys {
-        compatible = "zmk,input-processor-keybind";
-        #input-processor-cells = <0>;
-        track_remainders;
-        bindings = <&kp RIGHT>,
-                   <&kp LEFT>,
-                   <&kp UP>,
-                   <&kp DOWN>;
-        tick = <40>;
-        wait-ms = <0>;
-        tap-ms = <10>;
-    };
-
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -30,6 +17,12 @@
         trackball_split: trackball_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
+        };
+
+        
+        magnet_split: magnet_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
         };
     };
 
@@ -53,6 +46,18 @@
         arrow-prevent-move {
             layers = <2>;
             input-processors = <&zip_xy_scaler 0 1>;
+        };
+    };
+
+    magnet_listener: magnet_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet_split>;
+        move {
+            layers = <0>;
+            input-processors = 
+                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                                <&zip_xy_scaler 1 2>;
         };
     };
 
