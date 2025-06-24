@@ -1,6 +1,4 @@
 #include "MKB_R_Base.dtsi"
-#include "MKB_pinctrl_R.dtsi"
-#include "MKB.dtsi"
 
 &pinctrl {
     spi0_default: spi0_default {
