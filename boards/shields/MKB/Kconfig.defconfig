@@ -1,4 +1,4 @@
-if SHIELD_MKB_R
+if SHIELD_MKB_R_ENC || SHIELD_MKB_R_JOY || SHIELD_MKB_R_TB || SHIELD_MKB_R_RZT
     config ZMK_SPLIT
         default y
         

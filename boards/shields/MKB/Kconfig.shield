@@ -1,5 +1,15 @@
-config SHIELD_MKB_R
-    def_bool $(shields_list_contains,MKB_R)
+
+config SHIELD_MKB_R_ENC
+    def_bool $(shields_list_contains,MKB_R_ENC)
+
+config SHIELD_MKB_R_JOY
+    def_bool $(shields_list_contains,MKB_R_JOY)
+
+config SHIELD_MKB_R_TB
+    def_bool $(shields_list_contains,MKB_R_TB)
+    
+config SHIELD_MKB_R_RZT
+    def_bool $(shields_list_contains,MKB_R_RZT)
 
 config SHIELD_MKB_L_ENC
     def_bool $(shields_list_contains,MKB_L_ENC)
