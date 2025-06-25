@@ -16,7 +16,8 @@
         status = "okay";
         z-press-threshold = <50>;
         z-hysteresis = <10>;
-        enable-z-state-bindings;
+        normal-binding = <&kp A>;
+        pressed-binding = <&kp B>;
     };
 };
 
