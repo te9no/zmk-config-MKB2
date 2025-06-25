@@ -35,7 +35,7 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
-    - name: zmk-driver-tlx493d
+    - name: zmk-driver-tlx493d-2
       remote: te9no
       revision: main
     - name: zmk-layout-shift
