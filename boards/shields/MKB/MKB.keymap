@@ -33,6 +33,7 @@
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
 			>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
 		};
 		
 		function_layer {
@@ -45,6 +46,7 @@
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
 			>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
 		};
 		
 		num_layer {
@@ -57,6 +59,7 @@
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
 			>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
 		};
 		
 		mouse_layer {
