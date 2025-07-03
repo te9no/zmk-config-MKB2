@@ -32,10 +32,14 @@
             reg = <0>;
         };
 
-        
         magnet_split: magnet_split@1 {
             compatible = "zmk,input-split";
             reg = <1>;
+        };
+
+        stick_split: stick_split@1 {
+            compatible = "zmk,input-split";
+            reg = <2>;
         };
     };
 
@@ -71,6 +75,21 @@
             input-processors = 
                                 // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                                 <&zip_xy_scaler 1 2>;
+        };
+    };
+
+    stick_listener: stick_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&stick_split>;
+        
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 1 16>;
         };
     };
 
