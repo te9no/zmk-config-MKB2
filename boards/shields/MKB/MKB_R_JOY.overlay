@@ -60,7 +60,7 @@
     };
 
     split_inputs {
-        #address-cells = <12;
+        #address-cells = <2>;
         #size-cells = <0>;
 
         stick_split: stick_split@0 {
