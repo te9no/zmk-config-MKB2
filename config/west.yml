@@ -49,3 +49,4 @@ manifest:
     #   revision: v0.2.1 # set to same as ZMK version above
   self:
     path: config
+    
