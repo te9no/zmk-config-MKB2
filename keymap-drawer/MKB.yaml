@@ -40,10 +40,10 @@ layers:
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
-  - {t: SPACE, h: Fnc}
-  - {t: SPACE, h: Num}
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Fnc}
+  - {t: SPACE, h: Fnc}
+  - {t: SPACE, h: Num}
   - LEFT
   - DOWN
   - RIGHT
@@ -97,8 +97,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LALT
-  - {t: ENTER, type: held}
   - ENTER
+  - {t: ENTER, type: held}
   - ENTER
   - ENTER
   - {t: ▽, type: trans}
@@ -154,8 +154,8 @@ layers:
   - {t: ▽, type: trans}
   - ENTER
   - ENTER
-  - ENTER
   - {t: ENTER, type: held}
+  - ENTER
   - ENTER
   - ENTER
   - {t: ▽, type: trans}
