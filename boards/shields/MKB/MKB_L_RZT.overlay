@@ -14,8 +14,8 @@
         compatible = "infineon,tlx493d-a2bw";
         reg = <0x35>;
         status = "okay";
-        z-press-threshold = <50>;
-        z-hysteresis = <10>;
+        z_press_threshold = <50>;
+        z_hysteresis = <10>;
         // normal-binding = <&kp A>;           // Behavior bindings can be added here
         // pressed-binding = <&kp B>; // See driver documentation for usage
     };
