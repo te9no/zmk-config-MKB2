@@ -37,7 +37,7 @@
             reg = <1>;
         };
 
-        stick_split: stick_split@1 {
+        stick_split: stick_split@2 {
             compatible = "zmk,input-split";
             reg = <2>;
         };
