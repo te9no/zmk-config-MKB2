@@ -59,6 +59,10 @@
         };
     };
 };
+        
+&sensors {
+    triggers-per-rotation = <12>;
+};
 
 &left_encoder {
     status = "okay";
