@@ -10,16 +10,17 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    magnet: lis3mdl@1C {
+    magnet: lis3mdl@1c {
         compatible = "st,lis3mdl-input";
-        reg = <0x1C>;
+        reg = <0x1c>;
         status = "okay";
-        z_press_threshold = <50>;
-        z_hysteresis = <10>;
+        z-press-threshold = <50>;
+        z-hysteresis = <10>;
         // normal-binding = <&kp A>;           // Behavior bindings can be added here
         // pressed-binding = <&kp B>; // See driver documentation for usage
     };
 };
+
 
 &pinctrl {    
     i2c0_default: i2c0_default {
