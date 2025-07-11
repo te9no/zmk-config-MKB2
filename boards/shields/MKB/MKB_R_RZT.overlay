@@ -10,9 +10,9 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    magnet: tlx493d@35 {
-        compatible = "infineon,tlx493d-a2bw";
-        reg = <0x35>;
+    magnet: lis3mdl@1C {
+        compatible = "st,lis3mdl-input";
+        reg = <0x1C>;
         status = "okay";
         z_press_threshold = <50>;
         z_hysteresis = <10>;
