@@ -32,6 +32,7 @@
 &mt LCTL ESC     &kp LGUI          &kp LALT                          &lt NUM SPACE    &lt FUNC SPACE       &lt FUNC SPACE    &lt NUM SPACE                     &kp LEFT         &kp DOWN        &kp RIGHT
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -45,6 +46,7 @@
 &trans           &trans            &kp LALT                          &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans         &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -58,6 +60,7 @@
 &trans            &kp ENTER        &kp ENTER                         &kp ENTER        &kp ENTER            &kp ENTER         &kp ENTER                         &trans            &trans          &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -71,6 +74,7 @@
 &trans            &trans           &trans                            &trans           &trans               &trans            &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -84,6 +88,7 @@
 &trans            &trans           &trans                            &trans           &trans               &trans            &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -97,6 +102,7 @@
 &trans            &trans           &trans                            &trans           &trans               &trans            &trans                            &trans           &trans           &trans
 //<              ^                 +                _                >                                     <                 ^                +                _                >
 &kp RIGHT        &kp DOWN          &kp UP           &kp LEFT         &kp ENTER                             &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        &kp ENTER
+&kp RIGHT        &kp DOWN          &kp UP           &kp LEFT                                               &kp PG_UP         &kp END          &kp HOME         &kp PG_DN        
 			>;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
 		};
