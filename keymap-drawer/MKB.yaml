@@ -57,6 +57,14 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
   Fnc:
   - GRAVE
   - PG UP
@@ -114,6 +122,14 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
   Num:
   - CAPS
   - '1'
@@ -171,6 +187,14 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,6 +252,14 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -285,6 +317,14 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -342,3 +382,11 @@ layers:
   - HOME
   - PG DN
   - ENTER
+  - RIGHT
+  - DOWN
+  - UP
+  - LEFT
+  - PG UP
+  - END
+  - HOME
+  - PG DN
