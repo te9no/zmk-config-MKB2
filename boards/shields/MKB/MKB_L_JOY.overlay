@@ -1,8 +1,8 @@
+#include "MKB_L_Base.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
-#include "MKB_L_Base.dtsi"
 
 &adc {
 	status = "okay";
