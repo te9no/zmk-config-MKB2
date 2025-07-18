@@ -52,18 +52,6 @@ Futhesia Moduora is an intellectually and structurally evolving input device bor
 - **Resonant Evolution (共鳴型進化)**: Organic integration of developer codes and designs
 - **Tectonic Mode (テンティング適応)**: Physically adaptable form-factor
 
-## Module Configuration | モジュール設定
-To change the left-side module configuration, modify the include statement in `MKB_L.overlay`:
-
-```c
-// Available modules:
-// #include "MKB_L_TB.dtsi"      // Trackball module
-// #include "MKB_L_JS_Enc.dtsi"  // Joystick + Encoder module
-#include "MKB_L_Enc.dtsi"        // Encoder only module
-```
-
-Choose one module by uncommenting the desired include statement and commenting out others.
-
 ## Natural Habitat | 生態／運用環境
 Thrives in collaborative environments, particularly hackathons and technical conventions.
 単体での生息よりも、共創型の環境下において最も高いパフォーマンスを発揮する。
@@ -75,36 +63,6 @@ Thrives in collaborative environments, particularly hackathons and technical con
 The name "MeKaBu" encompasses multiple meanings:
 - Mechanical Components (メカニカルな部品群)
 - Sprouting Stock - branching growth structure (芽株 - 分岐して増殖する構造)
-
-## Local Build Instructions | ローカルビルド手順
-
-### Prerequisites
-```bash
-# Install West (ZMK build tool)
-pip3 install --user -U west
-
-# Initialize and update ZMK
-west init -l config
-west update
-```
-
-### Build Commands
-```bash
-# Left side with TrackBall module
-west build -d build/left_tb -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_TB=y
-
-# Left side with Joystick module
-west build -d build/left_joy -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_JOY=y
-
-# Left side with Encoder module
-west build -d build/left_enc -b seeeduino_xiao_ble -- -DSHIELD_MKB_L=y -DCONFIG_MKB_L_MODULE_ENC=y
-
-# Right side
-west build -d build/right -b seeeduino_xiao_ble -- -DSHIELD_MKB_R=y
-```
-
-The compiled firmware (.uf2) will be located in the respective build directories.
-ビルドされたファームウェア（.uf2）は各buildディレクトリに生成されます。
 
 ---
 *This configuration exists in the liminal space between reality and digital dreams.*  
