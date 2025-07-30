@@ -2,7 +2,7 @@ layout: {zmk_keyboard: MKB}
 layers:
   Def:
   - TAB
-  - A
+  - Q
   - W
   - E
   - R
