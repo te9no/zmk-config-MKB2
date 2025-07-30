@@ -2,7 +2,7 @@ layout: {zmk_keyboard: MKB}
 layers:
   Def:
   - TAB
-  - Q
+  - A
   - W
   - E
   - R
@@ -47,16 +47,16 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
   Fnc:
   - GRAVE
   - PG UP
@@ -104,16 +104,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
   Num:
   - CAPS
   - '1'
@@ -161,16 +161,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -218,16 +218,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -275,16 +275,16 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -332,13 +332,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RIGHT
-  - DOWN
-  - UP
   - LEFT
-  - ENTER
-  - PG UP
-  - END
+  - UP
+  - SPACE
+  - DOWN
+  - RIGHT
   - HOME
-  - PG DN
+  - PG UP
   - ENTER
+  - PG DN
+  - END
