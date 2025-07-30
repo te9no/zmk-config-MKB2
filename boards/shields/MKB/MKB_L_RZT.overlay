@@ -14,10 +14,9 @@
         compatible = "st,lis3mdl-input";
         reg = <0x1c>;
         status = "okay";
-        z-press-threshold = <50>;
-        z-hysteresis = <10>;
-        // normal-binding = <&kp A>;           // Behavior bindings can be added here
-        // pressed-binding = <&kp B>; // See driver documentation for usage
+        z-press-threshold = <1000>;
+        z-hysteresis = <1000>;
+        xy-deadzone = <5000>;
     };
 };
 
@@ -49,7 +48,7 @@
             layers = <0>;
             input-processors = 
                                 // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                                <&zip_xy_scaler 1 2>;
+                                <&zip_xy_scaler 1 16>;
         };
     };
 };
