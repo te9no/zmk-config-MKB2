@@ -5,31 +5,6 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
-&i2c1 {
-    status = "okay";
-    compatible = "nordic,nrf-twi";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>; 
-    
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};
-
 / {
     chosen {
         zephyr,display = &oled;
@@ -56,6 +31,16 @@
             compatible = "zmk,input-split";
             reg = <0>;
         };
+
+        magnet_split: magnet_split@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+        };
+
+        stick_split: stick_split@2 {
+            compatible = "zmk,input-split";
+            reg = <2>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -71,13 +56,40 @@
 
         arrow {
             layers = <2>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_keybind_keys>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>;
             process-next;
         };
         
         arrow-prevent-move {
             layers = <2>;
             input-processors = <&zip_xy_scaler 0 1>;
+        };
+    };
+
+    magnet_listener: magnet_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet_split>;
+        move {
+            layers = <0>;
+            input-processors = 
+                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                                <&zip_xy_scaler 1 2>;
+        };
+    };
+
+    stick_listener: stick_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&stick_split>;
+        
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 1 16>;
         };
     };
 
@@ -92,5 +104,30 @@
             , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
             , <&gpio0  10 (GPIO_ACTIVE_HIGH)>
             ;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <100000>; 
+    
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
