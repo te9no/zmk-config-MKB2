@@ -102,4 +102,21 @@
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
+    
+    behaviors {
+        normal_mouse: normal_mouse {
+            compatible = "zmk,behavior-mouse-key-press";
+            #binding-cells = <1>;
+            time-to-max-speed-ms = <300>;
+            acceleration-exponent = <1>;
+        };
+        
+        pressed_mouse: pressed_mouse {
+            compatible = "zmk,behavior-mouse-key-press";
+            #binding-cells = <1>;
+            time-to-max-speed-ms = <150>;
+            acceleration-exponent = <2>;
+        };
+    };
 };
+

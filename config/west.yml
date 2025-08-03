@@ -50,6 +50,9 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: main
+    - name: zmk-driver-MLX90393
+      remote: te9no
+      revision: main
   self:
     path: config
     

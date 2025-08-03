@@ -10,17 +10,25 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    magnet: lis3mdl@1c {
-        compatible = "st,lis3mdl-input";
-        reg = <0x1c>;
-        status = "okay";
+    mlx90393_input: mlx90393-input@0c {
+        compatible = "melexis,mlx90393-input";
+        reg = <0x0C>;
+        
+        polling-interval-ms = <10>;
         z-press-threshold = <50>;
         z-hysteresis = <10>;
-        // normal-binding = <&kp A>;           // Behavior bindings can be added here
-        // pressed-binding = <&kp B>; // See driver documentation for usage
+        
+        normal-binding = <&normal_mouse MOVE_X>;
+        pressed-binding = <&pressed_mouse MOVE_X>;
+        
+        deadzone-x = <3>;
+        deadzone-y = <3>;
+        deadzone-z = <5>;
+        
+        movement-threshold = <20>;
+        auto-calibration-timeout-s = <30>;
     };
 };
-
 
 &pinctrl {    
     i2c0_default: i2c0_default {
