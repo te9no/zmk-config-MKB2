@@ -8,12 +8,12 @@ manifest:
       url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
-    - name: zettaface
-      url-base: https://github.com/zettaface
     - name: kot149
       url-base: https://github.com/kot149
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    - name: ShiniNet
+      url-base: https://github.com/ShiniNet/
   projects:
     - name: zmk
       #remote: zmkfirmware
@@ -47,6 +47,9 @@ manifest:
     # - name: zmk-leader-key
     #   remote: urob
     #   revision: v0.2.1 # set to same as ZMK version above
+    - name: cirque-input-module
+      remote: ShiniNet
+      revision: main
   self:
     path: config
     

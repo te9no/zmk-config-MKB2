@@ -16,7 +16,7 @@
         status = "okay";
         z-press-threshold = <1000>;
         z-hysteresis = <1000>;
-        xy-deadzone = <5000>;
+        xy-deadzone = <2000>;
     };
 };
 
@@ -48,7 +48,7 @@
             layers = <0>;
             input-processors = 
                                 // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                                <&zip_xy_scaler 1 16>;
+                                <&zip_xy_scaler 1 32>;
         };
     };
 };
