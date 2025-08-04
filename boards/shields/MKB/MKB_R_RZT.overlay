@@ -10,7 +10,7 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    mlx90393_input: mlx90393-input@0c {
+    mlx90393_input: mlx90393-input@c {
         compatible = "melexis,mlx90393-input";
         reg = <0x0C>;
         
@@ -18,8 +18,7 @@
         z-press-threshold = <50>;
         z-hysteresis = <10>;
         
-        normal-binding = <&normal_mouse MOVE_X>;
-        pressed-binding = <&pressed_mouse MOVE_X>;
+        bindings = <&mkp LCLK>, <&mkp MCLK>;
         
         deadzone-x = <3>;
         deadzone-y = <3>;
@@ -58,7 +57,7 @@
         magnet_split: magnet_split@1 {
             compatible = "zmk,input-split";
             status = "okay";
-            device = <&magnet>;
+            device = <&mlx90393_input>;
             reg = <1>;
         };
     };
@@ -66,6 +65,6 @@
     magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&magnet>;
+        device = <&mlx90393_input>;
     };
 };

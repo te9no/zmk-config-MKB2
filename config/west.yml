@@ -35,9 +35,6 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
-    - name: zmk-driver-LIS3MDLTR
-      remote: te9no
-      revision: main
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
