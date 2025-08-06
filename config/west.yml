@@ -16,8 +16,8 @@ manifest:
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      #remote: zmkfirmware
-      remote: te9no
+      remote: zmkfirmware
+      # remote: te9no
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
@@ -29,9 +29,6 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    # - name: zmk-dongle-display
-    #   remote: te9no
-    #   revision: main
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
@@ -41,9 +38,6 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: te9no
       revision: main
-    # - name: zmk-leader-key
-    #   remote: urob
-    #   revision: v0.2.1 # set to same as ZMK version above
     - name: cirque-input-module
       remote: petejohanson
       revision: main
