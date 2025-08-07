@@ -10,9 +10,9 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    mlx90393_input: mlx90393-input@c {
+    mlx90393_input: mlx90393-input@18 {
         compatible = "melexis,mlx90393-input";
-        reg = <0x0C>;
+        reg = <0x18>;
         
         polling-interval-ms = <10>;
         z-press-threshold = <50>;
@@ -34,7 +34,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
                     <NRF_PSEL(TWIM_SCL, 0,  4)>;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
       
@@ -43,7 +43,7 @@
             psels = <NRF_PSEL(TWIM_SDA, 0,  5)>,
                     <NRF_PSEL(TWIM_SCL, 0,  4)>;
             low-power-enable;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
 };
