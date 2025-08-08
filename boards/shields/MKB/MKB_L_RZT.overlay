@@ -10,21 +10,21 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    mlx90393_input: mlx90393-input@18 {
+    mlx90393_input: mlx90393-input@0c {
         compatible = "melexis,mlx90393-input";
-        reg = <0x18>;
+        reg = <0x0c>;
         
         polling-interval-ms = <10>;
-        z-press-threshold = <50>;
+        z-press-threshold = <300>;
         z-hysteresis = <10>;
         
         bindings = <&mkp LCLK>, <&mkp MCLK>;
         
-        deadzone-x = <3>;
-        deadzone-y = <3>;
-        deadzone-z = <5>;
+        deadzone-x = <200>;
+        deadzone-y = <200>;
+        deadzone-z = <300>;
         
-        movement-threshold = <20>;
+        movement-threshold = <500>;
         auto-calibration-timeout-s = <30>;
     };
 };
