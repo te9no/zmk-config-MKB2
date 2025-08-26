@@ -5,15 +5,11 @@
       compatible = "alps,ec11";
       a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
       b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-      steps = <80>;
-      status = "disabled";
+      steps = <24>;
+      status = "okay";
    };
 };
 
 &sensors {
    triggers-per-rotation = <20>;
-};
-
-&right_encoder {
-   status = "okay";
 };

@@ -34,7 +34,7 @@
 &kp LEFT      &kp UP    &kp SPACE  &kp DOWN        &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
@@ -47,7 +47,7 @@
 &kp LEFT   &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         num_layer {
@@ -60,7 +60,7 @@
 &kp LEFT         &kp UP         &kp SPACE  &kp DOWN  &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         mouse_layer {
@@ -73,7 +73,7 @@
 &kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         scroll_layer {
@@ -86,7 +86,7 @@
 &kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         bt_layer {
@@ -99,7 +99,7 @@
 &kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
