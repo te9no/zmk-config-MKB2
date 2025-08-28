@@ -34,7 +34,7 @@
 &kp LEFT      &kp UP    &kp SPACE  &kp DOWN        &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp A B &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
