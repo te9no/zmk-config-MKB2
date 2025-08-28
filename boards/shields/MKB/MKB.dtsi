@@ -116,16 +116,20 @@
       };
    };
    
-   left_encoder: encoder_left {
+   // Encoders
+   left_encoder: left_encoder {
+      compatible = "alps,ec11";
       status = "disabled";
    };
 
-   right_encoder: encoder_right {
+   right_encoder: right_encoder {
+      compatible = "alps,ec11";
       status = "disabled";
    };
-
+   
    sensors: sensors {
       compatible = "zmk,keymap-sensors";
       sensors = <&left_encoder &right_encoder>;
+      triggers-per-rotation = <10>;
    };
 };
