@@ -20,57 +20,57 @@
 };
 
 / {
-    // anin0: analog_input_0 {
-    //     compatible = "zmk,analog-input";
-    //     sampling-hz = <100>;
-    //     x-ch {
-    //         io-channels = <&adc 2>;
-    //         mv-mid = <1600>;
-    //         mv-min-max = <1600>;
-    //         mv-deadzone = <88>;
-    //         scale-multiplier = <1>;
-    //         scale-divisor = <800>;
-    //         invert;
-    //         evt-type = <INPUT_EV_REL>;
-    //         input-code = <INPUT_REL_X>;
-    //     };
-    //     y-ch {
-    //         io-channels = <&adc 3>;
-    //         mv-mid = <1600>;
-    //         mv-min-max = <1600>;
-    //         mv-deadzone = <88>;
-    //         scale-multiplier = <1>;
-    //         scale-divisor = <800>;
-    //         invert;
-    //         evt-type = <INPUT_EV_REL>;
-    //         input-code = <INPUT_REL_Y>;
-    //     };
-    // };
+    anin0: analog_input_0 {
+        compatible = "zmk,analog-input";
+        sampling-hz = <100>;
+        x-ch {
+            io-channels = <&adc 2>;
+            mv-mid = <1600>;
+            mv-min-max = <1600>;
+            mv-deadzone = <88>;
+            scale-multiplier = <1>;
+            scale-divisor = <800>;
+            invert;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_X>;
+        };
+        y-ch {
+            io-channels = <&adc 3>;
+            mv-mid = <1600>;
+            mv-min-max = <1600>;
+            mv-deadzone = <88>;
+            scale-multiplier = <1>;
+            scale-divisor = <800>;
+            invert;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_Y>;
+        };
+    };
     
-    // // analog_input_listener {
-    // //     status = "okay";
-    // //     compatible = "zmk,input-listener";
-    // //     device = <&anin0>;
+    analog_input_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&anin0>;
         
-    // //     layer0 {
-    // //         layers = <0>;
-    // //         input-processors = <&zip_xy_to_scroll_mapper>;
-    // //     };
-    // //     layer1 {
-    // //         layers = <1>;
-    // //         input-processors = <&zip_xy_scaler 1 16>;
-    // //     };
-    // // };
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 1 16>;
+        };
+    };
 
-    // split_inputs {
-    //     #address-cells = <1>;
-    //     #size-cells = <0>;
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-    //     stick_split: stick_split@0 {
-    //         compatible = "zmk,input-split";
-    //         status = "okay";
-    //         device = <&anin0>;
-    //         reg = <2>;
-    //     };
-    // };
+        stick_split: stick_split@0 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&anin0>;
+            reg = <2>;
+        };
+    };
 };

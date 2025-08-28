@@ -14,4 +14,4 @@ parse_config:
 draw_config:
   dark_mode: auto
   glyph_tap_size: 18
-  footer_text: 'MKB KEYMAPS | Created with keymap-drawer' 
+  footer_text: 'MeKaBu KEYMAPS | Created with keymap-drawer' 

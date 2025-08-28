@@ -28,7 +28,7 @@ endif
 
 if SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB || SHIELD_MKB_L_RZT
     config ZMK_KEYBOARD_NAME
-        default "MKB_L"
+        default "MeKaBu"
 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
