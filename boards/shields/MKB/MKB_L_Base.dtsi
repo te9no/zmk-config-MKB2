@@ -41,6 +41,12 @@
             compatible = "zmk,input-split";
             reg = <2>;
         };
+        
+        glidepoint_split_L: glidepoint_split_L@1 {
+            compatible = "zmk,input-split";
+            device = <&glidepoint>;
+            reg = <1>;
+        };
     };
 
     trackball_listener: trackball_listener {
@@ -92,7 +98,27 @@
             input-processors = <&zip_xy_scaler 1 16>;
         };
     };
+    
+    glidepoint_listener_L: glidepoint_listener_L {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&glidepoint_split_L>;
+        
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
+            &zip_temp_layer 3 100
+        >;
 
+        scroller {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
+                &zip_xy_scaler 1 20
+                &zip_xy_to_scroll_mapper
+            >;
+        };
+    };
+    
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
@@ -129,5 +155,16 @@
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+    };
+    
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";
+        // sleep;
+        no-taps;
     };
 };

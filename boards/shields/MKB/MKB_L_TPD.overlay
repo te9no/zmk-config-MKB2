@@ -10,7 +10,7 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    glidepoint: glidepoint@2a {
+    glidepoint2: glidepoint2@2a {
             compatible = "cirque,pinnacle";
             reg = <0x2a>;
             status = "okay";
@@ -46,17 +46,17 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_split_L: glidepoint_split_L@1 {
+        glidepoint2_split_L: glidepoint2_split_L@1 {
             compatible = "zmk,input-split";
             status = "okay";
-            device = <&glidepoint>;
+            device = <&glidepoint2>;
             reg = <1>;
         };
     };
-    glidepoint_listener_L: glidepoint_listener_L {
+    glidepoint2_listener_L: glidepoint2_listener_L {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint_split_L>;
+        device = <&glidepoint2_split_L>;
         
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
