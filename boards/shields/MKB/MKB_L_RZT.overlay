@@ -10,13 +10,22 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    magnet: lis3mdl@1c {
-        compatible = "st,lis3mdl-input";
-        reg = <0x1c>;
-        status = "okay";
-        z-press-threshold = <1000>;
-        z-hysteresis = <1000>;
-        xy-deadzone = <5000>;
+    mlx90393_input: mlx90393-input@0c {
+        compatible = "melexis,mlx90393-input";
+        reg = <0x0c>;
+        
+        polling-interval-ms = <10>;
+        z-press-threshold = <300>;
+        z-hysteresis = <10>;
+        
+        bindings = <&mkp LCLK>, <&mkp MCLK>;
+        
+        deadzone-x = <200>;
+        deadzone-y = <200>;
+        deadzone-z = <300>;
+        
+        movement-threshold = <500>;
+        auto-calibration-timeout-s = <30>;
     };
 };
 
@@ -25,7 +34,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
       
@@ -34,7 +43,7 @@
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
             low-power-enable;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
 };
@@ -43,12 +52,12 @@
     magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&magnet>;
+        device = <&mlx90393_input>;
         move {
             layers = <0>;
             input-processors = 
                                 // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                                <&zip_xy_scaler 1 16>;
+                                <&zip_xy_scaler 1 32>;
         };
     };
 };
