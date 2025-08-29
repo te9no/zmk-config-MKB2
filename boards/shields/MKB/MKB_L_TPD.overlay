@@ -48,6 +48,8 @@
 
         glidepoint_split_L: glidepoint_split_L@1 {
             compatible = "zmk,input-split";
+            status = "okay";
+            device = <&glidepoint>;
             reg = <1>;
         };
     };
@@ -55,16 +57,12 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&glidepoint_split_L>;
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint>;
+        
         input-processors = <
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
             &zip_temp_layer 3 100
         >;
+
         scroller {
             layers = <5>;
             input-processors = <
@@ -74,9 +72,4 @@
             >;
         };
     };
-};
-
-&glidepoint_split_L {
-    status = "okay";
-    device = <&glidepoint>;
 };
