@@ -28,6 +28,17 @@
     };
 };
 
+&right_encoder2{
+    a-gpios = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    steps = <24>;
+    status = "okay";
+};
+
+&sensors {
+   triggers-per-rotation = <20>;
+};
+
 &i2c1 {
     status = "okay";
     compatible = "nordic,nrf-twi";
@@ -50,5 +61,16 @@
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+    };
+    
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "okay";
+        dr-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "2x";
+        // sleep;
+        no-taps;
     };
 };

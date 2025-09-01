@@ -98,7 +98,7 @@
             input-processors = <&zip_xy_scaler 1 16>;
         };
     };
-    
+
     glidepoint_listener_L: glidepoint_listener_L {
         compatible = "zmk,input-listener";
         status = "okay";
@@ -120,6 +120,17 @@
     };
     
     kscan0: kscan0 {
+        compatible = "zmk,kscan-composite";
+        matrix {
+            kscan = <&kscan1>;
+        };
+        direct {
+            row-offset = <6>;
+            kscan = <&kscan2>;
+        };
+    };
+
+    kscan1: kscan1 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
         gpios
@@ -129,6 +140,16 @@
             , <&xiao_d  3 (GPIO_ACTIVE_HIGH)>
             , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
             , <&gpio0  10 (GPIO_ACTIVE_HIGH)>
+            ;
+    };
+    
+    kscan2: kscan2 {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&gpio0 16 (GPIO_ACTIVE_LOW)>
+            , <&gpio1 0 (GPIO_ACTIVE_LOW)>
+            , <&gpio1 10 (GPIO_ACTIVE_LOW)>
+            , <&xiao_d 4 (GPIO_ACTIVE_LOW)>
             ;
     };
 };
