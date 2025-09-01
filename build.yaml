@@ -26,6 +26,13 @@ include:
     artifact-name: MKB_L_MODULE_TPD
 
   - board: seeeduino_xiao_ble
+    shield: MKB_L_KEY rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_KEY
+
+
+
+  - board: seeeduino_xiao_ble
     shield: MKB_R_TB rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_TB
@@ -44,6 +51,13 @@ include:
     shield: MKB_R_RZT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_RZT
+
+  - board: seeeduino_xiao_ble
+    shield: MKB_R_KEY rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_R_MODULE_KEY
+
+
 
   - board: seeeduino_xiao_ble
     shield: settings_reset

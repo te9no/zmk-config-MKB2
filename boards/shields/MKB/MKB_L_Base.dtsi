@@ -94,6 +94,17 @@
     };
 
     kscan0: kscan0 {
+        compatible = "zmk,kscan-composite";
+        matrix {
+            kscan = <&kscan1>;
+        };
+        direct {
+            row-offset = <6>;
+            kscan = <&kscan2>;
+        };
+    };
+
+    kscan1: kscan1 {
         compatible = "zmk,kscan-gpio-charlieplex";
         interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
         gpios
@@ -104,6 +115,10 @@
             , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
             , <&gpio0  10 (GPIO_ACTIVE_HIGH)>
             ;
+    };
+    
+    kscan2: kscan2 {
+        compatible = "zmk,kscan-gpio-direct";
     };
 };
 

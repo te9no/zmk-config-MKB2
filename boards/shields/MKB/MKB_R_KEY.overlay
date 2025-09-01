@@ -1,0 +1,7 @@
+#include "MKB_R_Base.dtsi"
+
+&kscan2 {
+    input-gpios
+        = <&xiao_d 7 (GPIO_ACTIVE_LOW)>
+        ;
+};
