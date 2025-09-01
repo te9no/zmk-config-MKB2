@@ -2,9 +2,11 @@
 
 /delete-node/ &kscan2;
 
-&kscan2 {
-    compatible = "zmk,kscan-gpio-direct";
-    input-gpios
-        = <&xiao_d 7 (GPIO_ACTIVE_LOW)>
-        ;
+/ {
+    kscan2: kscan2 {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios
+            = <&xiao_d 7 (GPIO_ACTIVE_LOW)>
+            ;
+    };
 };
