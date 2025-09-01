@@ -118,7 +118,6 @@
     };
     
     kscan2: kscan2 {
-        compatible = "zmk,kscan-gpio-direct";
     };
 };
 
