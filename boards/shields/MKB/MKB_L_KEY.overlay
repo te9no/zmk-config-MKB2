@@ -1,6 +1,7 @@
 #include "MKB_L_Base.dtsi"
 
 &kscan2 {
+    compatible = "zmk,kscan-gpio-direct";
     input-gpios
         = <&xiao_d 7 (GPIO_ACTIVE_LOW)>
         ;
