@@ -57,6 +57,8 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
   Fnc:
   - GRAVE
   - PG UP
@@ -114,6 +116,8 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
   Num:
   - CAPS
   - '1'
@@ -171,6 +175,8 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,6 +234,8 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
   Scr:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -285,6 +293,8 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
   BT:
   - BT CLR
   - {t: BT, h: '0'}
@@ -342,3 +352,5 @@ layers:
   - ENTER
   - PG DN
   - END
+  - A
+  - B
