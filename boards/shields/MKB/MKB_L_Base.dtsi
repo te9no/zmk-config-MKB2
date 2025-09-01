@@ -118,6 +118,10 @@
     };
     
     kscan2: kscan2 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
     };
 };
 
