@@ -18,14 +18,9 @@
         z-press-threshold = <300>;
         z-hysteresis = <10>;
         
-        bindings = <&mkp LCLK>, <&mkp MCLK>;
-        
         deadzone-x = <200>;
         deadzone-y = <200>;
         deadzone-z = <300>;
-        
-        movement-threshold = <500>;
-        auto-calibration-timeout-s = <30>;
     };
 };
 
