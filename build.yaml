@@ -1,59 +1,64 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: MKB_L_TB rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_TB rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L_JOY rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L_ENC rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_ENC rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L_RZT rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_RZT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_RZT
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L_TPD rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_TPD rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TPD
 
   - board: seeeduino_xiao_ble
-    shield: MKB_L_KEY rgbled_adapter nice_oled
+    shield: MKB_L_Base MKB_L_KEY rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_KEY
 
 
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R_TB rgbled_adapter nice_oled
+    shield: MKB_R_Base MKB_R_TB rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_TB
+    
+  - board: seeeduino_xiao_ble
+    shield: MKB_R_Base MKB_R_TBv3 rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_R_MODULE_TBv3
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R_JOY rgbled_adapter nice_oled
+    shield: MKB_R_Base MKB_R_JOY rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_JOY
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R_ENC rgbled_adapter nice_oled
+    shield: MKB_R_Base MKB_R_ENC rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_ENC
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R_RZT rgbled_adapter nice_oled
+    shield: MKB_R_Base MKB_R_RZT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_RZT
 
   - board: seeeduino_xiao_ble
-    shield: MKB_R_KEY rgbled_adapter nice_oled
+    shield: MKB_R_Base MKB_R_KEY rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_R_MODULE_KEY
 

@@ -1,5 +1,3 @@
-#include "MKB_L_Base.dtsi"
-
 &pinctrl {
     spi0_default: spi0_default {
         group1 {

@@ -1,5 +1,3 @@
-#include "MKB_L_Base.dtsi"
-
 /delete-node/ &kscan2;
 
 / {

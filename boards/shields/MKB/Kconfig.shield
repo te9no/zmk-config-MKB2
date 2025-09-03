@@ -1,3 +1,5 @@
+config SHIELD_MKB_R_Base
+    def_bool $(shields_list_contains,MKB_R_Base)
 
 config SHIELD_MKB_R_ENC
     def_bool $(shields_list_contains,MKB_R_ENC)
@@ -7,6 +9,9 @@ config SHIELD_MKB_R_JOY
 
 config SHIELD_MKB_R_TB
     def_bool $(shields_list_contains,MKB_R_TB)
+
+config SHIELD_MKB_R_TBv3
+    def_bool $(shields_list_contains,MKB_R_TBv3)
     
 config SHIELD_MKB_R_RZT
     def_bool $(shields_list_contains,MKB_R_RZT)
@@ -14,6 +19,9 @@ config SHIELD_MKB_R_RZT
 config SHIELD_MKB_R_KEY
     def_bool $(shields_list_contains,MKB_R_KEY)
 
+
+config SHIELD_MKB_L_Base
+    def_bool $(shields_list_contains,MKB_L_Base)
 
 config SHIELD_MKB_L_ENC
     def_bool $(shields_list_contains,MKB_L_ENC)
