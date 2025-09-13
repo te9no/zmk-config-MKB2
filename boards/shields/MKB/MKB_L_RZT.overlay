@@ -15,11 +15,16 @@
         
         polling-interval-ms = <10>;
         z-press-threshold = <300>;
-        z-hysteresis = <10>;
+        x-hysteresis = <50>;
+        y-hysteresis = <50>;
+        z-hysteresis = <50>;
         
         deadzone-x = <200>;
         deadzone-y = <200>;
         deadzone-z = <300>;
+        report-threshold-x = <3>;
+        report-threshold-y = <3>;
+        disable-wheel;
     };
 };
 
@@ -28,7 +33,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
-            bias-pull-up;
+            // bias-pull-up;
         };
     };
       
@@ -37,7 +42,7 @@
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
             low-power-enable;
-            bias-pull-up;
+            // bias-pull-up;
         };
     };
 };
