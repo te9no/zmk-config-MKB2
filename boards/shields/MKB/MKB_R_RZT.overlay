@@ -8,17 +8,17 @@
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
-
+    
     mlx90393_input: mlx90393-input@0c {
         compatible = "melexis,mlx90393-input";
         reg = <0x0c>;
-
+        
         polling-interval-ms = <10>;
         z-press-threshold = <200>;
         x-hysteresis = <50>;
         y-hysteresis = <50>;
         z-hysteresis = <50>;
-
+        
         scale-x = <1>;
         scale-y = <1>;
 
@@ -50,20 +50,7 @@
     };
 };
 
-/*input-split*/
 / {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        magnet_split: magnet_split@1 {
-            compatible = "zmk,input-split";
-            status = "okay";
-            device = <&mlx90393_input>;
-            reg = <1>;
-        };
-    };
-
     magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
