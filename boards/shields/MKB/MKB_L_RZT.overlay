@@ -14,13 +14,16 @@
         reg = <0x0c>;
         
         polling-interval-ms = <10>;
-        z-press-threshold = <300>;
+        z-press-threshold = <200>;
         x-hysteresis = <50>;
         y-hysteresis = <50>;
         z-hysteresis = <50>;
         
-        deadzone-x = <200>;
-        deadzone-y = <200>;
+        scale-x = <1>;
+        scale-y = <1>;
+
+        deadzone-x = <100>;
+        deadzone-y = <100>;
         deadzone-z = <300>;
         report-threshold-x = <3>;
         report-threshold-y = <3>;
