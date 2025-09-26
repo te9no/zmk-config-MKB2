@@ -50,10 +50,23 @@
     };
 };
 
+/*input-split*/
 / {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        magnet_split: magnet_split@1 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&mlx90393_input>;
+            reg = <1>;
+        };
+    };
+
     magnet_listener: magnet_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&mlx90393_input>;
+        device = <&magnet_split>;
     };
 };
