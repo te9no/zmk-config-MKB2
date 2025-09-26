@@ -56,7 +56,7 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        magnet_split: magnet_split@1 {
+        magnet_split: magnet_split@0 {
             compatible = "zmk,input-split";
             status = "okay";
             device = <&mlx90393_input>;
