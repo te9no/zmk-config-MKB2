@@ -60,7 +60,7 @@
             compatible = "zmk,input-split";
             status = "okay";
             device = <&mlx90393_input>;
-            reg = <1>;
+            reg = <0>;
         };
     };
 
