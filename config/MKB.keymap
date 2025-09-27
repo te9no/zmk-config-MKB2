@@ -1,10 +1,10 @@
 // #include <layout_shift.dtsi>
 
+#include <layout_shift_kp_override.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <layout_shift_kp_override.dtsi>
 
 #define DEF 0
 #define FUNC 1
@@ -27,12 +27,12 @@
         default_layer {
             label = "Def";
             bindings = <
-&kp TAB       &kp Q     &kp W      &kp E           &kp R          &kp T               &kp Y           &kp U          &kp I      &kp O      &kp P      &kp BKSP
-&lt BT ESC    &kp A     &kp S      &kp D           &kp F          &kp G               &kp H           &kp J          &kp K      &kp L      &kp SEMI   &kp SQT
-&kp LSHFT     &kp Z     &kp X      &mt LS(MCLK) C  &kp V          &kp B               &kp N           &kp M          &kp COMMA  &kp DOT    &kp UP     &kp FSLH
-&mt LCTL ESC  &kp LGUI  &kp LALT                   &lt NUM SPACE  &lt FUNC SPACE      &lt FUNC SPACE  &lt NUM SPACE             &kp LEFT   &kp DOWN   &kp RIGHT
-&kp LEFT      &kp UP    &kp SPACE  &kp DOWN        &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                                                 &kp B
+&kp TAB       &kp Q     &kp W      &kp E     &kp R          &kp T               &kp Y           &kp U          &kp I      &kp O      &kp P      &kp BKSP
+&lt BT ESC    &kp A     &kp S      &kp D     &kp F          &kp G               &kp H           &kp J          &kp K      &kp L      &kp SEMI   &kp SQT
+&kp LSHFT     &kp Z     &kp X      &kp C     &kp V          &kp B               &kp N           &kp M          &kp COMMA  &kp DOT    &kp UP     &kp FSLH
+&mt LCTL ESC  &kp LGUI  &kp LALT             &lt NUM SPACE  &lt FUNC SPACE      &lt FUNC SPACE  &lt NUM SPACE             &kp LEFT   &kp DOWN   &kp RIGHT
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                          &kp HOME       &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                       &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -46,7 +46,7 @@
 &trans     &kp BKSP   &kp DEL    &trans     &trans     &trans         &kp F11    &kp F12    &trans     &trans     &trans     &trans
 &trans     &trans     &kp LALT              &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans     &trans
 &kp LEFT   &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                                 &kp B
+                                 &kp A                                                      &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -60,7 +60,7 @@
 &mt LSHFT SPACE  &kp BACKSPACE  &kp DEL    &trans    &trans     &trans         &trans     &kp FSLH   &kp SEMI   &kp SQT    &trans     &trans
 &trans           &kp ENTER      &kp ENTER            &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans     &trans
 &kp LEFT         &kp UP         &kp SPACE  &kp DOWN  &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                                          &kp B
+                                           &kp A                                                     &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -74,7 +74,7 @@
 &trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB3   &mkp MB2   &trans
 &trans    &trans  &trans               &trans     &trans      &trans  &trans               &trans     &trans     &trans
 &kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                         &kp B
+                             &kp A                                              &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -88,7 +88,7 @@
 &trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB3   &mkp MB2   &trans
 &trans    &trans  &trans               &trans     &trans      &trans  &trans               &trans     &trans     &trans
 &kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                      &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                         &kp B
+                             &kp A                                              &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -102,11 +102,10 @@
 &trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
 &trans      &trans        &trans                      &trans        &trans            &trans          &trans               &trans     &trans     &trans
 &kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-&kp A                                                                                 &kp B
+                                        &kp A                                                                   &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
-
