@@ -28,7 +28,7 @@ layers:
   - LSHFT
   - Z
   - X
-  - {t: C, h: Sft+MCLK}
+  - C
   - V
   - B
   - N
