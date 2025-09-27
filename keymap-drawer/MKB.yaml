@@ -40,6 +40,7 @@ layers:
   - {t: ESC, h: LCTL}
   - LGUI
   - LALT
+  - A
   - {t: SPACE, h: Num}
   - {t: SPACE, h: Fnc}
   - {t: SPACE, h: Fnc}
@@ -50,6 +51,7 @@ layers:
   - LEFT
   - UP
   - SPACE
+  - B
   - DOWN
   - RIGHT
   - HOME
@@ -57,8 +59,6 @@ layers:
   - ENTER
   - PG DN
   - END
-  - A
-  - B
   Fnc:
   - GRAVE
   - PG UP
