@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/mctechnology17
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    - name: t-ogura
+      url-base: https://github.com/t-ogura
   projects:
     - name: zmk
       # remote: zmkfirmware
@@ -44,6 +46,10 @@ manifest:
     - name: zmk-driver-MLX90393
       remote: te9no
       revision: main
+    - name: prospector-zmk-module
+      remote: t-ogura
+      revision: v1.1.1
+      path: modules/prospector-scanner-zmk-module
   self:
     path: config
     
