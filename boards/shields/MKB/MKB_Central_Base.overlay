@@ -5,11 +5,8 @@
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
 
-/ {
-    chosen {
-        zephyr,display = &oled;
-    };
 
+/ {
     zip_keybind_keys: zip_keybind_keys {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
@@ -93,59 +90,4 @@
         };
     };
 
-    kscan0: kscan0 {
-        compatible = "zmk,kscan-composite";
-        matrix {
-            kscan = <&kscan1>;
-        };
-        direct {
-            row-offset = <6>;
-            kscan = <&kscan2>;
-        };
-    };
-
-    kscan1: kscan1 {
-        compatible = "zmk,kscan-gpio-charlieplex";
-        interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH)>;
-        gpios
-            = <&xiao_d  0 (GPIO_ACTIVE_HIGH)>
-            , <&xiao_d  1 (GPIO_ACTIVE_HIGH)>
-            , <&xiao_d  2 (GPIO_ACTIVE_HIGH)>
-            , <&xiao_d  3 (GPIO_ACTIVE_HIGH)>
-            , <&gpio0   9 (GPIO_ACTIVE_HIGH)>
-            , <&gpio0  10 (GPIO_ACTIVE_HIGH)>
-            ;
-    };
-    
-    kscan2: kscan2 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-};
-
-&i2c1 {
-    status = "okay";
-    compatible = "nordic,nrf-twi";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-    clock-frequency = <100000>; 
-    
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <32>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
-        com-sequential;
-        inversion-on;
-        prechargep = <0x22>;
-    };
-};
+#include "MKB.dtsi"

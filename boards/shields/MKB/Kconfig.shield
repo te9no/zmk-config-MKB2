@@ -1,42 +1,42 @@
-config SHIELD_MKB_R_Base
-    def_bool $(shields_list_contains,MKB_R_Base)
+config SHIELD_MKB_Peripheral_Base
+    def_bool $(shields_list_contains,MKB_Peripheral_Base)
 
-config SHIELD_MKB_R_ENC
-    def_bool $(shields_list_contains,MKB_R_ENC)
+config SHIELD_MKB_ENC_Peri
+    def_bool $(shields_list_contains,MKB_ENC_Peri)
 
-config SHIELD_MKB_R_JOY
-    def_bool $(shields_list_contains,MKB_R_JOY)
+config SHIELD_MKB_JOY_Peri
+    def_bool $(shields_list_contains,MKB_JOY_Peri)
 
-config SHIELD_MKB_R_TB
-    def_bool $(shields_list_contains,MKB_R_TB)
+config SHIELD_MKB_TB_Peri
+    def_bool $(shields_list_contains,MKB_TB_Peri)
 
-config SHIELD_MKB_R_TBv3
-    def_bool $(shields_list_contains,MKB_R_TBv3)
+config SHIELD_MKB_TBv3_Peri
+    def_bool $(shields_list_contains,MKB_TBv3_Peri)
     
-config SHIELD_MKB_R_RZT
-    def_bool $(shields_list_contains,MKB_R_RZT)
+config SHIELD_MKB_RZT_Peri
+    def_bool $(shields_list_contains,MKB_RZT_Peri)
 
-config SHIELD_MKB_R_KEY
-    def_bool $(shields_list_contains,MKB_R_KEY)
+config SHIELD_MKB_KEY_Peri
+    def_bool $(shields_list_contains,MKB_KEY_Peri)
 
 
-config SHIELD_MKB_L_Base
-    def_bool $(shields_list_contains,MKB_L_Base)
+config SHIELD_MKB_Central_Base
+    def_bool $(shields_list_contains,MKB_Central_Base)
 
-config SHIELD_MKB_L_ENC
-    def_bool $(shields_list_contains,MKB_L_ENC)
+config SHIELD_MKB_ENC_Cent
+    def_bool $(shields_list_contains,MKB_ENC_Cent)
 
-config SHIELD_MKB_L_JOY
-    def_bool $(shields_list_contains,MKB_L_JOY)
+config SHIELD_MKB_JOY_Cent
+    def_bool $(shields_list_contains,MKB_JOY_Cent)
 
-config SHIELD_MKB_L_TB
-    def_bool $(shields_list_contains,MKB_L_TB)
+config SHIELD_MKB_TB_Cent
+    def_bool $(shields_list_contains,MKB_TB_Cent)
     
-config SHIELD_MKB_L_RZT
-    def_bool $(shields_list_contains,MKB_L_RZT)
+config SHIELD_MKB_RZT_Cent
+    def_bool $(shields_list_contains,MKB_RZT_Cent)
 
-config SHIELD_MKB_L_TPD
-    def_bool $(shields_list_contains,MKB_L_TPD)
+config SHIELD_MKB_TPD_Cent
+    def_bool $(shields_list_contains,MKB_TPD_Cent)
 
-config SHIELD_MKB_L_KEY
-    def_bool $(shields_list_contains,MKB_L_KEY)
+config SHIELD_MKB_KEY_Cent
+    def_bool $(shields_list_contains,MKB_KEY_Cent)
