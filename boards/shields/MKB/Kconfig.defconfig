@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-if SHIELD_MKB_Peripheral_Base || SHIELD_MKB_ENC_Peri || SHIELD_MKB_JOY_Peri || SHIELD_MKB_TB_Peri || SHIELD_MKB_TBv3_Peri || SHIELD_MKB_RZT_Peri || SHIELD_MKB_KEY_Peri
-    config ZMK_SPLIT
-=======
 config ZMK_SPLIT
     default y
     
 if ZMK_DISPLAY
     config I2C
->>>>>>> Stashed changes
         default y
 
     config SSD1306
@@ -24,22 +19,12 @@ if LVGL
     config LV_Z_BITS_PER_PIXEL
         default 1
 
-<<<<<<< Updated upstream
-        choice LV_COLOR_DEPTH
-            default LV_COLOR_DEPTH_1
-        endchoice
-    endif # LVGL
-endif 
-
-if SHIELD_MKB_Central_Base || SHIELD_MKB_ENC_Cent || SHIELD_MKB_JOY_Cent || SHIELD_MKB_TB_Cent || SHIELD_MKB_RZT_Cent || SHIELD_MKB_TPD_Cent || SHIELD_MKB_KEY_Cent
-=======
     choice LV_COLOR_DEPTH
         default LV_COLOR_DEPTH_1
     endchoice
 endif # LVGL
 
 if SHIELD_Base_CT
->>>>>>> Stashed changes
     config ZMK_KEYBOARD_NAME
         default "MeKaBu"
 
@@ -51,31 +36,4 @@ if SHIELD_Base_CT
 
     config ZMK_SPLIT
         default y
-<<<<<<< Updated upstream
-    
-    if ZMK_DISPLAY
-        config I2C
-            default y
-
-        config SSD1306
-            default y
-    endif # ZMK_DISPLAY
-
-    if LVGL
-        config LV_Z_VDB_SIZE
-            default 64
-
-        config LV_DPI_DEF
-            default 148
-
-        config LV_Z_BITS_PER_PIXEL
-            default 1
-
-        choice LV_COLOR_DEPTH
-            default LV_COLOR_DEPTH_1
-        endchoice
-    endif # LVGL
 endif
-=======
-endif
->>>>>>> Stashed changes
