@@ -1,42 +1,45 @@
-config SHIELD_MKB_Peripheral_Base
-    def_bool $(shields_list_contains,MKB_Peripheral_Base)
+config SHIELD_Base_CT
+    def_bool $(shields_list_contains,Base_CT)
 
-config SHIELD_MKB_ENC_Peri
-    def_bool $(shields_list_contains,MKB_ENC_Peri)
+config SHIELD_Base_PR
+    def_bool $(shields_list_contains,Base_PR)
 
-config SHIELD_MKB_JOY_Peri
-    def_bool $(shields_list_contains,MKB_JOY_Peri)
 
-config SHIELD_MKB_TB_Peri
-    def_bool $(shields_list_contains,MKB_TB_Peri)
+config SHIELD_TB_CT
+    def_bool $(shields_list_contains,TB_CT)
 
-config SHIELD_MKB_TBv3_Peri
-    def_bool $(shields_list_contains,MKB_TBv3_Peri)
+config SHIELD_TB_PR
+    def_bool $(shields_list_contains,TB_PR)
+
+
+config SHIELD_TBv3_PR
+    def_bool $(shields_list_contains,TBv3_PR)
     
-config SHIELD_MKB_RZT_Peri
-    def_bool $(shields_list_contains,MKB_RZT_Peri)
-
-config SHIELD_MKB_KEY_Peri
-    def_bool $(shields_list_contains,MKB_KEY_Peri)
-
-
-config SHIELD_MKB_Central_Base
-    def_bool $(shields_list_contains,MKB_Central_Base)
-
-config SHIELD_MKB_ENC_Cent
-    def_bool $(shields_list_contains,MKB_ENC_Cent)
-
-config SHIELD_MKB_JOY_Cent
-    def_bool $(shields_list_contains,MKB_JOY_Cent)
-
-config SHIELD_MKB_TB_Cent
-    def_bool $(shields_list_contains,MKB_TB_Cent)
     
-config SHIELD_MKB_RZT_Cent
-    def_bool $(shields_list_contains,MKB_RZT_Cent)
+config SHIELD_JOY_CT
+    def_bool $(shields_list_contains,JOY_CT)
 
-config SHIELD_MKB_TPD_Cent
-    def_bool $(shields_list_contains,MKB_TPD_Cent)
+config SHIELD_JOY_PR
+    def_bool $(shields_list_contains,JOY_PR)
 
-config SHIELD_MKB_KEY_Cent
-    def_bool $(shields_list_contains,MKB_KEY_Cent)
+
+config SHIELD_ENC_L
+    def_bool $(shields_list_contains,ENC_L)
+
+config SHIELD_ENC_R
+    def_bool $(shields_list_contains,ENC_R)
+
+
+config SHIELD_RZT_CT
+    def_bool $(shields_list_contains,RZT_CT)
+
+config SHIELD_RZT_PR
+    def_bool $(shields_list_contains,RZT_PR)
+
+
+config SHIELD_KEY_Common
+    def_bool $(shields_list_contains,KEY_R)
+
+
+config SHIELD_TPD_CT
+    def_bool $(shields_list_contains,TPD_CT)

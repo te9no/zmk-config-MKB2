@@ -41,23 +41,20 @@
 };
 
 / {
-    glidepoint_listener_L: glidepoint_listener_L {
+    split_inputs_L {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@1 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&glidepoint>;
+            reg = <1>;
+        };
+    };
+    glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint>;
-        
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 3 100
-        >;
-
-        scroller {
-            layers = <5>;
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
-                &zip_xy_scaler 1 20
-                &zip_xy_to_scroll_mapper
-            >;
-        };
+        device = <&glidepoint_split>;
     };
 };

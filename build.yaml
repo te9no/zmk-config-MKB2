@@ -1,89 +1,206 @@
 ---
 include:
+
+######################################################################
+#
+#Left Side,Central role
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_TB_Cent rgbled_adapter nice_oled
+    shield: Base_CT TB_CT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_TB
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_TB_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_JOY_Cent rgbled_adapter nice_oled
+    shield: Base_CT JOY_CT ENC_L rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_JOY
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_JOY_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_ENC_Cent rgbled_adapter nice_oled
+    shield: Base_CT ENC_L rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_ENC
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_ENC_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_RZT_Cent rgbled_adapter nice_oled
+    shield: Base_CT RZT_CT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_RZT
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_RZT_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_TPD_Cent rgbled_adapter nice_oled
+    shield: Base_CT TPD_CT rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_TPD
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_TPD_Central
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Central_Base MKB_KEY_Cent rgbled_adapter nice_oled
+    shield: Base_CT KEY_Common rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_central.conf
-    artifact-name: MKB_L_MODULE_KEY
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_L_KEY_Central
 
+
+######################################################################
+#
+#Right Side,Peripheral role
+  - board: seeeduino_xiao_ble
+    shield: Base_PR Right TB_PR rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_TB_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_TB_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right TBv3_PR rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_TBv4
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_TBv3_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_TBv3_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right JOY_PR ENC_R rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_TBv3
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_JOY_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_JOY_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right ENC_R rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_JOY
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_ENC_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_ENC_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right RZT_PR rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_ENC
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_RZT_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_RZT_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right TPD_PR rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_RZT
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_TPD_Peripheral
 
   - board: seeeduino_xiao_ble
-    shield: MKB_Peripheral_Base MKB_KEY_Peri rgbled_adapter nice_oled
+    shield: Base_PR Right KEY_Common rgbled_adapter nice_oled
     snippet: zmk-usb-logging studio-rpc-usb-uart
     cmake-args:
-      - -DOVERLAY_CONFIG=config/role_peripheral.conf
-    artifact-name: MKB_R_MODULE_KEY
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_R_KEY_Peripheral
+
+
+######################################################################
+#
+#Right Side,Central role
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right TB_CT rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_TB_Central
+
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right JOY_CT ENC_R rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_JOY_Central
+
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right ENC_R rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_ENC_Central
+
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right RZT_CT rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_RZT_Central
+
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right TPD_CT rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_TPD_Central
+
+  - board: seeeduino_xiao_ble
+    shield: Base_CT Right KEY_Common rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/central.conf
+    artifact-name: MKB_R_KEY_Central
+
+
+######################################################################
+#
+#Left Side,Peripheral role
+  - board: seeeduino_xiao_ble
+    shield: Base_PR TB_PR rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_TB_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR TBv3_PR rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_TBv3_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR JOY_CT ENC_L rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_JOY_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR ENC_L rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_ENC_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR RZT_PR rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_RZT_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR TPD_PR rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_TPD_Peripheral
+
+  - board: seeeduino_xiao_ble
+    shield: Base_PR KEY_Common rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    cmake-args:
+      - -DOVERLAY_CONFIG=config/peripheral.conf
+    artifact-name: MKB_L_KEY_Peripheral
+
+
+
+
 
 
   - board: seeeduino_xiao_ble
