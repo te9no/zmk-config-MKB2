@@ -31,11 +31,10 @@
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <1500000>;
-        irq-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <800>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        motion-gpios = <&xiao_d 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        res-cpi = <800>;
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
         force-awake;
     };
 };

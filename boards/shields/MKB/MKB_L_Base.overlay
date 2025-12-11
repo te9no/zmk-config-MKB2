@@ -170,3 +170,7 @@
         prechargep = <0x22>;
     };
 };
+
+&uicr {
+  nfct-pins-as-gpios;
+};
