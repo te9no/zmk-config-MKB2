@@ -40,24 +40,23 @@
     };
 };
 
+/*input-split*/
 / {
-    glidepoint_listener: glidepoint_listener {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackpad_split: trackpad_split@0 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&glidepoint>;
+            reg = <0>;
+        };
+    };
+
+    trackpad_listener: trackpad_listener {
         compatible = "zmk,input-listener";
         status = "okay";
-        device = <&glidepoint>;
-        
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
-            &zip_temp_layer 3 100
-        >;
-
-        scroller {
-            layers = <5>;
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
-                &zip_xy_scaler 1 20
-                &zip_xy_to_scroll_mapper
-            >;
-        };
+        device = <&trackpad_split>;
     };
 };
