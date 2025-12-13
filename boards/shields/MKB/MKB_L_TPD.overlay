@@ -16,8 +16,6 @@
             data-ready-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
 
             sensitivity = "2x";
-            // sleep;
-            no-taps;
         };
 };
 
