@@ -70,32 +70,32 @@ include:
 # Left Shields / noAML - without AML
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_TB rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB_noAML
 
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY_noAML
 
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_ENC rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC_noAML
 
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_RZT rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_RZT_noAML
 
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_TPD rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TPD_noAML
 
   - board: seeeduino_xiao_ble
     shield: MKB_L_Base MKB_L_KEY rgbled_adapter nice_oled
-    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    snippet: noAML zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_KEY_noAML
 
 # Settings Reset
