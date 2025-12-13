@@ -1,0 +1,66 @@
+/ {
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball_split>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 700>;
+
+        scroll {
+            layers = <1>;
+            input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+        };
+
+        arrow {
+            layers = <2>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>;
+            process-next;
+        };
+        
+        arrow-prevent-move {
+            layers = <2>;
+            input-processors = <&zip_xy_scaler 0 1>;
+        };
+    };
+
+    magnet_listener: magnet_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&magnet_split>;
+        move {
+            layers = <0>;
+            input-processors = 
+                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                                <&zip_xy_scaler 1 2>;
+        };
+    };
+
+    stick_listener: stick_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&stick_split>;
+        
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 1 16>;
+        };
+    };
+    
+    trackpad_listener: trackpad_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackpad_split>;
+        
+        layer0 {
+            layers = <0>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_to_scroll_mapper>;
+        };
+        layer1 {
+            layers = <1>;
+            input-processors = <&zip_xy_scaler 1 16>;
+        };
+    };
+};
