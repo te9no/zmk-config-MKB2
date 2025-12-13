@@ -13,7 +13,7 @@
             compatible = "cirque,pinnacle";
             reg = <0x2a>;
             status = "okay";
-            dr-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
+            data-ready-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH)>;
 
             sensitivity = "2x";
             // sleep;
