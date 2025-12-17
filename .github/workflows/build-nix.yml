@@ -49,6 +49,7 @@ jobs:
   upload-firmware:
     needs: build
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
