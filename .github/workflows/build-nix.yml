@@ -100,6 +100,7 @@ jobs:
   notify:
     needs: build
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: stegzilla/discord-notify@v2
         with:
