@@ -1,13 +1,74 @@
 name: Build ZMK firmware
 on: 
   workflow_dispatch:
-  # push:
-  #   paths:
-  #     - config/**
-  #     - boards/**
-  #     - build.yaml
+  push:
+    paths:
+      - config/**
+      - boards/**
+      - build.yaml
  
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
- 
+  upload-firmware:
+    needs: build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: ${{ (inputs.amend_commit == true && 2) || 1 }}
+          submodules: recursive
+          
+      - name: Get branch name
+        id: branch-name
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Branch name is $BRANCH_NAME"
+
+      - name: Prepare firmware directory
+        run: |
+          mkdir -p firmware/${{ steps.branch-name.outputs.branch }}
+          rm -rf firmware/${{ steps.branch-name.outputs.branch }}/*
+          echo "Created directory firmware/${{ steps.branch-name.outputs.branch }}"
+
+      - name: Get last commit message
+        id: last_commit_message
+        if: inputs.amend_commit == true && (inputs.destination == 'commit' || inputs.destination == 'both')
+        run: |
+          echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
+
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: firmware/${{ steps.branch-name.outputs.branch }}
+
+      - name: Commit updated images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: 'firmware/**/*'
+          commit_message: 'Update firmware files for branch ${{ steps.branch-name.outputs.branch }}'
+          commit_options: '--no-verify'
+          push_options: '--no-verify'
+
+      - name: Artifact upload
+        id: artifact-upload-step
+        if: ( inputs.destination == 'artifact' || inputs.destination == 'both' )
+        uses: actions/upload-artifact@v4
+        with:
+          name: '${{ inputs.artifact_name }}'
+          path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
+
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: stegzilla/discord-notify@v2
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          title: Completed
+          message: Completed
+        if: ${{ always() }}
