@@ -9,7 +9,7 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <100000>; 
     
-    glidepoint: glidepoint@2a {
+    glidepoint_R: glidepoint_R@2a {
             compatible = "cirque,pinnacle";
             reg = <0x2a>;
             status = "okay";
@@ -46,11 +46,11 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        trackpad_split: trackpad_split@0 {
+        trackpad_split: trackpad_split@3 {
             compatible = "zmk,input-split";
             status = "okay";
-            device = <&glidepoint>;
-            reg = <0>;
+            device = <&glidepoint_R>;
+            reg = <3>;
         };
     };
 

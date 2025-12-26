@@ -3,7 +3,7 @@
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball_split>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 700>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>;
 
         scroll {
             layers = <1>;
@@ -54,13 +54,18 @@
         status = "okay";
         device = <&trackpad_split>;
         
-        layer0 {
-            layers = <0>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_to_scroll_mapper>;
-        };
-        layer1 {
-            layers = <1>;
-            input-processors = <&zip_xy_scaler 1 16>;
+        input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
+            &zip_temp_layer 3 100
+        >;
+
+        scroller {
+            layers = <5>;
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
+                &zip_xy_scaler 1 20
+                &zip_xy_to_scroll_mapper
+            >;
         };
     };
 };
