@@ -1,12 +1,12 @@
 name: Build ZMK firmware (nix)
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - config/**
-      - boards/**
-      - snippets/**
-      - build.yaml
+  # push:
+  #   paths:
+  #     - config/**
+  #     - boards/**
+  #     - snippets/**
+  #     - build.yaml
     inputs:
       amend_commit:
         description: 'Whether to amend the last commit instead of creating a new one. Make sure you understand the implications of rewriting the branch history if you use this option!'
