@@ -46,16 +46,19 @@
         status = "okay";
         device = <&glidepoint_L>;
         
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
-            &zip_temp_layer 3 100
-        >;
-
-        scroller {
-            layers = <5>;
+        layer0 {
+            layers = <0>;
             input-processors = <
                 &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
-                &zip_xy_scaler 1 20
+                &zip_xy_scaler 1 4
+                &zip_xy_to_scroll_mapper
+            >;
+        };
+
+        layer1 {
+            layers = <1>;
+            input-processors = <
+                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
                 &zip_xy_to_scroll_mapper
             >;
         };
