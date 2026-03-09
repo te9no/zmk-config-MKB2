@@ -1,0 +1,5 @@
+if(CONFIG_ZMK_MKB_MODE_MUX)
+  zephyr_library_include_directories(include)
+  zephyr_library_sources(src/mode_manager.c)
+  zephyr_library_sources(src/behaviors/behavior_set_mode.c)
+endif()

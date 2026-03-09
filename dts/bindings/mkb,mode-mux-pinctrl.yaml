@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+
+description: Pinctrl multiplexer helper node for MKB shared-pin mode switching
+
+compatible: "mkb,mode-mux-pinctrl"
+
+include: pinctrl-device.yaml

@@ -59,6 +59,53 @@ Thrives in collaborative environments, particularly hackathons and technical con
 ### Current Keymap Configuration | 現在のキーマップ構成
 ![MeKaBu Keymap](keymap-drawer/MKB.svg)
 
+## Technical Notes | 技術仕様メモ
+
+### Shared-Pin Mode Mux (P0.11 / P0.12)
+- P0.11 / P0.12 を `SPI` / `I2C` / `QDEC(Encoder)` で排他的に共有します。
+- 対象デバイスはすべて `status = "okay"` のまま定義し、起動時はダミー pinctrl を適用します。
+- 実際の物理ピン割り当ては `mode_manager` が起動時に設定を読んで適用します。
+- モード値は Zephyr `settings` に永続化されます。
+  - `0`: SPI
+  - `1`: I2C
+  - `2`: QDEC
+
+関連ファイル:
+- `boards/shields/MKB/MKB_L_Base.overlay`
+- `boards/shields/MKB/MKB_R_Base.overlay`
+- `boards/shields/MKB/src/mode_manager.c`
+- `boards/shields/MKB/src/behaviors/behavior_set_mode.c`
+
+### Unified Firmware (段階移行)
+モジュール別ファームを維持しつつ、共有ピン系モジュールを統合したターゲットを追加しています。
+
+- Left: `MKB_L_Base + MKB_L_UNI`
+- Right: `MKB_R_Base + MKB_R_UNI`
+
+`build.yaml` の `artifact-name`:
+- `MKB_L_UNIFIED`
+- `MKB_R_UNIFIED`
+
+### `&sm` Behavior (モード切替コマンド)
+`config/MKB.keymap` の BT レイヤーで利用します。
+
+- `&sm 0..2`: ローカル側のみ切替
+  - `0=SPI`, `1=I2C`, `2=QDEC`
+- `&sm 10..12`: リモート側（split peripheral）のみ切替
+  - `10=SPI`, `11=I2C`, `12=QDEC`
+- `&sm 20..22`: ローカル + リモートの両方を同時切替
+  - `20=SPI`, `21=I2C`, `22=QDEC`
+
+実行時の動作:
+1. 対象側でモードを保存 (`settings_save_one`)
+2. 必要に応じて central から peripheral へ relay event 送信
+3. 反映後に再起動 (`sys_reboot(SYS_REBOOT_COLD)`)
+
+### 運用上の注意
+- 左右で異なるモジュールを使う場合、`&sm` は左右個別（ローカル/リモート）で操作してください。
+- I2C の pull-up は pinctrl 側でのみ管理します。
+- SPI はモード切替時に不要な干渉を避けるため、非選択デバイスを suspend します。
+
 ## Etymology | 語源
 The name "MeKaBu" encompasses multiple meanings:
 - Mechanical Components (メカニカルな部品群)

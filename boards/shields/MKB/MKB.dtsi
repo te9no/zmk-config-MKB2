@@ -2,6 +2,7 @@
 #include <physical_layouts.dtsi>
 #include <behaviors/rgbled_widget.dtsi>
 #include <behaviors/battery_history_request.dtsi>
+#include <behaviors/set_mode.dtsi>
 
 / {
 	chosen {

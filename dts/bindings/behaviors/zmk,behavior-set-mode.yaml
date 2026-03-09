@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: MIT
+
+description: Set shared-pin mode and reboot
+
+compatible: "zmk,behavior-set-mode"
+
+include: one_param.yaml

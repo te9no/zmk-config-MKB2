@@ -1,3 +1,0 @@
-name: Default
-append:
-  EXTRA_DTC_OVERLAY_FILE: Default.overlay

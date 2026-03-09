@@ -1,6 +1,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
 #include <dt-bindings/zmk/keys.h>
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
@@ -103,5 +104,110 @@
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+    };
+};
+
+&pinctrl {
+    spi2_boot_dummy: spi2_boot_dummy {
+        group1 {
+            psels = <NRF_PSEL_DISCONNECTED(SPIM_SCK)>,
+                    <NRF_PSEL_DISCONNECTED(SPIM_MOSI)>,
+                    <NRF_PSEL_DISCONNECTED(SPIM_MISO)>;
+            low-power-enable;
+        };
+    };
+
+    i2c0_boot_dummy: i2c0_boot_dummy {
+        group1 {
+            psels = <NRF_PSEL_DISCONNECTED(TWIM_SCL)>,
+                    <NRF_PSEL_DISCONNECTED(TWIM_SDA)>;
+            low-power-enable;
+        };
+    };
+
+    qdec0_boot_dummy: qdec0_boot_dummy {
+        group1 {
+            psels = <NRF_PSEL_DISCONNECTED(QDEC_A)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_B)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_LED)>;
+            low-power-enable;
+        };
+    };
+
+    spi2_active_shared: spi2_active_shared {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 12)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 11)>,
+                    <NRF_PSEL_DISCONNECTED(SPIM_MISO)>;
+            nordic,drive-mode = <NRF_DRIVE_H0H1>;
+        };
+    };
+
+    i2c0_active_shared: i2c0_active_shared {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SCL, 0, 12)>,
+                    <NRF_PSEL(TWIM_SDA, 0, 11)>;
+            bias-pull-up;
+        };
+    };
+
+    qdec0_active_shared: qdec0_active_shared {
+        group1 {
+            psels = <NRF_PSEL(QDEC_A, 0, 11)>,
+                    <NRF_PSEL(QDEC_B, 0, 12)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_LED)>;
+            bias-pull-up;
+        };
+    };
+
+    shared_sleep: shared_sleep {
+        group1 {
+            psels = <NRF_PSEL_DISCONNECTED(SPIM_SCK)>,
+                    <NRF_PSEL_DISCONNECTED(SPIM_MOSI)>,
+                    <NRF_PSEL_DISCONNECTED(SPIM_MISO)>,
+                    <NRF_PSEL_DISCONNECTED(TWIM_SCL)>,
+                    <NRF_PSEL_DISCONNECTED(TWIM_SDA)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_A)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_B)>,
+                    <NRF_PSEL_DISCONNECTED(QDEC_LED)>;
+            low-power-enable;
+        };
+    };
+};
+
+&spi2 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi2_boot_dummy>;
+    pinctrl-1 = <&shared_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";
+    clock-frequency = <100000>;
+    pinctrl-0 = <&i2c0_boot_dummy>;
+    pinctrl-1 = <&shared_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&qdec0 {
+    status = "okay";
+    led-pre = <0>;
+    steps = <24>;
+    pinctrl-0 = <&qdec0_boot_dummy>;
+    pinctrl-1 = <&shared_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/ {
+    mkb_mux_pinctrl: mkb_mux_pinctrl {
+        compatible = "mkb,mode-mux-pinctrl";
+        pinctrl-0 = <&shared_sleep>;
+        pinctrl-1 = <&spi2_active_shared>;
+        pinctrl-2 = <&i2c0_active_shared>;
+        pinctrl-3 = <&qdec0_active_shared>;
+        pinctrl-names = "default", "spi", "i2c", "qdec";
     };
 };
