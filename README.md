@@ -73,8 +73,14 @@ Thrives in collaborative environments, particularly hackathons and technical con
 関連ファイル:
 - `boards/shields/MKB/MKB_L_Base.overlay`
 - `boards/shields/MKB/MKB_R_Base.overlay`
-- `boards/shields/MKB/src/mode_manager.c`
-- `boards/shields/MKB/src/behaviors/behavior_set_mode.c`
+- `/zmk-workspace/zmk-module-shared-mode-mux/src/mode_manager.c`
+- `/zmk-workspace/zmk-module-shared-mode-mux/src/behaviors/behavior_set_mode.c`
+- `/zmk-workspace/zmk-module-shared-mode-mux/dts/behaviors/set_mode.dtsi`
+- `/zmk-workspace/zmk-module-shared-mode-mux/dts/bindings/behaviors/zmk,behavior-set-mode.yaml`
+- `/zmk-workspace/zmk-module-shared-mode-mux/zephyr/module.yml` (`dts_root: .`)
+
+補足:
+- このリポジトリ内の `dts/behaviors/set_mode.dtsi` / `dts/bindings/*` は参照せず、外部モジュール側定義を利用します。
 
 ### Unified Firmware (段階移行)
 モジュール別ファームを維持しつつ、共有ピン系モジュールを統合したターゲットを追加しています。

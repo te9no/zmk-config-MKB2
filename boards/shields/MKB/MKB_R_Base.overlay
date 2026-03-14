@@ -168,8 +168,8 @@
 };
 
 / {
-    mkb_mux_pinctrl: mkb_mux_pinctrl {
-        compatible = "mkb,mode-mux-pinctrl";
+    shared_mode_mux_pinctrl: shared_mode_mux_pinctrl {
+        compatible = "zmk,mode-mux-pinctrl";
         pinctrl-0 = <&shared_sleep>;
         pinctrl-1 = <&spi2_active_shared>;
         pinctrl-2 = <&i2c0_active_shared>;

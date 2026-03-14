@@ -11,7 +11,7 @@ config SHIELD_MKB_L_Base
 config SHIELD_MKB_L_UNI
     def_bool $(shields_list_contains,MKB_L_UNI)
 
-config ZMK_MKB_MODE_MUX
+config ZMK_SHARED_MODE_MUX
     bool "MKB shared-pin mode manager (SPI/I2C/QDEC)"
     default n
     select SETTINGS
@@ -20,7 +20,7 @@ config ZMK_MKB_MODE_MUX
       Manage exclusive ownership of P0.11/P0.12 across spi2, i2c0, and qdec0.
       Exposes behavior `&sm <mode>` and persists selected mode in settings.
 
-config ZMK_MKB_MODE_MUX_INIT_PRIORITY
+config ZMK_SHARED_MODE_MUX_INIT_PRIORITY
     int "MKB mode manager SYS_INIT priority (POST_KERNEL)"
-    depends on ZMK_MKB_MODE_MUX
+    depends on ZMK_SHARED_MODE_MUX
     default 0

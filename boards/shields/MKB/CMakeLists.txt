@@ -1,4 +1,4 @@
-if(CONFIG_ZMK_MKB_MODE_MUX)
+if(CONFIG_ZMK_SHARED_MODE_MUX AND NOT CONFIG_ZEPHYR_ZMK_MODULE_SHARED_MODE_MUX_MODULE)
   zephyr_library_include_directories(include)
   zephyr_library_sources(src/mode_manager.c)
   zephyr_library_sources(src/behaviors/behavior_set_mode.c)
