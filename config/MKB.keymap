@@ -50,12 +50,12 @@
         function_layer {
             label = "Fnc";
             bindings = <
-&trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans      &trans  &kp LC(A)       &kp UP_ARROW    &kp LC(E)        &trans     &trans
-&trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &trans      &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans
-&trans    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS      &trans      &trans  &kp LG(LEFT)    &kp LG(RIGHT)   &trans           &trans     &trans
-&trans    &trans        &trans                      &kp EQUAL     &trans      &trans  &trans                          &trans           &trans     &trans
-&kp LEFT  &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                         &kp HOME        &kp PG_UP       &kp ENTER        &kp PG_DN  &kp END
-                                      &kp A                                                           &kp B
+&trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &trans         &trans  &kp LC(A)       &kp UP_ARROW    &kp LC(E)        &trans     &trans
+&trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &trans         &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans
+&trans    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS      &kp EQUAL      &trans  &kp LG(LEFT)    &kp LG(RIGHT)   &trans           &trans     &trans
+&trans    &trans        &trans                      &kp EQUAL     &trans         &trans  &trans                          &trans           &trans     &trans
+&kp LEFT  &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                            &kp HOME        &kp PG_UP       &kp ENTER        &kp PG_DN  &kp END
+                                      &kp A                                                              &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
