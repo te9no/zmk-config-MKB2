@@ -34,6 +34,12 @@ config SHIELD_MKB_L_TB
     
 config SHIELD_MKB_L_RZT
     def_bool $(shields_list_contains,MKB_L_RZT)
+    
+config SHIELD_MKB_L_RZTv2
+    def_bool $(shields_list_contains,MKB_L_RZTv2)
+
+config SHIELD_MKB_L_RZTv2I2C
+    def_bool $(shields_list_contains,MKB_L_RZTv2I2C)
 
 config SHIELD_MKB_L_TPD
     def_bool $(shields_list_contains,MKB_L_TPD)

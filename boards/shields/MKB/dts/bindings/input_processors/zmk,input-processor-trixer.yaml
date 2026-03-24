@@ -1,0 +1,134 @@
+# Copyright (c) 2026, The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: Input processor for 3 magnetometers Trackpuck
+
+compatible: "zmk,input-processor-trixer"
+
+include: ip_one_param.yaml
+
+properties:
+
+  sync-report-ms:
+    type: int
+    required: true
+    default: 1
+
+  radius-um:
+    type: int
+    required: false
+    default: 18500
+    description: Radius of magnet circle in micrometers (default 18.5mm)
+
+  xy-sensitivity-num:
+    type: int
+    required: false
+    default: 1
+    description: XY sensitivity numerator for scaling raw to mm
+
+  xy-sensitivity-denom:
+    type: int
+    required: false
+    default: 1
+    description: XY sensitivity denominator for scaling raw to mm
+
+  z-sensitivity-num:
+    type: int
+    required: false
+    default: 1
+    description: Z sensitivity numerator for scaling raw to mm
+
+  z-sensitivity-denom:
+    type: int
+    required: false
+    default: 1
+    description: Z sensitivity denominator for scaling raw to mm
+
+  pitch-scale-num:
+    type: int
+    required: false
+    default: 1
+    description: Pitch output scale numerator
+
+  pitch-scale-denom:
+    type: int
+    required: false
+    default: 1
+    description: Pitch output scale denominator
+
+  roll-scale-num:
+    type: int
+    required: false
+    default: 1
+    description: Roll output scale numerator
+
+  roll-scale-denom:
+    type: int
+    required: false
+    default: 1
+    description: Roll output scale denominator
+
+  yaw-scale-num:
+    type: int
+    required: false
+    default: 1
+    description: Yaw output scale numerator
+
+  yaw-scale-denom:
+    type: int
+    required: false
+    default: 1
+    description: Yaw output scale denominator
+
+  yaw-comp-x-num:
+    type: int
+    required: false
+    default: 0
+    description: Yaw compensation for X translation numerator
+
+  yaw-comp-x-denom:
+    type: int
+    required: false
+    default: 1
+    description: Yaw compensation for X translation denominator
+
+  neutral-timeout-ms:
+    type: int
+    required: false
+    default: 20
+    description: Timeout in milliseconds before reporting neutral when all sensors are idle
+
+  smooth-len:
+    type: int
+    default: 5
+    description: Number of samples for smoothing
+
+  rpt-dzn-x:
+    type: int
+    default: 9
+    description: X-axis deadzone
+
+  rpt-dzn-y:
+    type: int
+    default: 9
+    description: Y-axis deadzone
+
+  rpt-dzn-z:
+    type: int
+    default: 9
+    description: Z-axis deadzone
+
+  rpt-dzn-rx:
+    type: int
+    default: 9
+    description: RX-axis deadzone
+
+  rpt-dzn-ry:
+    type: int
+    default: 9
+    description: RY-axis deadzone
+
+  rpt-dzn-rz:
+    type: int
+    default: 9
+    description: RZ-axis deadzone

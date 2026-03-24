@@ -59,6 +59,17 @@ manifest:
     - name: zmk-module-settings-rpc
       remote: cormoran
       revision: main
+  
+# for RokuzitanV2
+    - name: zmk-hid-joystick
+      remote: badjeff
+      revision: main
+    - name: zmk-input-processor-report-rate-limit
+      remote: badjeff
+      revision: main
+    - name: zmk-mlx90393-driver
+      remote: badjeff
+      revision: main
 
   self:
     path: config
