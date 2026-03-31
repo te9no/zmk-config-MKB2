@@ -28,7 +28,7 @@
 
     trackball: pd@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <1500000>;
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -59,4 +59,5 @@
         status = "okay";
         device = <&trackball_split>;
     };
+
 };

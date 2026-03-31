@@ -37,7 +37,7 @@
 
     trackball2: trackball2@0 {
         status = "okay";
-        compatible = "pixart,pmw3610-alt";
+        compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -47,3 +47,4 @@
         y-input-code = <INPUT_REL_Y>;
     };
 };
+
