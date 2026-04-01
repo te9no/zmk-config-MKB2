@@ -14,11 +14,13 @@ manifest:
       url-base: https://github.com/mctechnology17
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    - name: cormoran
+      url-base: https://github.com/cormoran
   projects:
     - name: zmk
       # remote: zmkfirmware
       remote: te9no
-      revision: main
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
@@ -30,7 +32,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-nice-oled
-      remote: mctechnology17
+      remote: te9no
       revision: main
     - name: zmk-layout-shift
       remote: kot149
@@ -44,6 +46,20 @@ manifest:
     - name: zmk-driver-MLX90393
       remote: te9no
       revision: main
+
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+
   self:
     path: config
 

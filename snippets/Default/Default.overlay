@@ -1,18 +1,25 @@
+#include <input/processors/runtime-input-processor.dtsi>
+
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackball_split>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 700>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, 
+                           <&mouse_runtime_input_processor &scroll_runtime_input_processor>;
 
         scroll {
             layers = <1>;
-            input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, <&zip_xy_scaler 1 16>, <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>, 
+                               <&zip_xy_to_scroll_mapper>, 
+                               <&scroll_runtime_input_processor>;
         };
 
         arrow {
             layers = <2>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT|INPUT_TRANSFORM_Y_INVERT)>, 
+                               <&mouse_runtime_input_processor &scroll_runtime_input_processor>,
+                               <&zip_keybind_keys>;
             process-next;
         };
         
@@ -28,9 +35,8 @@
         device = <&magnet_split>;
         move {
             layers = <0>;
-            input-processors = 
-                                // <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                                <&zip_xy_scaler 1 2>;
+            input-processors = <&zip_xy_to_scroll_mapper>, 
+                               <&scroll_runtime_input_processor>;
         };
     };
 
@@ -41,11 +47,12 @@
         
         layer0 {
             layers = <0>;
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_to_scroll_mapper>, 
+                               <&scroll_runtime_input_processor>;
         };
         layer1 {
             layers = <1>;
-            input-processors = <&zip_xy_scaler 1 16>;
+            input-processors = <&scroll_runtime_input_processor>;
         };
     };
     
@@ -54,18 +61,14 @@
         status = "okay";
         device = <&trackpad_split>;
         
-        input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
-            &zip_temp_layer 3 100
-        >;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                           <&scroll_runtime_input_processor>;
 
         scroller {
             layers = <5>;
-            input-processors = <
-                &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)
-                &zip_xy_scaler 1 20
-                &zip_xy_to_scroll_mapper
-            >;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+                               <&zip_xy_to_scroll_mapper>, 
+                               <&scroll_runtime_input_processor>;
         };
     };
 };
