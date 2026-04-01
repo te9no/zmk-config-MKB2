@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    xy_transf: xy_transf {
+    xy_transf: xy_transf {  
             compatible = "zmk,input-processor-transform";
             #input-processor-cells = <1>;
             type = <INPUT_EV_REL>;
@@ -67,15 +67,52 @@
 	};
 };
 
-&spi0 {
+// / {
+//     magnet_listener: magnet_listener {
+//         compatible = "zmk,input-listener";
+//         status = "okay";
+//         device = <&mlxpuck1>;
+//         move {
+//             layers = <0>;
+//         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>; 
+//         };
+//     };
+// };
+
+// / {
+//     magnet_listener: magnet_listener {
+//         compatible = "zmk,input-listener";
+//         status = "okay";
+//         device = <&mlxpuck2>;
+//         move {
+//             layers = <0>;
+//         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>; 
+//         };
+//     };
+// };
+
+// / {
+//     magnet_listener: magnet_listener {
+//         compatible = "zmk,input-listener";
+//         status = "okay";
+//         device = <&mlxpuck3>;
+//         move {
+//             layers = <0>;
+//         input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>; 
+//         };
+//     };
+// };
+
+&spi2 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-0 = <&spi2_default>;
+    pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+    cs-gpios = <&gpio1 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+             , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
              , <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-             , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+             ;
     mlxpuck1: mlx90393@0 {
         compatible = "melexis,mlx90393";
         status = "okay";
@@ -89,12 +126,13 @@
         rpt-dzn-y = <150>;
         rpt-dzn-z = <150>;
     };
+
     mlxpuck2: mlx90393@1 {
         compatible = "melexis,mlx90393";
         status = "okay";
         spi-max-frequency = <1000000>;
         reg = <1>;
-        irq-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         woc-thd-trim-pctg = <65>;
         smooth-len = <5>;
         downshift = <50>;
@@ -107,7 +145,7 @@
         status = "okay";
         spi-max-frequency = <1000000>;
         reg = <2>;
-        irq-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         woc-thd-trim-pctg = <65>;
         smooth-len = <5>;
         downshift = <50>;
@@ -118,14 +156,14 @@
 };
 
 &pinctrl {
-    spi0_default: spi0_default {
+    spi2_default: spi2_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 4)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 5)>,
                     <NRF_PSEL(SPIM_MISO, 0, 5)>;
         };
     };
-    spi0_sleep: spi0_sleep {
+    spi2_sleep: spi2_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 4)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 5)>,
@@ -133,4 +171,8 @@
             low-power-enable;
         };
     };
+};
+
+&uart0 {
+	status = "disabled";
 };

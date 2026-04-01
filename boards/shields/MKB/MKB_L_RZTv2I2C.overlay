@@ -79,7 +79,7 @@
         compatible = "melexis,mlx90393";
         status = "okay";
         reg = <0x0c>;
-        irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        // irq-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         woc-thd-trim-pctg = <65>;
         smooth-len = <5>;
         downshift = <50>;
@@ -91,7 +91,7 @@
         compatible = "melexis,mlx90393";
         status = "okay";
         reg = <0x0d>;
-        irq-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        // irq-gpios = <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         woc-thd-trim-pctg = <65>;
         smooth-len = <5>;
         downshift = <50>;
@@ -103,7 +103,7 @@
         compatible = "melexis,mlx90393";
         status = "okay";
         reg = <0x0e>;
-        irq-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        // irq-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         woc-thd-trim-pctg = <65>;
         smooth-len = <5>;
         downshift = <50>;
@@ -118,7 +118,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
       
@@ -127,7 +127,7 @@
             psels = <NRF_PSEL(TWIM_SDA, 0,  4)>,
                     <NRF_PSEL(TWIM_SCL, 0,  5)>;
             low-power-enable;
-            // bias-pull-up;
+            bias-pull-up;
         };
     };
 };

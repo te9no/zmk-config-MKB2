@@ -4,7 +4,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include "MKB_pinctrl_L.dtsi"
 #include "MKB.dtsi"
-#include <input/processors/runtime-input-processor.dtsi>
+// #include <input/processors/runtime-input-processor.dtsi>
+
+&uicr {
+    nfct-pins-as-gpios;
+};
 
 / {
     chosen {
