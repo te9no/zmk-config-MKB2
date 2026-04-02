@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: TILDE, h: Fnc}
+  - DELETE
   - LCTRL
   - A
   - S
@@ -44,9 +44,9 @@ layers:
   - {t: SPACE, h: Num}
   - {t: BACKSPACE, h: Fnc}
   - {t: LANGUAGE 1, h: Mouse}
-  - LEFT
-  - DOWN
-  - RIGHT
+  - ''
+  - SLASH
+  - ''
   - LEFT
   - UP
   - SPACE
@@ -71,12 +71,12 @@ layers:
   - UP ARROW
   - Ctl+E
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '4'
   - '5'
   - '6'
-  - MINUS
+  - PERIOD
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT ARROW
@@ -88,18 +88,18 @@ layers:
   - '7'
   - '8'
   - '9'
-  - PLUS
   - EQUAL
+  - ''
   - {t: ▽, type: trans}
   - Gui+LEFT
   - Gui+RIGHT
+  - Gui+LEFT BRACKET
+  - {t: Gui+RIGHT BRACKET, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - EQUAL
+  - AL CONTROL PANEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -119,7 +119,7 @@ layers:
   - A
   - B
   Num:
-  - TAB
+  - {t: ▽, type: trans}
   - Sft+1
   - Sft+2
   - Sft+3
@@ -129,31 +129,31 @@ layers:
   - Sft+7
   - Sft+8
   - MINUS
-  - EQUAL
-  - {t: ▽, type: trans}
-  - LEFT CONTROL
+  - PLUS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&bl BL_INC'
+  - {t: VOLUME UP, h: toggle}
   - Sft+Gui+3
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BACKSLASH
-  - SEMI
+  - SEMICOLON
   - SQT
-  - {t: ▽, type: trans}
-  - LSHFT
-  - {t: ▽, type: trans}
+  - NON US BACKSLASH
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bl BL_DEC'
+  - VOLUME DOWN
   - Sft+Gui+4
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - SLASH
+  - TILDE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -361,11 +361,11 @@ layers:
   - F3
   - F4
   - F5
+  - Sft+9
+  - Sft+0
   - '1'
   - '2'
   - '3'
-  - Sft+9
-  - Sft+0
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F6
@@ -373,11 +373,11 @@ layers:
   - F8
   - F9
   - F10
+  - LEFT BRACKET
+  - RIGHT BRACKET
   - '4'
   - '5'
   - '6'
-  - LEFT BRACKET
-  - RIGHT BRACKET
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F11
@@ -385,19 +385,19 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - PERIOD
+  - '0'
   - '7'
-  - '8'
+  - {t: '8', h: toggle}
   - '9'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '0'
-  - {t: ▽, type: trans}
+  - MINUS
+  - PLUS
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
