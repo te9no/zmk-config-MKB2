@@ -40,7 +40,7 @@
 &kp TAB    &kp Q      &kp W         &kp E     &kp R                   &kp T            &kp Y               &kp U             &kp I      &kp O      &kp P        &kp DELETE
 &kp LCTRL  &kp A      &kp S         &kp D     &kp F                   &kp G            &kp H               &kp J             &kp K      &kp L      &lt 3 SEMI   &kp ENTER
 &kp LSHFT  &kp Z      &kp X         &kp C     &kp V                   &kp B            &kp N               &kp M             &kp COMMA  &kp DOT    &lt 1 SLASH  &mt RIGHT_SHIFT MINUS
-&lt 6 ESC  &kp LCTRL  &kp LEFT_ALT            &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &none      &kp SLASH    &none
+&lt 6 ESC  &kp LCTRL  &kp LEFT_ALT            &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &kp SLASH  &trans       &kp ESCAPE
 &kp LEFT   &kp UP     &kp SPACE     &kp DOWN  &kp RIGHT                                                    &kp HOME          &kp PG_UP  &kp ENTER  &kp PG_DN    &kp END
                                     &kp A                                                                                    &kp B
             >;
@@ -65,7 +65,7 @@
         num_layer {
             label = "Num";
             bindings = <
-&trans    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)         &kp LS(N5)                &kp LS(N6)  &kp LS(N7)  &kp LS(N8)     &kp MINUS  &kp PLUS              &trans
+&trans    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)         &kp LS(N5)                &kp LS(N6)  &kp LS(N7)  &kp LS(N8)     &kp MINUS  &kp EQUAL             &trans
 &trans    &trans      &trans      &bl BL_INC  &kt C_VOLUME_UP    &kp LS(LG(NUMBER_3))      &trans      &trans      &kp SEMICOLON  &kp SQT    &kp NON_US_BACKSLASH  &trans
 &trans    &trans      &trans      &bl BL_DEC  &kp C_VOLUME_DOWN  &kp LS(LG(NUMBER_4))      &trans      &trans      &trans         &trans     &kp TILDE             &trans
 &trans    &trans      &trans                  &trans             &trans                    &kp DELETE  &trans                     &trans     &trans                &trans
@@ -107,12 +107,12 @@
         bt_layer {
             label = "BT";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR_ALL  &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans                      &trans        &trans            &trans          &trans               &trans     &trans     &trans
-&kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                        &kp A                                                                   &kp B
+&trans    &trans  &trans     &trans    &trans     &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans      &trans
+&trans    &trans  &trans     &trans    &trans     &trans      &trans        &trans        &trans        &trans        &trans      &trans
+&trans    &trans  &trans     &trans    &trans     &trans      &trans        &trans        &trans        &trans        &trans      &trans
+&trans    &trans  &trans               &trans     &trans      &trans        &trans                      &trans        &bt BT_CLR  &bt BT_CLR_ALL
+&kp LEFT  &kp UP  &kp SPACE  &kp DOWN  &kp RIGHT                            &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN   &kp END
+                             &kp A                                                        &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -127,6 +127,15 @@
 &trans  &trans   &trans   &trans  &trans                                 &trans             &trans        &trans        &trans        &trans
                           &trans                                                            &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Bluetooth-ON {
+            if-layers = <2 6>;
+            then-layer = <5>;
         };
     };
 };
