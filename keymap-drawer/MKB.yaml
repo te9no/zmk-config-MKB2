@@ -24,7 +24,7 @@ layers:
   - K
   - L
   - {t: SEMI, h: Mouse}
-  - ENTER
+  - {t: ENTER, h: RIGHT CONTROL}
   - LSHFT
   - Z
   - X
@@ -35,7 +35,7 @@ layers:
   - M
   - COMMA
   - DOT
-  - {t: SLASH, h: Fnc}
+  - {t: ▽, type: trans}
   - {t: MINUS, h: RIGHT SHIFT}
   - {t: ESC, h: '6'}
   - LCTRL
@@ -94,14 +94,14 @@ layers:
   - Gui+LEFT
   - Gui+RIGHT
   - Gui+LEFT BRACKET
-  - {t: Gui+RIGHT BRACKET, type: held}
+  - Gui+RIGHT BRACKET
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - AL CONTROL PANEL
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -137,8 +137,8 @@ layers:
   - '&bl BL_INC'
   - {t: VOLUME UP, h: toggle}
   - Sft+Gui+3
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+9
+  - Sft+0
   - SEMICOLON
   - SQT
   - NON US BACKSLASH
@@ -149,12 +149,12 @@ layers:
   - '&bl BL_DEC'
   - VOLUME DOWN
   - Sft+Gui+4
+  - {t: LEFT BRACKET, h: sticky}
+  - RIGHT BRACKET
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - TILDE
-  - {t: ▽, type: trans}
+  - GRAVE
+  - GRAVE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
