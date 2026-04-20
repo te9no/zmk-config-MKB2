@@ -1,11 +1,12 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 #include <behaviors/rgbled_widget.dtsi>
-#include <behaviors/battery_history_request.dtsi>
+// #include <behaviors/battery_history_request.dtsi>
 
 / {
 	chosen {
 		zmk,physical-layout = &layout_MKB;
+      zmk,battery = &vbatt;
 	};
    
 	default_transform: keymap_transform_0 {
@@ -135,4 +136,17 @@
       compatible = "zmk,keymap-sensors";
       sensors = <&left_encoder &right_encoder>;
    };
+
+   vbatt: vbatt {
+      io-channels = <&adc 2>;
+      power-gpios; // unset
+      output-ohms = <470000>;
+      full-ohms = <(1000000 + 470000)>;
+      // For Ni-Mh 1U
+      mv-to-pct-thresholds = <1100 1150 1200 1220 1240 1260 1280 1300 1320 1350 1400>;
+   };
+};
+
+&adc {
+   status = "okay";
 };
