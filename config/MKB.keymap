@@ -65,12 +65,12 @@
         num_layer {
             label = "Num";
             bindings = <
-&trans    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)         &kp LS(N5)                &kp LS(N6)        &kp LS(N7)         &kp LS(N8)     &kp MINUS  &kp EQUAL             &trans
-&trans    &trans      &trans      &bl BL_INC  &kt C_VOLUME_UP    &kp LS(LG(NUMBER_3))      &kp LS(N9)        &kp LS(N0)         &kp SEMICOLON  &kp SQT    &kp NON_US_BACKSLASH  &trans
-&trans    &trans      &trans      &bl BL_DEC  &kp C_VOLUME_DOWN  &kp LS(LG(NUMBER_4))      &sk LEFT_BRACKET  &kp RIGHT_BRACKET  &trans         &trans     &kp GRAVE             &kp GRAVE
-&trans    &trans      &trans                  &trans             &trans                    &kp DELETE        &trans                            &trans     &trans                &trans
-&kp LEFT  &kp UP      &kp SPACE   &kp DOWN    &kp RIGHT                                                      &kp HOME           &kp PG_UP      &kp ENTER  &kp PG_DN             &kp END
-                                  &kp A                                                                                         &kp B
+&kp ESCAPE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)         &kp LS(N5)                &kp LS(N6)        &kp LS(N7)         &kp LS(N8)     &kp MINUS  &kp EQUAL             &trans
+&trans      &trans      &trans      &bl BL_INC  &kt C_VOLUME_UP    &kp LS(LG(NUMBER_3))      &kp LS(N9)        &kp LS(N0)         &kp SEMICOLON  &kp SQT    &kp NON_US_BACKSLASH  &trans
+&trans      &trans      &trans      &bl BL_DEC  &kp C_VOLUME_DOWN  &kp LS(LG(NUMBER_4))      &sk LEFT_BRACKET  &kp RIGHT_BRACKET  &trans         &trans     &kp GRAVE             &kp GRAVE
+&trans      &trans      &trans                  &trans             &trans                    &kp DELETE        &trans                            &trans     &trans                &trans
+&kp LEFT    &kp UP      &kp SPACE   &kp DOWN    &kp RIGHT                                                      &kp HOME           &kp PG_UP      &kp ENTER  &kp PG_DN             &kp END
+                                    &kp A                                                                                         &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
