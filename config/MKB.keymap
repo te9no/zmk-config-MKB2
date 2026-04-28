@@ -35,49 +35,49 @@
         command_1: command_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp NUMBER_1>;
+            bindings = <&kp LG(NUMBER_1)>;
             label = "COMMAND_1";
         };
 
         command_2: command_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp NUMBER_2>;
+            bindings = <&kp LG(NUMBER_2)>;
             label = "COMMAND_2";
         };
 
         command_3: command_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp NUMBER_3>;
+            bindings = <&kp LG(NUMBER_3)>;
             label = "COMMAND_3";
         };
 
         command_4: command_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp NUMBER_4>;
+            bindings = <&kp LG(NUMBER_4)>;
             label = "COMMAND_4";
         };
 
         command_5: command_5 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp N5>;
+            bindings = <&kp LG(N5)>;
             label = "COMMAND_5";
         };
 
         command_6: command_6 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp NUMBER_6>;
+            bindings = <&kp LG(NUMBER_6)>;
             label = "COMMAND_6";
         };
 
         command_7: command_7 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp N7>;
+            bindings = <&kp LG(N7)>;
             label = "COMMAND_7";
         };
     };
