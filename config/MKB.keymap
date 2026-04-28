@@ -31,18 +31,69 @@
         };
     };
 
+    macros {
+        command_1: command_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp NUMBER_1>;
+            label = "COMMAND_1";
+        };
+
+        command_2: command_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp NUMBER_2>;
+            label = "COMMAND_2";
+        };
+
+        command_3: command_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp NUMBER_3>;
+            label = "COMMAND_3";
+        };
+
+        command_4: command_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp NUMBER_4>;
+            label = "COMMAND_4";
+        };
+
+        command_5: command_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp N5>;
+            label = "COMMAND_5";
+        };
+
+        command_6: command_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp NUMBER_6>;
+            label = "COMMAND_6";
+        };
+
+        command_7: command_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp N7>;
+            label = "COMMAND_7";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             label = "Def";
             bindings = <
-&kp TAB    &kp Q      &kp W         &kp E     &kp R                   &kp T            &kp Y               &kp U             &kp I      &kp O      &kp P       &kp DELETE
-&kp LCTRL  &kp A      &kp S         &kp D     &kp F                   &kp G            &kp H               &kp J             &kp K      &kp L      &lt 3 SEMI  &mt RIGHT_CONTROL ENTER
-&kp LSHFT  &kp Z      &kp X         &kp C     &kp V                   &kp B            &kp N               &kp M             &kp COMMA  &kp DOT    &trans      &mt RIGHT_SHIFT MINUS
-&lt 6 ESC  &kp LCTRL  &kp LEFT_ALT            &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &kp SLASH  &trans      &kp ESCAPE
-&kp LEFT   &kp UP     &kp SPACE     &kp DOWN  &kp RIGHT                                                    &kp HOME          &kp PG_UP  &kp ENTER  &kp PG_DN   &kp END
-                                    &kp A                                                                                    &kp B
+&kp TAB     &kp Q       &kp W         &kp E       &kp R                   &kp T            &kp Y               &kp U             &kp I      &kp O      &kp P       &kp DELETE
+&kp LCTRL   &kp A       &kp S         &kp D       &kp F                   &kp G            &kp H               &kp J             &kp K      &kp L      &lt 3 SEMI  &mt RIGHT_CONTROL ENTER
+&kp LSHFT   &kp Z       &kp X         &kp C       &kp V                   &kp B            &kp N               &kp M             &kp COMMA  &kp DOT    &trans      &mt RIGHT_SHIFT MINUS
+&lt 6 ESC   &kp LCTRL   &kp LEFT_ALT              &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &kp SLASH  &trans      &trans
+&command_1  &command_2  &kp SPACE     &command_4  &command_3                                                   &kp HOME          &kp PG_UP  &kp ENTER  &kp PG_DN   &kp END
+                                      &kp A                                                                                      &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -54,7 +105,7 @@
 &trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0            &trans      &trans  &kp LC(A)       &kp UP_ARROW    &kp LC(E)             &trans                 &trans
 &trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD              &trans      &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW       &trans                 &trans
 &trans    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL               &none       &trans  &kp LG(LEFT)    &kp LG(RIGHT)   &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)  &trans
-&trans    &trans        &trans                      &kp C_AL_CONTROL_PANEL  &trans      &trans  &trans                          &trans                &trans                 &trans
+&trans    &trans        &trans                      &kp C_AL_CONTROL_PANEL  &trans      &trans  &trans                          &trans                &trans                 &kp ESCAPE
 &kp LEFT  &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                   &kp HOME        &kp PG_UP       &kp ENTER             &kp PG_DN              &kp END
                                       &kp A                                                                     &kp B
             >;
@@ -120,12 +171,12 @@
 
         layer_6 {
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5       &kp LS(N9)        &kp LS(N0)         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-&trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans  &kp F11  &kp F12  &trans  &trans  &trans       &kp PERIOD        &kp N0             &kp N7        &kt N8        &kp N9        &trans
-&trans  &trans   &trans           &trans  &trans       &kp MINUS         &kp PLUS                         &trans        &trans        &trans
-&trans  &trans   &trans   &trans  &trans                                 &trans             &trans        &trans        &trans        &trans
-                          &trans                                                            &trans
+&trans      &kp F1      &kp F2   &kp F3  &kp F4      &kp F5       &kp LS(N9)        &kp LS(N0)         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+&trans      &kp F6      &kp F7   &kp F8  &kp F9      &kp F10      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&trans      &kp F11     &kp F12  &trans  &trans      &trans       &kp PERIOD        &kp N0             &kp N7        &kt N8        &kp N9        &trans
+&trans      &trans      &trans           &trans      &trans       &kp MINUS         &kp PLUS                         &trans        &trans        &trans
+&command_5  &command_6  &trans   &trans  &command_7                                 &trans             &trans        &trans        &trans        &trans
+                                 &trans                                                                &trans
             >;
         };
     };
