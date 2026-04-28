@@ -46,12 +46,12 @@ layers:
   - {t: LANGUAGE 1, h: Mouse}
   - SLASH
   - {t: ▽, type: trans}
-  - ESCAPE
-  - LEFT
-  - UP
+  - {t: ▽, type: trans}
+  - '&command_1'
+  - '&command_2'
   - SPACE
-  - DOWN
-  - RIGHT
+  - '&command_4'
+  - '&command_3'
   - HOME
   - PG UP
   - ENTER
@@ -105,7 +105,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ESCAPE
   - LEFT
   - UP
   - SPACE
@@ -401,11 +401,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&command_5'
+  - '&command_6'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&command_7'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
