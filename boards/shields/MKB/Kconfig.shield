@@ -40,3 +40,6 @@ config SHIELD_MKB_L_TPD
 
 config SHIELD_MKB_L_KEY
     def_bool $(shields_list_contains,MKB_L_KEY)
+
+config SHIELD_MKB_L_TBENC
+    def_bool $(shields_list_contains,MKB_L_TBENC)

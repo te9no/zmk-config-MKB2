@@ -24,7 +24,7 @@ if LVGL
     endchoice
 endif # LVGL
 
-if SHIELD_MKB_L_Base || SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB || SHIELD_MKB_L_RZT || SHIELD_MKB_L_TPD || SHIELD_MKB_L_KEY
+if SHIELD_MKB_L_Base
     config ZMK_KEYBOARD_NAME
         default "MeKaBu"
 
