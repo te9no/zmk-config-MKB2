@@ -20,7 +20,8 @@
 
 / {
     anin0: analog_input_0 {
-        compatible = "zmk,analog-input";
+        compatible = "dya,analog-input";
+        // compatible = "zmk,analog-input";
         sampling-hz = <100>;
         x-ch {
             io-channels = <&adc 2>;
@@ -30,6 +31,7 @@
             scale-multiplier = <1>;
             scale-divisor = <800>;
             invert;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
         };
@@ -41,6 +43,7 @@
             scale-multiplier = <1>;
             scale-divisor = <800>;
             invert;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_Y>;
         };
@@ -50,7 +53,7 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        stick_split: stick_split@0 {
+        stick_split: stick_split@2 {
             compatible = "zmk,input-split";
             status = "okay";
             device = <&anin0>;
