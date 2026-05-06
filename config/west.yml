@@ -60,6 +60,9 @@ manifest:
       remote: cormoran
       revision: main
 
+    - name: zmk-module-analoginput-rpc
+      remote: te9no
+      revision: main
   self:
     path: config
 
