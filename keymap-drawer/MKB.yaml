@@ -46,7 +46,7 @@ layers:
   - {t: LANGUAGE 1, h: Mouse}
   - SLASH
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   - '&command_1'
   - '&command_2'
   - SPACE
