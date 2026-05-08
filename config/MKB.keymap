@@ -29,6 +29,11 @@
             bindings = <&lt 1 K>;
             key-positions = <20 21>;
         };
+
+        scroll2 {
+            bindings = <&lt 1 I>;
+            key-positions = <8 9>;
+        };
     };
 
     macros {
@@ -80,6 +85,13 @@
             bindings = <&kp LG(N7)>;
             label = "COMMAND_7";
         };
+
+        previous_tab: previous_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(TAB)>;
+            label = "PREVIOUS_TAB";
+        };
     };
 
     keymap {
@@ -88,12 +100,12 @@
         default_layer {
             label = "Def";
             bindings = <
-&kp TAB     &kp Q       &kp W         &kp E       &kp R                   &kp T            &kp Y               &kp U             &kp I      &kp O      &kp P       &kp DELETE
-&kp LCTRL   &kp A       &kp S         &kp D       &kp F                   &kp G            &kp H               &kp J             &kp K      &kp L      &lt 3 SEMI  &mt RIGHT_CONTROL ENTER
-&kp LSHFT   &kp Z       &kp X         &kp C       &kp V                   &kp B            &kp N               &kp M             &kp COMMA  &kp DOT    &trans      &mt RIGHT_SHIFT MINUS
-&lt 6 ESC   &kp LCTRL   &kp LEFT_ALT              &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &kp SLASH  &trans      &none
-&command_1  &command_2  &kp SPACE     &command_4  &command_3                                                   &kp HOME          &kp PG_UP  &kp ENTER  &kp PG_DN   &kp END
-                                      &kp A                                                                                      &kp B
+&kp TAB     &kp Q       &kp W         &kp E          &kp R                   &kp T            &kp Y               &kp U             &kp I      &kp O      &lt 3 P     &kp DELETE
+&kp LCTRL   &kp A       &kp S         &kp D          &kp F                   &kp G            &kp H               &kp J             &kp K      &kp L      &lt 3 SEMI  &mt RIGHT_CONTROL ENTER
+&kp LSHFT   &kp Z       &kp X         &kp C          &kp V                   &kp B            &kp N               &kp M             &kp COMMA  &kp DOT    &trans      &mt RIGHT_SHIFT MINUS
+&lt 6 ESC   &kp LCTRL   &kp LEFT_ALT                 &mt LEFT_COMMAND LANG2  &lt 2 SPACE      &lt FUNC BACKSPACE  &lt 3 LANGUAGE_1             &kp SLASH  &trans      &none
+&command_1  &command_2  &kp SPACE     &previous_tab  &command_3                                                   &kp HOME          &kp PG_UP  &kp ENTER  &kp PG_DN   &kp END
+                                      &kp A                                                                                         &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -130,7 +142,7 @@
         mouse_layer {
             label = "Mouse";
             bindings = <
-&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
+&trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB2   &trans     &trans
 &trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &mkp MB1   &mkp MB2   &trans     &trans
 &trans    &trans  &trans     &trans    &trans     &trans      &trans  &trans    &trans     &trans     &trans     &trans
 &trans    &trans  &trans               &trans     &trans      &trans  &trans               &trans     &trans     &trans
@@ -171,12 +183,12 @@
 
         layer_6 {
             bindings = <
-&trans      &kp F1      &kp F2   &kp F3  &kp F4      &kp F5       &kp LS(N9)        &kp LS(N0)         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-&trans      &kp F6      &kp F7   &kp F8  &kp F9      &kp F10      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans      &kp F11     &kp F12  &trans  &trans      &trans       &kp PERIOD        &kp N0             &kp N7        &kt N8        &kp N9        &trans
-&trans      &trans      &trans           &trans      &trans       &kp MINUS         &kp PLUS                         &trans        &trans        &trans
-&command_5  &command_6  &trans   &trans  &command_7                                 &trans             &trans        &trans        &trans        &trans
-                                 &trans                                                                &trans
+&trans      &kp F1      &kp F2   &kp F3         &kp F4      &kp F5       &kp LS(N9)        &kp LS(N0)         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+&trans      &kp F6      &kp F7   &kp F8         &kp F9      &kp F10      &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&trans      &kp F11     &kp F12  &trans         &trans      &trans       &kp PERIOD        &kp N0             &kp N7        &kt N8        &kp N9        &trans
+&trans      &trans      &trans                  &trans      &trans       &kp MINUS         &kp PLUS                         &trans        &trans        &trans
+&command_4  &command_5  &trans   &previous_tab  &command_6                                 &trans             &trans        &trans        &trans        &trans
+                                 &trans                                                                       &trans
             >;
         };
     };
