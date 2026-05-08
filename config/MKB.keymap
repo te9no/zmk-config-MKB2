@@ -89,7 +89,7 @@
         previous_tab: previous_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(TAB)>;
+            bindings = <&kp LC(TAB)>;
             label = "PREVIOUS_TAB";
         };
     };
