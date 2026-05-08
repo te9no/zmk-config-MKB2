@@ -11,7 +11,7 @@ layers:
   - U
   - I
   - O
-  - P
+  - {t: P, h: Mouse}
   - DELETE
   - LCTRL
   - A
@@ -50,7 +50,7 @@ layers:
   - '&command_1'
   - '&command_2'
   - SPACE
-  - '&command_4'
+  - '&previous_tab'
   - '&command_3'
   - HOME
   - PG UP
@@ -186,9 +186,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp MB1'
+  - '&mkp MB2'
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -200,7 +200,7 @@ layers:
   - {t: ▽, type: trans}
   - '&mkp MB1'
   - '&mkp MB2'
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -401,11 +401,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&command_4'
   - '&command_5'
+  - {t: ▽, type: trans}
+  - '&previous_tab'
   - '&command_6'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&command_7'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -416,3 +416,5 @@ layers:
 combos:
 - p: [20, 21]
   k: {t: K, h: Fnc}
+- p: [8, 9]
+  k: {t: I, h: Fnc}
