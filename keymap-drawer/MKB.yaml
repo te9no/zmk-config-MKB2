@@ -76,7 +76,7 @@ layers:
   - AMPERSAND
   - Sft+SINGLE QUOTE
   - DOLLAR
-  - LEFT PARENTHESIS
+  - '&kakko'
   - BACKSLASH
   - HASH
   - FSLH
@@ -88,7 +88,7 @@ layers:
   - F6
   - F7
   - F8
-  - RIGHT PARENTHESIS
+  - '&kagikako'
   - PIPE
   - TILDE
   - INT YEN
@@ -354,3 +354,14 @@ layers:
   - END
   - A
   - B
+combos:
+- p: [19, 31]
+  k: '&mkp LCLK'
+- p: [21, 33]
+  k: '&mkp MB2'
+- p: [20, 32]
+  k: '&mkp MCLK'
+- p: [7, 19]
+  k: '&mkp MB4'
+- p: [8, 20]
+  k: '&mkp MB5'
