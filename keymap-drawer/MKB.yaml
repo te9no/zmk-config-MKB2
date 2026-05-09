@@ -67,11 +67,11 @@ layers:
   - ASTERISK
   - PLUS
   - CARET
-  - F2
-  - F3
-  - F4
-  - F5
-  - {t: ▽, type: trans}
+  - UNDER
+  - LEFT PARENTHESIS
+  - RIGHT PARENTHESIS
+  - EQUAL
+  - DELETE
   - {t: ▽, type: trans}
   - AMPERSAND
   - Sft+SINGLE QUOTE
@@ -79,10 +79,10 @@ layers:
   - LEFT PARENTHESIS
   - BACKSLASH
   - HASH
-  - F7
-  - F8
-  - F9
-  - F10
+  - FSLH
+  - PERCENT
+  - LEFT BRACKET
+  - RIGHT BRACKET
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F6
@@ -91,7 +91,9 @@ layers:
   - RIGHT PARENTHESIS
   - PIPE
   - TILDE
-  - F12
+  - INT YEN
+  - PRINTSCREEN
+  - QUESTION
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -99,10 +101,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
-  - ENTER
-  - {t: ENTER, type: held}
-  - ENTER
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -119,7 +119,7 @@ layers:
   - A
   - B
   Num:
-  - CAPS
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -130,38 +130,38 @@ layers:
   - '8'
   - '9'
   - '0'
+  - DELETE
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - PRINTSCREEN
+  - F2
+  - F3
+  - F4
+  - F5
   - MINUS
-  - EQUAL
-  - LBKT
-  - RBKT
+  - '4'
+  - '5'
+  - '6'
   - BSLH
   - {t: ▽, type: trans}
-  - {t: SPACE, h: LSHFT}
-  - BACKSPACE
-  - DEL
+  - {t: ▽, type: trans}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '0'
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - FSLH
-  - SEMI
-  - SQT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ENTER
-  - ENTER
-  - ENTER
-  - ENTER
-  - ENTER
-  - {t: ENTER, type: held}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
