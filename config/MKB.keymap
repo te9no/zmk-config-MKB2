@@ -25,7 +25,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "Def";
+            label = "0.Base";
             bindings = <
 &kp TAB        &kp Q     &kp W      &kp E     &kp R             &kp T          &kp Y           &kp U              &kp I      &kp O      &kp P      &kp BACKSPACE
 &kp CAPSLOCK   &kp A     &kp S      &kp D     &kp F             &kp G          &kp H           &kp J              &kp K      &kp L      &kp MINUS  &kp ENTER
@@ -39,14 +39,14 @@
         };
 
         function_layer {
-            label = "Fnc";
+            label = "1.Kigo";
             bindings = <
-&kp GRAVE  &kp PG_UP  &kp UP     &kp PG_DN  &kp HOME   &trans         &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &trans
-&tog_ls    &kp LEFT   &kp DOWN   &kp RIGHT  &kp END    &trans         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &trans
-&trans     &kp BKSP   &kp DEL    &trans     &trans     &trans         &kp F11    &kp F12    &trans     &trans     &trans     &trans
-&trans     &trans     &kp LALT              &kp ENTER  &kp ENTER      &kp ENTER  &kp ENTER             &trans     &trans     &trans
-&kp LEFT   &kp UP     &kp SPACE  &kp DOWN   &kp RIGHT                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                 &kp A                                                      &kp B
+&trans    &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK           &kp PLUS           &kp CARET  &kp F2     &kp F3     &kp F4     &kp F5     &trans
+&trans    &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kp LEFT_PARENTHESIS   &kp BACKSLASH      &kp HASH   &kp F7     &kp F8     &kp F9     &kp F10    &trans
+&trans    &kp F6         &kp F7                &kp F8           &kp RIGHT_PARENTHESIS  &kp PIPE           &kp TILDE  &kp F12    &trans     &trans     &trans     &trans
+&trans    &trans         &trans                                 &trans                 &kp ENTER          &kp ENTER  &kp ENTER             &trans     &trans     &trans
+&kp LEFT  &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                            &kp HOME   &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                               &kp A                                                                            &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
