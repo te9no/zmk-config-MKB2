@@ -63,11 +63,11 @@
 
         layer0 {
             layers = <0>;
-            input-processors = <&scroll_runtime_input_processor>;
+            input-processors = <&stick_scroll_runtime_input_processor>;
         };
         layer1 {
             layers = <1>;
-            input-processors = <&mouse_runtime_input_processor>;
+            input-processors = <&stick_mouse_runtime_input_processor>;
         };
     };
 };

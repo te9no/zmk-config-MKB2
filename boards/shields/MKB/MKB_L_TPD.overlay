@@ -49,7 +49,7 @@
         layer0 {
             layers = <0>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                               <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+                               <&zip_xy_to_scroll_mapper &tpd_scroll_runtime_input_processor>;
         };
     };
 };

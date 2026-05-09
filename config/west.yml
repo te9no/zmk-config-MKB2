@@ -21,7 +21,7 @@ manifest:
   projects:
     - name: zmk
       # remote: zmkfirmware
-      remote: te9no
+      remote: cormoran
       revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-rgbled-widget

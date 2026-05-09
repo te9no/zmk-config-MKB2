@@ -6,10 +6,10 @@ include:
   #   snippet: Default zmk-usb-logging studio-rpc-usb-uart
   #   artifact-name: MKB_L_MODULE_TB
 
-  # - board: seeeduino_xiao_ble
-  #   shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled
-  #   snippet: Default zmk-usb-logging studio-rpc-usb-uart
-  #   artifact-name: MKB_L_MODULE_JOY
+  - board: seeeduino_xiao_ble
+    shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled
+    snippet: Default zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_L_MODULE_JOY
 
   # - board: seeeduino_xiao_ble
   #   shield: MKB_L_Base MKB_L_ENC rgbled_adapter nice_oled
@@ -47,10 +47,10 @@ include:
   #   snippet: zmk-usb-logging studio-rpc-usb-uart
   #   artifact-name: MKB_R_MODULE_TBv3
 
-  # - board: seeeduino_xiao_ble
-  #   shield: MKB_R_Base MKB_R_JOY rgbled_adapter nice_oled
-  #   snippet: zmk-usb-logging studio-rpc-usb-uart
-  #   artifact-name: MKB_R_MODULE_JOY
+  - board: seeeduino_xiao_ble
+    shield: MKB_R_Base MKB_R_JOY rgbled_adapter nice_oled
+    snippet: zmk-usb-logging studio-rpc-usb-uart
+    artifact-name: MKB_R_MODULE_JOY
 
   # - board: seeeduino_xiao_ble
   #   shield: MKB_R_Base MKB_R_ENC rgbled_adapter nice_oled

@@ -1,5 +1,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/zmk/runtime_input_processor.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/keys.h>
 #include "MKB_pinctrl_L.dtsi"
@@ -47,6 +48,66 @@
             compatible = "zmk,input-split";
             reg = <3>;
         };
+    };
+
+    stick_mouse_runtime_input_processor: stick_mouse_runtime_input_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "stickm";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        track-remainders;
+        temp-layer-transparent-behavior = <&trans>;
+        temp-layer-kp-behavior = <&kp>;
+        temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
+        #input-processor-cells = <0>;
+    };
+
+    stick_scroll_runtime_input_processor: stick_scroll_runtime_input_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "sticks";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        xy-to-scroll-enabled;
+        scale-divisor = <60>;
+        track-remainders;
+        temp-layer-transparent-behavior = <&trans>;
+        temp-layer-kp-behavior = <&kp>;
+        temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
+        axis-snap-mode = <AXIS_SNAP_MODE_Y>;
+        axis-snap-threshold = <600>;
+        #input-processor-cells = <0>;
+    };
+
+    tpd_mouse_runtime_input_processor: tpd_mouse_runtime_input_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "tpdm";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        track-remainders;
+        temp-layer-transparent-behavior = <&trans>;
+        temp-layer-kp-behavior = <&kp>;
+        temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
+        #input-processor-cells = <0>;
+    };
+
+    tpd_scroll_runtime_input_processor: tpd_scroll_runtime_input_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "tpds";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        xy-to-scroll-enabled;
+        scale-divisor = <60>;
+        track-remainders;
+        temp-layer-transparent-behavior = <&trans>;
+        temp-layer-kp-behavior = <&kp>;
+        temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
+        axis-snap-mode = <AXIS_SNAP_MODE_Y>;
+        axis-snap-threshold = <600>;
+        #input-processor-cells = <0>;
     };
 
     kscan0: kscan0 {

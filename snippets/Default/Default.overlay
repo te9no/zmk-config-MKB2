@@ -48,11 +48,11 @@
         layer0 {
             layers = <0>;
             input-processors = <&zip_xy_to_scroll_mapper>, 
-                               <&scroll_runtime_input_processor>;
+                               <&stick_scroll_runtime_input_processor>;
         };
         layer1 {
             layers = <1>;
-            input-processors = <&scroll_runtime_input_processor>;
+            input-processors = <&stick_mouse_runtime_input_processor>;
         };
     };
     
@@ -62,13 +62,13 @@
         device = <&trackpad_split>;
         
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
-                           <&scroll_runtime_input_processor>;
+                           <&tpd_mouse_runtime_input_processor>;
 
         scroller {
             layers = <5>;
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
                                <&zip_xy_to_scroll_mapper>, 
-                               <&scroll_runtime_input_processor>;
+                               <&tpd_scroll_runtime_input_processor>;
         };
     };
 };
