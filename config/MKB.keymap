@@ -44,7 +44,7 @@
 &trans    &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK           &kp PLUS           &kp CARET  &kp UNDER    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
 &trans    &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kp LEFT_PARENTHESIS   &kp BACKSLASH      &kp HASH   &kp FSLH     &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
 &trans    &kp F6         &kp F7                &kp F8           &kp RIGHT_PARENTHESIS  &kp PIPE           &kp TILDE  &kp INT_YEN  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
-&trans    &trans         &trans                                 &trans                 &trans             &trans     &trans                             &trans                 &trans             &trans
+&trans    &trans         &trans                                 &trans                 &trans             &trans     &mo 5                              &trans                 &trans             &trans
 &kp LEFT  &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                            &kp HOME     &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
                                                &kp A                                                                              &kp B
             >;
@@ -53,12 +53,12 @@
         };
 
         num_layer {
-            label = "Num";
+            label = "2.NumFn";
             bindings = <
 &trans    &kp N1           &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7        &kp N8        &kp N9        &kp N0     &kp DELETE
 &trans    &kp PRINTSCREEN  &kp F2     &kp F3    &kp F4     &kp F5       &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BSLH   &trans
 &trans    &kp F6           &kp F7     &kp F8    &kp F9     &kp F10      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans
-&trans    &trans           &trans               &trans     &trans       &trans     &trans                      &trans        &trans     &trans
+&trans    &trans           &trans               &trans     &trans       &mo 5      &trans                      &trans        &trans     &trans
 &kp LEFT  &kp UP           &kp SPACE  &kp DOWN  &kp RIGHT                          &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN  &kp END
                                       &kp A                                                      &kp B
             >;
@@ -95,7 +95,7 @@
         };
 
         bt_layer {
-            label = "BT";
+            label = "5.BT";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR_ALL  &trans    &trans     &trans     &trans     &trans
 &trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
