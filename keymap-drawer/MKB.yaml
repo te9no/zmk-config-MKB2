@@ -43,7 +43,7 @@ layers:
   - INT MUHENKAN
   - SPACE
   - {t: ENTER, h: 1.Kigo}
-  - {t: BACKSPACE, h: Num}
+  - {t: BACKSPACE, h: 2.NumFn}
   - LEFT
   - DOWN
   - RIGHT
@@ -102,7 +102,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
+  - 5.BT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -118,7 +118,7 @@ layers:
   - END
   - A
   - B
-  Num:
+  2.NumFn:
   - {t: ▽, type: trans}
   - '1'
   - '2'
@@ -160,7 +160,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - 5.BT
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -295,7 +295,7 @@ layers:
   - END
   - A
   - B
-  BT:
+  5.BT:
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
@@ -337,8 +337,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
