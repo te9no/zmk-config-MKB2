@@ -90,8 +90,8 @@ layers:
   - F8
   - '&kagikako'
   - PIPE
+  - INTERNATIONAL 3
   - TILDE
-  - INT YEN
   - PRINTSCREEN
   - QUESTION
   - {t: ▽, type: trans}
@@ -361,7 +361,7 @@ combos:
   k: '&mkp MB2'
 - p: [20, 32]
   k: '&mkp MCLK'
-- p: [7, 19]
+- p: [19, 18]
   k: '&mkp MB4'
-- p: [8, 20]
+- p: [21, 20]
   k: '&mkp MB5'
