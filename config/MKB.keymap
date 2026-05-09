@@ -21,6 +21,51 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        mausuL {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 31>;
+        };
+
+        mausuR {
+            bindings = <&mkp MB2>;
+            key-positions = <21 33>;
+        };
+
+        mausuC {
+            bindings = <&mkp MCLK>;
+            key-positions = <20 32>;
+        };
+
+        mausuBK {
+            bindings = <&mkp MB4>;
+            key-positions = <7 19>;
+        };
+
+        mausuFW {
+            bindings = <&mkp MB5>;
+            key-positions = <8 20>;
+        };
+    };
+
+    macros {
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "KAKKO";
+        };
+
+        kagikako: kagikako {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "KAGIKAKO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,12 +86,12 @@
         function_layer {
             label = "1.Kigo";
             bindings = <
-&trans    &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK           &kp PLUS           &kp CARET  &kp UNDER    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
-&trans    &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kp LEFT_PARENTHESIS   &kp BACKSLASH      &kp HASH   &kp FSLH     &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
-&trans    &kp F6         &kp F7                &kp F8           &kp RIGHT_PARENTHESIS  &kp PIPE           &kp TILDE  &kp INT_YEN  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
-&trans    &trans         &trans                                 &trans                 &trans             &trans     &mo 5                              &trans                 &trans             &trans
-&kp LEFT  &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                            &kp HOME     &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
-                                               &kp A                                                                              &kp B
+&trans    &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK  &kp PLUS           &kp CARET  &kp UNDER    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
+&trans    &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kakko        &kp BACKSLASH      &kp HASH   &kp FSLH     &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
+&trans    &kp F6         &kp F7                &kp F8           &kagikako     &kp PIPE           &kp TILDE  &kp INT_YEN  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
+&trans    &trans         &trans                                 &trans        &trans             &trans     &mo 5                              &trans                 &trans             &trans
+&kp LEFT  &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                   &kp HOME     &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
+                                               &kp A                                                                     &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
