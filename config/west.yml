@@ -40,8 +40,11 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: te9no
       revision: main
-    - name: cirque-input-module
-      remote: petejohanson
+    - name: zmk-module-cirque-trackpad
+      remote: te9no
+      revision: main
+    - name: zmk-module-analoginput-rpc
+      remote: te9no
       revision: main
     - name: zmk-driver-MLX90393
       remote: te9no
@@ -63,4 +66,4 @@ manifest:
   self:
     path: config
 
-    
+

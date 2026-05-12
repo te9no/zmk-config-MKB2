@@ -1,0 +1,1 @@
+dya	DYA / MeKaBu analog input module

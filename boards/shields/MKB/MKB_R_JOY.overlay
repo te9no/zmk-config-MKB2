@@ -20,16 +20,20 @@
 
 / {
     anin0: analog_input_0 {
-        compatible = "zmk,analog-input";
+        compatible = "dya,analog-input";
         sampling-hz = <100>;
+        report-interval-ms = <8>;
         x-ch {
             io-channels = <&adc 2>;
             mv-mid = <1600>;
             mv-min-max = <1600>;
             mv-deadzone = <88>;
             scale-multiplier = <1>;
-            scale-divisor = <800>;
+            scale-divisor = <1>;
             invert;
+            output-min = <0>;
+            output-max = <24>;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_X>;
         };
@@ -39,8 +43,11 @@
             mv-min-max = <1600>;
             mv-deadzone = <88>;
             scale-multiplier = <1>;
-            scale-divisor = <800>;
+            scale-divisor = <1>;
             invert;
+            output-min = <0>;
+            output-max = <24>;
+            response-curve = <2>;
             evt-type = <INPUT_EV_REL>;
             input-code = <INPUT_REL_Y>;
         };
