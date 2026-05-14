@@ -61,11 +61,11 @@ layers:
   - B
   Fnc:
   - {t: ▽, type: trans}
+  - ''
   - '1'
   - '2'
   - '3'
   - '0'
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+A
   - UP ARROW
@@ -73,11 +73,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ''
   - '4'
   - '5'
   - '6'
-  - PERIOD
-  - {t: ▽, type: trans}
+  - ''
   - {t: ▽, type: trans}
   - LEFT ARROW
   - DOWN ARROW
@@ -85,10 +85,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ''
   - '7'
   - '8'
   - '9'
-  - EQUAL
   - ''
   - {t: ▽, type: trans}
   - Gui+LEFT
