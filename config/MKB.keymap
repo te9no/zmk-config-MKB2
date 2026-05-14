@@ -114,12 +114,12 @@
         function_layer {
             label = "Fnc";
             bindings = <
-&trans    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0            &trans      &trans  &kp LC(A)       &kp UP_ARROW    &kp LC(E)             &trans                 &trans
-&trans    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PERIOD              &trans      &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW       &trans                 &trans
-&trans    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL               &none       &trans  &kp LG(LEFT)    &kp LG(RIGHT)   &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)  &trans
-&trans    &trans        &trans                      &kp C_AL_CONTROL_PANEL  &trans      &trans  &trans                          &trans                &trans                 &kp ESCAPE
-&kp LEFT  &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                   &kp HOME        &kp PG_UP       &kp ENTER             &kp PG_DN              &kp END
-                                      &kp A                                                                     &kp B
+&trans    &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3            &kp N0      &trans  &kp LC(A)       &kp UP_ARROW    &kp LC(E)             &trans                 &trans
+&trans    &none   &kp NUMBER_4  &kp N5        &kp NUMBER_6            &none       &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW       &trans                 &trans
+&trans    &none   &kp N7        &kp N8        &kp N9                  &none       &trans  &kp LG(LEFT)    &kp LG(RIGHT)   &kp RG(LEFT_BRACKET)  &kp RG(RIGHT_BRACKET)  &trans
+&trans    &trans  &trans                      &kp C_AL_CONTROL_PANEL  &trans      &trans  &trans                          &trans                &trans                 &kp ESCAPE
+&kp LEFT  &kp UP  &kp SPACE     &kp DOWN      &kp RIGHT                                   &kp HOME        &kp PG_UP       &kp ENTER             &kp PG_DN              &kp END
+                                &kp A                                                                     &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
