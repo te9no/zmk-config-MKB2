@@ -79,8 +79,8 @@
             #binding-cells = <0>;
             bindings = <&kp D &kp A &kp I &kp S &kp U &kp K &kp E &kp DOT &kp S &kp H &kp I &kp O &kp M &kp I &kp T &kp S &kp U &kp DOT &kp E &kp P &kp AT &kp H &kp I &kp T &kp A &kp C &kp H &kp I &kp MINUS &kp S &kp Y &kp S &kp T &kp E &kp M &kp S &kp DOT &kp C &kp O &kp M>;
             label = "MEERU";
-            tap-ms = <30>;
-            wait-ms = <23>;
+            tap-ms = <32>;
+            wait-ms = <41>;
         };
 
         Kajitsuka: Kajitsuka {
