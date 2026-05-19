@@ -60,7 +60,7 @@ layers:
   - A
   - B
   1.Kigo:
-  - LANG ZENKAKUHANKAKU
+  - GRAVE
   - QUESTION
   - DOUBLE QUOTES
   - '!'
@@ -119,7 +119,7 @@ layers:
   - A
   - B
   2.NumFn:
-  - LANG ZENKAKUHANKAKU
+  - GRAVE
   - '1'
   - '2'
   - '3'
@@ -323,8 +323,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - '&Kajitsuka'
+  - '&MEERU2'
   - '&MEERU'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
