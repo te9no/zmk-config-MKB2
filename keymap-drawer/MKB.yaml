@@ -60,7 +60,7 @@ layers:
   - A
   - B
   1.Kigo:
-  - {t: ▽, type: trans}
+  - LANG ZENKAKUHANKAKU
   - QUESTION
   - DOUBLE QUOTES
   - '!'
@@ -96,7 +96,7 @@ layers:
   - QUESTION
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -119,7 +119,7 @@ layers:
   - A
   - B
   2.NumFn:
-  - {t: ▽, type: trans}
+  - LANG ZENKAKUHANKAKU
   - '1'
   - '2'
   - '3'
@@ -155,7 +155,7 @@ layers:
   - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -324,8 +324,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&Kajitsuka'
+  - '&MEERU'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
