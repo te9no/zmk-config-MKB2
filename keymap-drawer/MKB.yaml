@@ -365,3 +365,5 @@ combos:
   k: '&mkp MB4'
 - p: [21, 20]
   k: '&mkp MB5'
+- p: [19, 20]
+  k: '&mkp LCLK'
