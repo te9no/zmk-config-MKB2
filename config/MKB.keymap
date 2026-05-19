@@ -48,6 +48,11 @@
             bindings = <&mkp MB5>;
             key-positions = <21 20>;
         };
+
+        hidari2 {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
     };
 
     macros {
