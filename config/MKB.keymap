@@ -77,11 +77,7 @@
         MEERU: MEERU {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&kp D &kp A &kp I &kp S &kp U &kp K &kp E &kp DOT &kp S &kp H &kp I &kp O &kp M &kp I &kp T &kp S &kp U &kp DOT &kp E &kp P>,
-                <&macro_wait_time 100>,
-                <&kp LS(N2) &kp H &kp I &kp T &kp A &kp C &kp H &kp I &kp MINUS &kp S &kp Y &kp S &kp T &kp E &kp M &kp S &kp DOT &kp C &kp O &kp M>;
-
+            bindings = <&kp D &kp A &kp I &kp S &kp U &kp K &kp E &kp DOT &kp S &kp H &kp I &kp O &kp M &kp I &kp T &kp S &kp U &kp DOT &kp E &kp P>;
             label = "MEERU";
             tap-ms = <59>;
             wait-ms = <64>;
@@ -94,6 +90,13 @@
             label = "KAJITSUKA";
             tap-ms = <22>;
             wait-ms = <22>;
+        };
+
+        MEERU2: MEERU2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp H &kp I &kp T &kp A &kp C &kp H &kp I &kp MINUS &kp S &kp Y &kp S &kp T &kp E &kp M &kp S &kp DOT &kp C &kp O &kp M>;
+            label = "MEERU2";
         };
     };
 
@@ -117,12 +120,12 @@
         function_layer {
             label = "1.Kigo";
             bindings = <
-&kp LANG_ZENKAKUHANKAKU  &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK  &kp PLUS           &kp CARET            &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
-&trans                   &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kakko        &kp BACKSLASH      &kp HASH             &kp FSLH   &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
-&trans                   &kp F6         &kp F7                &kp F8           &kagikako     &kp PIPE           &kp INTERNATIONAL_3  &kp TILDE  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
-&kp LCTRL                &trans         &trans                                 &trans        &trans             &trans               &mo 5                            &trans                 &trans             &trans
-&kp LEFT                 &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                             &kp HOME   &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
-                                                              &kp A                                                                             &kp B
+&kp GRAVE  &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK  &kp PLUS           &kp CARET            &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
+&trans     &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kakko        &kp BACKSLASH      &kp HASH             &kp FSLH   &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
+&trans     &kp F6         &kp F7                &kp F8           &kagikako     &kp PIPE           &kp INTERNATIONAL_3  &kp TILDE  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
+&kp LCTRL  &trans         &trans                                 &trans        &trans             &trans               &mo 5                            &trans                 &trans             &trans
+&kp LEFT   &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                             &kp HOME   &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
+                                                &kp A                                                                             &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -131,12 +134,12 @@
         num_layer {
             label = "2.NumFn";
             bindings = <
-&kp LANG_ZENKAKUHANKAKU  &kp N1           &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7        &kp N8        &kp N9        &kp N0     &kp DELETE
-&trans                   &kp PRINTSCREEN  &kp F2     &kp F3    &kp F4     &kp F5       &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BSLH   &trans
-&trans                   &kp F6           &kp F7     &kp F8    &kp F9     &kp F10      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans
-&kp LCTRL                &trans           &trans               &trans     &trans       &mo 5      &trans                      &trans        &trans     &trans
-&kp LEFT                 &kp UP           &kp SPACE  &kp DOWN  &kp RIGHT                          &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN  &kp END
-                                                     &kp A                                                      &kp B
+&kp GRAVE  &kp N1           &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7        &kp N8        &kp N9        &kp N0     &kp DELETE
+&trans     &kp PRINTSCREEN  &kp F2     &kp F3    &kp F4     &kp F5       &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BSLH   &trans
+&trans     &kp F6           &kp F7     &kp F8    &kp F9     &kp F10      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans
+&kp LCTRL  &trans           &trans               &trans     &trans       &mo 5      &trans                      &trans        &trans     &trans
+&kp LEFT   &kp UP           &kp SPACE  &kp DOWN  &kp RIGHT                          &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN  &kp END
+                                       &kp A                                                      &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -175,7 +178,7 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR_ALL  &trans    &trans     &trans     &trans     &trans
 &trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
-&trans      &trans        &trans        &trans        &Kajitsuka    &MEERU            &trans          &trans    &trans     &trans     &trans     &trans
+&trans      &trans        &trans        &Kajitsuka    &MEERU2       &MEERU            &trans          &trans    &trans     &trans     &trans     &trans
 &trans      &trans        &trans                      &trans        &trans            &trans          &trans               &trans     &trans     &trans
 &kp LEFT    &kp UP        &kp SPACE     &kp DOWN      &kp RIGHT                                       &kp HOME  &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
                                         &kp A                                                                   &kp B
