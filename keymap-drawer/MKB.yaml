@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: MKB}
 layers:
-  0.Base:
+  Base:
   - TAB
   - Q
   - W
@@ -37,13 +37,13 @@ layers:
   - DOT
   - UP
   - FSLH
-  - {t: ESC, h: LCTRL}
+  - LCTRL
   - LGUI
   - LALT
   - INT MUHENKAN
   - SPACE
-  - {t: ENTER, h: 1.Kigo}
-  - {t: BACKSPACE, h: 2.NumFn}
+  - {t: ENTER, h: Kigo}
+  - {t: BACKSPACE, h: 12Fn}
   - LEFT
   - DOWN
   - RIGHT
@@ -59,8 +59,8 @@ layers:
   - END
   - A
   - B
-  1.Kigo:
-  - GRAVE
+  Kigo:
+  - LANGUAGE 5
   - QUESTION
   - DOUBLE QUOTES
   - '!'
@@ -102,7 +102,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - 5.BT
+  - BT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -118,8 +118,8 @@ layers:
   - END
   - A
   - B
-  2.NumFn:
-  - GRAVE
+  12Fn:
+  - LANGUAGE 5
   - '1'
   - '2'
   - '3'
@@ -160,7 +160,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - 5.BT
+  - BT
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -295,7 +295,7 @@ layers:
   - END
   - A
   - B
-  5.BT:
+  BT:
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
@@ -367,3 +367,9 @@ combos:
   k: '&mkp MB5'
 - p: [19, 20]
   k: '&mkp LCLK'
+- p: [0, 1, 12, 13]
+  k: ESCAPE
+- p: [18, 30]
+  k: INT HENKAN
+- p: [17, 29]
+  k: INT MUHENKAN
