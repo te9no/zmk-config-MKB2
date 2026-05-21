@@ -53,6 +53,21 @@
             bindings = <&mkp LCLK>;
             key-positions = <19 20>;
         };
+
+        esuke-pu {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1 12 13>;
+        };
+
+        nihongoon {
+            bindings = <&kp INT_HENKAN>;
+            key-positions = <18 30>;
+        };
+
+        nihongooff {
+            bindings = <&kp INT_MUHENKAN>;
+            key-positions = <17 29>;
+        };
     };
 
     macros {
@@ -104,42 +119,42 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "0.Base";
+            label = "Base";
             bindings = <
-&kp TAB        &kp Q     &kp W      &kp E     &kp R             &kp T          &kp Y           &kp U              &kp I      &kp O      &kp P      &kp BACKSPACE
-&kp CAPSLOCK   &kp A     &kp S      &kp D     &kp F             &kp G          &kp H           &kp J              &kp K      &kp L      &kp MINUS  &kp ENTER
-&kp LSHFT      &kp Z     &kp X      &kp C     &kp V             &kp B          &kp N           &kp M              &kp COMMA  &kp DOT    &kp UP     &kp FSLH
-&mt LCTRL ESC  &kp LGUI  &kp LALT             &kp INT_MUHENKAN  &kp SPACE      &lt FUNC ENTER  &lt NUM BACKSPACE             &kp LEFT   &kp DOWN   &kp RIGHT
-&kp LEFT       &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                        &kp HOME           &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
-                                    &kp A                                                                         &kp B
+&kp TAB       &kp Q     &kp W      &kp E     &kp R             &kp T          &kp Y           &kp U              &kp I      &kp O      &kp P      &kp BACKSPACE
+&kp CAPSLOCK  &kp A     &kp S      &kp D     &kp F             &kp G          &kp H           &kp J              &kp K      &kp L      &kp MINUS  &kp ENTER
+&kp LSHFT     &kp Z     &kp X      &kp C     &kp V             &kp B          &kp N           &kp M              &kp COMMA  &kp DOT    &kp UP     &kp FSLH
+&kp LCTRL     &kp LGUI  &kp LALT             &kp INT_MUHENKAN  &kp SPACE      &lt FUNC ENTER  &lt NUM BACKSPACE             &kp LEFT   &kp DOWN   &kp RIGHT
+&kp LEFT      &kp UP    &kp SPACE  &kp DOWN  &kp RIGHT                                        &kp HOME           &kp PG_UP  &kp ENTER  &kp PG_DN  &kp END
+                                   &kp A                                                                         &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
-            label = "1.Kigo";
+            label = "Kigo";
             bindings = <
-&kp GRAVE  &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK  &kp PLUS           &kp CARET            &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
-&trans     &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kakko        &kp BACKSLASH      &kp HASH             &kp FSLH   &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
-&trans     &kp F6         &kp F7                &kp F8           &kagikako     &kp PIPE           &kp INTERNATIONAL_3  &kp TILDE  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
-&kp LCTRL  &trans         &trans                                 &trans        &trans             &trans               &mo 5                            &trans                 &trans             &trans
-&kp LEFT   &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                             &kp HOME   &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
-                                                &kp A                                                                             &kp B
+&kp LANGUAGE_5  &kp QUESTION   &kp DOUBLE_QUOTES     &kp EXCLAMATION  &kp ASTERISK  &kp PLUS           &kp CARET            &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DELETE
+&trans          &kp AMPERSAND  &kp LS(SINGLE_QUOTE)  &kp DOLLAR       &kakko        &kp BACKSLASH      &kp HASH             &kp FSLH   &kp PERCENT           &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &trans
+&trans          &kp F6         &kp F7                &kp F8           &kagikako     &kp PIPE           &kp INTERNATIONAL_3  &kp TILDE  &kp PRINTSCREEN       &kp QUESTION           &trans             &trans
+&kp LCTRL       &trans         &trans                                 &trans        &trans             &trans               &mo 5                            &trans                 &trans             &trans
+&kp LEFT        &kp UP         &kp SPACE             &kp DOWN         &kp RIGHT                                             &kp HOME   &kp PG_UP             &kp ENTER              &kp PG_DN          &kp END
+                                                     &kp A                                                                             &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         num_layer {
-            label = "2.NumFn";
+            label = "12Fn";
             bindings = <
-&kp GRAVE  &kp N1           &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7        &kp N8        &kp N9        &kp N0     &kp DELETE
-&trans     &kp PRINTSCREEN  &kp F2     &kp F3    &kp F4     &kp F5       &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BSLH   &trans
-&trans     &kp F6           &kp F7     &kp F8    &kp F9     &kp F10      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans
-&kp LCTRL  &trans           &trans               &trans     &trans       &mo 5      &trans                      &trans        &trans     &trans
-&kp LEFT   &kp UP           &kp SPACE  &kp DOWN  &kp RIGHT                          &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN  &kp END
-                                       &kp A                                                      &kp B
+&kp LANGUAGE_5  &kp N1           &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7        &kp N8        &kp N9        &kp N0     &kp DELETE
+&trans          &kp PRINTSCREEN  &kp F2     &kp F3    &kp F4     &kp F5       &kp MINUS  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp BSLH   &trans
+&trans          &kp F6           &kp F7     &kp F8    &kp F9     &kp F10      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans
+&kp LCTRL       &trans           &trans               &trans     &trans       &mo 5      &trans                      &trans        &trans     &trans
+&kp LEFT        &kp UP           &kp SPACE  &kp DOWN  &kp RIGHT                          &kp HOME      &kp PG_UP     &kp ENTER     &kp PG_DN  &kp END
+                                            &kp A                                                      &kp B
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -174,7 +189,7 @@
         };
 
         bt_layer {
-            label = "5.BT";
+            label = "BT";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR_ALL  &trans    &trans     &trans     &trans     &trans
 &trans      &trans        &trans        &trans        &trans        &trans            &trans          &trans    &trans     &trans     &trans     &trans
