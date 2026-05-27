@@ -92,11 +92,11 @@ layers:
   - PIPE
   - INTERNATIONAL 3
   - TILDE
-  - PRINTSCREEN
+  - AT
   - QUESTION
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -155,7 +155,7 @@ layers:
   - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LCTRL
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -367,7 +367,7 @@ combos:
   k: '&mkp MB5'
 - p: [19, 20]
   k: '&mkp LCLK'
-- p: [0, 1, 12, 13]
+- p: [0, 1]
   k: ESCAPE
 - p: [18, 30]
   k: INT HENKAN
