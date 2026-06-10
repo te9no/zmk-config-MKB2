@@ -373,3 +373,9 @@ combos:
   k: INT HENKAN
 - p: [17, 29]
   k: INT MUHENKAN
+- p: [1, 2]
+  k: LANGUAGE 5
+- p: [3, 2]
+  k: LANGUAGE 4
+- p: [3, 4]
+  k: LANGUAGE 3
