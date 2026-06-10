@@ -68,6 +68,21 @@
             bindings = <&kp INT_MUHENKAN>;
             key-positions = <17 29>;
         };
+
+        hanzenn {
+            bindings = <&kp LANGUAGE_5>;
+            key-positions = <1 2>;
+        };
+
+        hiragana {
+            bindings = <&kp LANGUAGE_4>;
+            key-positions = <3 2>;
+        };
+
+        katakana {
+            bindings = <&kp LANGUAGE_3>;
+            key-positions = <3 4>;
+        };
     };
 
     macros {
@@ -76,8 +91,8 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
             label = "KAKKO";
-            wait-ms = <50>;
-            tap-ms = <30>;
+            wait-ms = <60>;
+            tap-ms = <42>;
         };
 
         kagikako: kagikako {
@@ -95,7 +110,7 @@
             bindings = <&kp D &kp A &kp I &kp S &kp U &kp K &kp E &kp DOT &kp S &kp H &kp I &kp O &kp M &kp I &kp T &kp S &kp U &kp DOT &kp E &kp P>;
             label = "MEERU";
             tap-ms = <59>;
-            wait-ms = <64>;
+            wait-ms = <39>;
         };
 
         Kajitsuka: Kajitsuka {
