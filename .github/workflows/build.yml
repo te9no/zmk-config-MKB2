@@ -1,75 +1,111 @@
 name: Build ZMK firmware
-on: 
+
+on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: "Regex matched against artifact-name, board, shield, and snippet. Use 'all' for every target."
+        required: false
+        default: "all"
+      commit_firmware:
+        description: "Commit built firmware files back to this branch."
+        required: false
+        default: true
+        type: boolean
+  schedule:
+    # Daily build health check at 05:00 JST.
+    - cron: "0 20 * * *"
   push:
     paths:
-      - config/**
-      - boards/**
-      - build.yaml
- 
+      - "config/**"
+      - "boards/**"
+      - "snippets/**"
+      - "build.yaml"
+      - "zephyr/module.yml"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3 
+    uses: te9no/zmk-workspace/.github/workflows/build-zmk-firmware.yml@main
+    permissions:
+      contents: write
+      actions: read
+    with:
+      target: ${{ inputs.target || 'all' }}
+      commit_firmware: ${{ github.event_name == 'push' || inputs.commit_firmware == true }}
+      build_yaml: "build.yaml"
+      firmware_folder: "firmware"
+      max_parallel: 4
 
-  upload-firmware:
-    needs: build
+  notify-daily-build-failure:
+    name: 🚨 Notify daily build failure
     runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: ${{ (inputs.amend_commit == true && 2) || 1 }}
-          submodules: recursive
-          
-      - name: Get branch name
-        id: branch-name
-        run: |
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-          echo "Branch name is $BRANCH_NAME"
-
-      - name: Prepare firmware directory
-        run: |
-          mkdir -p firmware/${{ steps.branch-name.outputs.branch }}
-          rm -rf firmware/${{ steps.branch-name.outputs.branch }}/*
-          echo "Created directory firmware/${{ steps.branch-name.outputs.branch }}"
-
-      - name: Get last commit message
-        id: last_commit_message
-        if: inputs.amend_commit == true && (inputs.destination == 'commit' || inputs.destination == 'both')
-        run: |
-          echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
-
-      - name: Download firmware artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: firmware/${{ steps.branch-name.outputs.branch }}
-
-      - name: Commit updated images
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: 'firmware/**/*'
-          commit_message: 'Update firmware files for branch ${{ steps.branch-name.outputs.branch }}'
-          commit_options: '--no-verify'
-          push_options: '--no-verify'
-
-      - name: Artifact upload
-        id: artifact-upload-step
-        if: ( inputs.destination == 'artifact' || inputs.destination == 'both' )
-        uses: actions/upload-artifact@v4
-        with:
-          name: '${{ inputs.artifact_name }}'
-          path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
-
-  notify:
     needs: build
-    runs-on: ubuntu-latest
-    continue-on-error: true
+    if: ${{ always() && github.event_name == 'schedule' && needs.build.result == 'failure' }}
+    permissions:
+      issues: write
+      actions: read
+      contents: read
     steps:
-      - uses: stegzilla/discord-notify@v2
+      - name: 🚨 Create or update failure issue
+        uses: actions/github-script@v7
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          title: Completed
-          message: Completed
-        if: ${{ always() }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = '🚨 Daily ZMK firmware build failed';
+            const label = 'build-health';
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = [
+              '## 🚨 Daily ZMK firmware build failed',
+              '',
+              `- 🧭 Workflow: ${context.workflow}`,
+              `- 🌿 Branch: ${context.ref.replace('refs/heads/', '')}`,
+              `- 🔁 Run: ${runUrl}`,
+              `- 🕒 Triggered at: ${new Date().toISOString()}`,
+              '',
+              'Please inspect the failed build logs and fix the firmware configuration or module revision drift.'
+            ].join('\n');
+
+            try {
+              await github.rest.issues.createLabel({
+                owner,
+                repo,
+                name: label,
+                color: 'D73A4A',
+                description: 'Daily firmware build health checks'
+              });
+            } catch (error) {
+              if (error.status !== 422) throw error;
+            }
+
+            const issues = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: label,
+              per_page: 100
+            });
+            const existing = issues.data.find((issue) => issue.title === title);
+
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: existing.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: [label]
+              });
+            }

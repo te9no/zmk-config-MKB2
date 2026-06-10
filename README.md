@@ -57,7 +57,7 @@ Thrives in collaborative environments, particularly hackathons and technical con
 単体での生息よりも、共創型の環境下において最も高いパフォーマンスを発揮する。
 
 ### Current Keymap Configuration | 現在のキーマップ構成
-![MeKaBu Keymap](keymap-drawer/MKB.svg)
+![Keymap](keymap-svg/MKB.svg)
 
 ## Etymology | 語源
 The name "MeKaBu" encompasses multiple meanings:
