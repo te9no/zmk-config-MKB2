@@ -13,7 +13,6 @@ on:
 
 jobs:
   draw-keymap-svg:
-    needs: draw
     uses: te9no/zmk-workspace/.github/workflows/draw-keymap-svg.yml@main
     permissions:
       contents: write
