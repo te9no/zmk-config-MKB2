@@ -40,6 +40,8 @@ jobs:
       commit_firmware: ${{ github.event_name == 'push' || inputs.commit_firmware == true }}
       build_yaml: "build.yaml"
       firmware_folder: "firmware"
+      update_build_health: true
+      badge_folder: "badges/build-health"
       max_parallel: 4
 
   notify-daily-build-failure:

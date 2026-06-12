@@ -1,5 +1,7 @@
 ﻿# Futhesia Moduora (MeKaBu) - フセシア・モデュオラ（メカブ）
 
+[![Build Health](badges/build-health/zmk-config-MKB2/main/build-health.svg)](https://github.com/te9no/zmk-config-MKB2/actions/workflows/build.yml?query=branch%3Amain)
+
 ```
                                                                                          
                                 :-:                                                      
