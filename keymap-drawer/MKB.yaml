@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: MKB}
 layers:
-  Def:
+  Base:
   - TAB
   - Q
   - W
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - BKSP
-  - {t: ESC, h: BT}
+  - BACKSPACE
+  - CAPSLOCK
   - A
   - S
   - D
@@ -23,8 +23,8 @@ layers:
   - J
   - K
   - L
-  - SEMI
-  - {t: SQT, h: Mouse}
+  - MINUS
+  - ENTER
   - LSHFT
   - Z
   - X
@@ -37,13 +37,13 @@ layers:
   - DOT
   - UP
   - FSLH
-  - {t: ESC, h: LCTL}
+  - LCTRL
   - LGUI
   - LALT
-  - {t: SPACE, h: Num}
-  - {t: SPACE, h: Fnc}
-  - {t: SPACE, h: Fnc}
-  - {t: SPACE, h: Num}
+  - INT MUHENKAN
+  - SPACE
+  - {t: ENTER, h: Kigo}
+  - {t: BACKSPACE, h: 12Fn}
   - LEFT
   - DOWN
   - RIGHT
@@ -59,50 +59,50 @@ layers:
   - END
   - A
   - B
-  Fnc:
-  - GRAVE
-  - PG UP
-  - UP
-  - PG DN
-  - HOME
+  Kigo:
+  - LANGUAGE 5
+  - QUESTION
+  - DOUBLE QUOTES
+  - '!'
+  - ASTERISK
+  - PLUS
+  - CARET
+  - UNDER
+  - LEFT PARENTHESIS
+  - RIGHT PARENTHESIS
+  - EQUAL
+  - DELETE
   - {t: ▽, type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
+  - AMPERSAND
+  - Sft+SINGLE QUOTE
+  - DOLLAR
+  - '&kakko'
+  - BACKSLASH
+  - HASH
+  - FSLH
+  - PERCENT
+  - LEFT BRACKET
+  - RIGHT BRACKET
   - {t: ▽, type: trans}
-  - '&tog_ls'
-  - LEFT
-  - DOWN
-  - RIGHT
-  - END
   - {t: ▽, type: trans}
   - F6
   - F7
   - F8
-  - F9
-  - F10
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BKSP
-  - DEL
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F11
-  - F12
+  - '&kagikako'
+  - PIPE
+  - INTERNATIONAL 3
+  - TILDE
+  - AT
+  - QUESTION
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LALT
-  - ENTER
-  - {t: ENTER, type: held}
-  - ENTER
-  - ENTER
+  - {t: ▽, type: trans}
+  - {type: held}
+  - BT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -118,8 +118,8 @@ layers:
   - END
   - A
   - B
-  Num:
-  - CAPS
+  12Fn:
+  - LANGUAGE 5
   - '1'
   - '2'
   - '3'
@@ -130,38 +130,38 @@ layers:
   - '8'
   - '9'
   - '0'
+  - DELETE
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - PRINTSCREEN
+  - F2
+  - F3
+  - F4
+  - F5
   - MINUS
-  - EQUAL
-  - LBKT
-  - RBKT
+  - '4'
+  - '5'
+  - '6'
   - BSLH
   - {t: ▽, type: trans}
-  - {t: SPACE, h: LSHFT}
-  - BACKSPACE
-  - DEL
+  - {t: ▽, type: trans}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - '0'
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - FSLH
-  - SEMI
-  - SQT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ENTER
-  - ENTER
-  - {t: ENTER, type: held}
-  - ENTER
-  - ENTER
-  - ENTER
+  - BT
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -201,7 +201,7 @@ layers:
   - '&mkp MB3'
   - '&mkp MB2'
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -308,37 +308,37 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&Kajitsuka'
+  - '&MEERU2'
+  - '&MEERU'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -354,3 +354,28 @@ layers:
   - END
   - A
   - B
+combos:
+- p: [19, 31]
+  k: '&mkp LCLK'
+- p: [21, 33]
+  k: '&mkp MB2'
+- p: [20, 32]
+  k: '&mkp MCLK'
+- p: [19, 18]
+  k: '&mkp MB4'
+- p: [21, 20]
+  k: '&mkp MB5'
+- p: [19, 20]
+  k: '&mkp LCLK'
+- p: [0, 1]
+  k: ESCAPE
+- p: [18, 30]
+  k: INT HENKAN
+- p: [17, 29]
+  k: INT MUHENKAN
+- p: [1, 2]
+  k: LANGUAGE 5
+- p: [3, 2]
+  k: LANGUAGE 4
+- p: [3, 4]
+  k: LANGUAGE 3
