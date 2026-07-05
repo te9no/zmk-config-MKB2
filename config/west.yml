@@ -41,9 +41,9 @@ manifest:
       remote: te9no
       revision: main
 
-    - name: zmk-layout-shift
-      remote: kot149
-      revision: main
+#    - name: zmk-layout-shift
+#      remote: kot149
+#      revision: main
 
     - name: zmk-input-processor-keybind
       remote: te9no
