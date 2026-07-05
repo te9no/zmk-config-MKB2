@@ -10,46 +10,26 @@ on:
 
 jobs:
   build:
-    uses: te9no/zmk/.github/workflows/build-user-config.yml@v0.3-branch+dya
-
-  upload-firmware:
-    needs: build
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
           submodules: recursive
 
-      - name: Get branch name
-        id: branch-name
+      - name: Install west + deps
         run: |
-          BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          pip install west
+          sudo apt-get update
+          sudo apt-get install -y ninja-build cmake gcc-arm-none-eabi
 
-      - name: Prepare firmware directory
+      - name: West init
+        run: west init -l .
+
+      - name: West update
+        run: west update
+
+      - name: Build firmware
         run: |
-          mkdir -p firmware/${{ steps.branch-name.outputs.branch }}
-          rm -rf firmware/${{ steps.branch-name.outputs.branch }}/*
-
-      - name: Download firmware artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: firmware/${{ steps.branch-name.outputs.branch }}
-
-      - name: Commit updated images
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          file_pattern: 'firmware/**/*'
-          commit_message: 'Update firmware files for branch ${{ steps.branch-name.outputs.branch }}'
-          commit_options: '--no-verify'
-          push_options: '--no-verify'
-
-      - name: Artifact upload
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: 'firmware'
-          path: 'firmware/${{ steps.branch-name.outputs.branch }}/*'
+          west build -s zmk/app -b seeeduino_xiao_ble -- \
+            -DSHIELD="MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled"
