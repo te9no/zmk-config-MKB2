@@ -3,6 +3,6 @@ id: MeKaBu
 name: MeKaBu
 type: shield
 url: https://github.com/Modulable-Keyboard-Developer/zmk-config-MKB
-requires: [seeeduino_xiao_ble]
+requires: [xiao_ble]
 features:
   - keys

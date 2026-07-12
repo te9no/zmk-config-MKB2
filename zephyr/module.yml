@@ -1,4 +1,5 @@
 build:
+  cmake: .
   settings:
     board_root: .
     snippet_root: .

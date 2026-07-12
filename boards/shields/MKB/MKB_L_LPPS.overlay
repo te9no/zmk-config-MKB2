@@ -1,0 +1,188 @@
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/spi/spi.h>
+#include <common/nordic/nrf52840_uf2_boot_mode.dtsi>
+#include <zephyr/dt-bindings/gpio/gpio_ads1220.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 4)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 12)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 13)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 4)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 12)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 13)>;
+            low-power-enable;
+        };
+    };
+};
+
+&kscan1 {
+    /delete-property/ interrupt-gpios;
+    poll-period-ms = <10>;
+};
+
+/ {
+    bootloader_trigger: bootloader_trigger {
+        compatible = "zmk,cdc-acm-bootloader-trigger";
+        cdc-port = <&snippet_zmk_usb_logging_uart>;
+    };
+
+    gpio_ads1220: gpio_ads1220 {
+        compatible = "ti,ads1220-gpio";
+        status = "okay";
+        gpio-controller;
+        #gpio-cells = <2>;
+        dev-reg = <0>;
+        idac-ua-high = <250>;
+        idac-ua-low = <0>;
+        skip-reg-write-high;
+    };
+
+    lpps_input: lpps_input {
+        compatible = "zmk,input-listener";
+        device = <&lpps_axis>;
+    };
+
+    lpps_axis: analog_axis_hires_0 {
+        compatible = "analog-axis-hires";
+        status = "okay";
+
+        /*
+         * Poll quickly while active, then slow down and finally power down the
+         * ADS1220 between reads for dry-cell operation.
+         */
+        poll-period-downshift-ms = <15 5000 100>;
+
+        axis-x {
+            status = "okay";
+            io-channels = <&adc_ads1220 0>;
+            in-min = <(0 - 5000)>;
+            in-max = <(0 + 5000)>;
+            in-calib-cycle = <100>;
+            in-deadzone = <1500>;
+            out-min = <(-4)>;
+            out-max = <4>;
+            skip-change-comparator;
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_X>;
+        };
+
+        axis-y {
+            status = "okay";
+            io-channels = <&adc_ads1220 1>;
+            in-min = <(0 - 5000)>;
+            in-max = <(0 + 5000)>;
+            in-calib-cycle = <100>;
+            in-deadzone = <1500>;
+            out-min = <(-4)>;
+            out-max = <4>;
+            skip-change-comparator;
+
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_Y>;
+        };
+
+        // axis-x2 {
+        //     status = "okay";
+        //     io-channels = <&adc_ads1220 2>;
+        //     in-min = <(0 - 5000)>;
+        //     in-max = <(0 + 5000)>;
+        //     in-calib-cycle = <100>;
+        //     in-deadzone = <1500>;
+        //     out-min = <(-4)>;
+        //     out-max = <4>;
+        //     skip-change-comparator;
+        //     zephyr,axis-type = <INPUT_EV_REL>;
+        //     zephyr,axis = <INPUT_REL_Y>;
+        // };
+
+        // axis-y2 {
+        //     status = "okay";
+        //     io-channels = <&adc_ads1220 3>;
+        //     in-min = <(0 - 5000)>;
+        //     in-max = <(0 + 5000)>;
+        //     in-calib-cycle = <100>;
+        //     in-deadzone = <1500>;
+        //     out-min = <(-4)>;
+        //     out-max = <4>;
+        //     invert-input;
+        //     skip-change-comparator;
+        //     zephyr,axis-type = <INPUT_EV_REL>;
+        //     zephyr,axis = <INPUT_REL_Y>;
+        // };
+    };
+};
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+    // cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+
+    adc_ads1220: adc_ads1220@0 {
+        compatible = "ti,ads1220";
+        status = "okay";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        idac-ua = <250>;
+        #io-channel-cells = <1>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        /* DRDY edge is not reliable on the LPPS module during startup; use timed polling. */
+        // drdy-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        adc_ads1220_ch0: channel@0 {
+            reg = <0>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_128";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <175>;
+            zephyr,input-positive = <0>;
+            zephyr,input-negative = <4>;
+            zephyr,current-source-pin = [05 00];
+        };
+
+        adc_ads1220_ch1: channel@1 {
+            reg = <1>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_128";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <175>;
+            zephyr,input-positive = <2>;
+            zephyr,input-negative = <4>;
+            zephyr,current-source-pin = [05 00];
+        };
+
+        // adc_ads1220_ch2: channel@2 {
+        //     reg = <2>;
+        //     zephyr,resolution = <24>;
+        //     zephyr,gain = "ADC_GAIN_128";
+        //     zephyr,reference = "ADC_REF_EXTERNAL0";
+        //     zephyr,acquisition-time = <175>;
+        //     zephyr,input-positive = <2>;
+        //     zephyr,input-negative = <4>;
+        //     zephyr,current-source-pin = [05 00];
+        // };
+
+        // adc_ads1220_ch3: channel@3 {
+        //     reg = <3>;
+        //     zephyr,resolution = <24>;
+        //     zephyr,gain = "ADC_GAIN_128";
+        //     zephyr,reference = "ADC_REF_EXTERNAL0";
+        //     zephyr,acquisition-time = <175>;
+        //     zephyr,input-positive = <3>;
+        //     zephyr,input-negative = <4>;
+        //     zephyr,current-source-pin = [05 00];
+        // };
+    };
+};

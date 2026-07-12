@@ -2,9 +2,6 @@ config ZMK_SPLIT
     default y
     
 if ZMK_DISPLAY
-    config I2C
-        default y
-
     config SSD1306
         default y
 endif # ZMK_DISPLAY
@@ -24,7 +21,7 @@ if LVGL
     endchoice
 endif # LVGL
 
-if SHIELD_MKB_L_Base || SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB || SHIELD_MKB_L_RZT || SHIELD_MKB_L_TPD || SHIELD_MKB_L_KEY
+if SHIELD_MKB_L_Base || SHIELD_MKB_L_ENC || SHIELD_MKB_L_JOY || SHIELD_MKB_L_TB || SHIELD_MKB_L_RZT || SHIELD_MKB_L_TPD || SHIELD_MKB_L_KEY || SHIELD_MKB_L_LPPS
     config ZMK_KEYBOARD_NAME
         default "MeKaBu"
 
