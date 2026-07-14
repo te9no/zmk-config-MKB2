@@ -1,16 +1,24 @@
 #include "MKB_L_LPPS.overlay"
 
 /*
- * Diagnostic-only shield. It samples every ADS1220 MUX selection at gain 1
- * and emits two compact ADSSCAN records every 500 ms. No pointer events are
- * generated.
+ * Diagnostic-only shield. It samples every ADS1220 MUX selection and emits two
+ * compact ADSSCAN records. No pointer events are generated.
  */
 
-#define ADS_SCAN_CHANNEL_PROPERTIES(_positive, _negative) \
+#define ADS_SCAN_DIFF_PROPERTIES(_positive, _negative) \
+	zephyr,resolution = <24>; \
+	zephyr,gain = "ADC_GAIN_4"; \
+	zephyr,reference = "ADC_REF_INTERNAL"; \
+	zephyr,acquisition-time = <20>; \
+	zephyr,input-positive = <_positive>; \
+	zephyr,input-negative = <_negative>; \
+	zephyr,current-source-pin = [05 00]
+
+#define ADS_SCAN_MONITOR_PROPERTIES(_positive, _negative) \
 	zephyr,resolution = <24>; \
 	zephyr,gain = "ADC_GAIN_1"; \
 	zephyr,reference = "ADC_REF_INTERNAL"; \
-	zephyr,acquisition-time = <175>; \
+	zephyr,acquisition-time = <20>; \
 	zephyr,input-positive = <_positive>; \
 	zephyr,input-negative = <_negative>; \
 	zephyr,current-source-pin = [05 00]
@@ -41,7 +49,7 @@
 	lpps_scan: analog_axis_hires_scan {
 		compatible = "analog-axis-hires";
 		status = "okay";
-		poll-period-ms = <150>;
+		poll-period-ms = <1000>;
 		diagnostic-scan;
 		diagnostic-log-period-ms = <500>;
 
@@ -64,67 +72,67 @@
 };
 
 &adc_ads1220_ch0 {
-	ADS_SCAN_CHANNEL_PROPERTIES(0, 1);
+	ADS_SCAN_DIFF_PROPERTIES(0, 1);
 };
 
 &adc_ads1220_ch1 {
-	ADS_SCAN_CHANNEL_PROPERTIES(0, 2);
+	ADS_SCAN_DIFF_PROPERTIES(0, 2);
 };
 
 &adc_ads1220_ch2 {
-	ADS_SCAN_CHANNEL_PROPERTIES(0, 3);
+	ADS_SCAN_DIFF_PROPERTIES(0, 3);
 };
 
 &adc_ads1220_ch3 {
-	ADS_SCAN_CHANNEL_PROPERTIES(1, 2);
+	ADS_SCAN_DIFF_PROPERTIES(1, 2);
 };
 
 &adc_ads1220 {
-	idac-ua = <10>;
+	idac-ua = <100>;
 	pga-bypass;
 
 	channel@4 {
 		reg = <4>;
-		ADS_SCAN_CHANNEL_PROPERTIES(1, 3);
+		ADS_SCAN_DIFF_PROPERTIES(1, 3);
 	};
 	channel@5 {
 		reg = <5>;
-		ADS_SCAN_CHANNEL_PROPERTIES(2, 3);
+		ADS_SCAN_DIFF_PROPERTIES(2, 3);
 	};
 	channel@6 {
 		reg = <6>;
-		ADS_SCAN_CHANNEL_PROPERTIES(1, 0);
+		ADS_SCAN_DIFF_PROPERTIES(1, 0);
 	};
 	channel@7 {
 		reg = <7>;
-		ADS_SCAN_CHANNEL_PROPERTIES(3, 2);
+		ADS_SCAN_DIFF_PROPERTIES(3, 2);
 	};
 	channel@8 {
 		reg = <8>;
-		ADS_SCAN_CHANNEL_PROPERTIES(0, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(0, 4);
 	};
 	channel@9 {
 		reg = <9>;
-		ADS_SCAN_CHANNEL_PROPERTIES(1, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(1, 4);
 	};
 	channel@a {
 		reg = <10>;
-		ADS_SCAN_CHANNEL_PROPERTIES(2, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(2, 4);
 	};
 	channel@b {
 		reg = <11>;
-		ADS_SCAN_CHANNEL_PROPERTIES(3, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(3, 4);
 	};
 	channel@c {
 		reg = <12>;
-		ADS_SCAN_CHANNEL_PROPERTIES(5, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(5, 4);
 	};
 	channel@d {
 		reg = <13>;
-		ADS_SCAN_CHANNEL_PROPERTIES(6, 4);
+		ADS_SCAN_MONITOR_PROPERTIES(6, 4);
 	};
 	channel@e {
 		reg = <14>;
-		ADS_SCAN_CHANNEL_PROPERTIES(7, 7);
+		ADS_SCAN_MONITOR_PROPERTIES(7, 7);
 	};
 };

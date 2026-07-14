@@ -1,0 +1,13 @@
+#include "MKB_L_LPPS_SCAN.overlay"
+
+/*
+ * Short-run topology probe.
+ *
+ * Use this only with R8/R9 temporarily removed so AIN1/AIN2 are not clamped to
+ * VCM. The firmware scans all ADS1220 differential MUX combinations and common
+ * mode monitors. It still drives IDAC1 to REFP0.
+ */
+&lpps_scan {
+	poll-period-ms = <150>;
+	diagnostic-log-period-ms = <500>;
+};
