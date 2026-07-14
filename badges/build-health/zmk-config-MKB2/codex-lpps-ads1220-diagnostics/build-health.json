@@ -1,0 +1,13 @@
+{
+  "repository": "te9no/zmk-config-MKB2",
+  "branch": "codex/lpps-ads1220-diagnostics",
+  "target": "all",
+  "status": "failing",
+  "raw_status": "failure",
+  "color": "#d73a49",
+  "sha": "745eff230e95f4927b117ab7b18b1ad1d50a4c80",
+  "run_id": "29294567236",
+  "run_number": "82",
+  "run_url": "https://github.com/te9no/zmk-config-MKB2/actions/runs/29294567236",
+  "generated_at": "2026-07-14T00:04:30Z"
+}
