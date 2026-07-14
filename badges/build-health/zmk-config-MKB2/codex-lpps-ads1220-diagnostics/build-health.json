@@ -5,9 +5,9 @@
   "status": "failing",
   "raw_status": "failure",
   "color": "#d73a49",
-  "sha": "041e4bab058ddeadff21c21c0c504334feafd327",
-  "run_id": "29304029923",
-  "run_number": "84",
-  "run_url": "https://github.com/te9no/zmk-config-MKB2/actions/runs/29304029923",
-  "generated_at": "2026-07-14T03:42:54Z"
+  "sha": "0f13aaa7a0b9de905a8de9a8bacd93345851a8fe",
+  "run_id": "29340520550",
+  "run_number": "85",
+  "run_url": "https://github.com/te9no/zmk-config-MKB2/actions/runs/29340520550",
+  "generated_at": "2026-07-14T14:25:53Z"
 }
