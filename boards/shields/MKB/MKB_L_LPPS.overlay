@@ -63,8 +63,8 @@
         axis-x {
             status = "okay";
             io-channels = <&adc_ads1220 0>;
-            in-min = <(0 - 500000)>;
-            in-max = <(0 + 500000)>;
+            in-min = <(0 - 655300)>;
+            in-max = <(0 + 655300)>;
             in-calib-cycle = <100>;
             in-deadzone = <2000>;
             out-min = <(-4)>;
@@ -77,8 +77,8 @@
         axis-y {
             status = "okay";
             io-channels = <&adc_ads1220 1>;
-            in-min = <(0 - 500000)>;
-            in-max = <(0 + 500000)>;
+            in-min = <(0 - 655300)>;
+            in-max = <(0 + 655300)>;
             in-calib-cycle = <100>;
             in-deadzone = <2000>;
             out-min = <(-4)>;
@@ -131,7 +131,7 @@
         status = "okay";
         spi-max-frequency = <1000000>;
         reg = <0>;
-        idac-ua = <10>;
+        idac-ua = <250>;
         #io-channel-cells = <1>;
         #address-cells = <1>;
         #size-cells = <0>;
@@ -140,21 +140,18 @@
         // drdy-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /*
-         * Characterization mode for the undocumented six-pin sensor interface.
-         * IDAC1 supplies the ADS1220 minimum 10 uA through REFP0 while the raw
-         * sensor pinout is characterized. The ADC uses its
-         * internal 2.048 V reference so unknown sensor voltages do not also
-         * alter the measurement reference. AIN0/AIN2 sit at the high common-mode
-         * level and AIN1/AIN3 at the low common-mode level, so CH0/CH1 compare
-         * within those pairs. CH2/CH3 monitor one node from each level.
+         * The LPPS six-wire bridge is reduced to badjeff's four-wire topology:
+         * J6.3+J6.4 form Y_SIG on AIN0, J6.5+J6.6 form X_SIG on AIN3,
+         * AIN1/AIN2 are the 2.4 kohm reference midpoint, and REFP0/REFN0
+         * excite the bridge. CH2/CH3 remain low-gain common-mode monitors.
          */
         adc_ads1220_ch0: channel@0 {
             reg = <0>;
             zephyr,resolution = <24>;
-            zephyr,gain = "ADC_GAIN_16";
-            zephyr,reference = "ADC_REF_INTERNAL";
-            zephyr,acquisition-time = <175>;
-            zephyr,input-positive = <0>;
+            zephyr,gain = "ADC_GAIN_64";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <3>;
             zephyr,input-negative = <2>;
             zephyr,current-source-pin = [05 00];
         };
@@ -162,11 +159,11 @@
         adc_ads1220_ch1: channel@1 {
             reg = <1>;
             zephyr,resolution = <24>;
-            zephyr,gain = "ADC_GAIN_16";
-            zephyr,reference = "ADC_REF_INTERNAL";
-            zephyr,acquisition-time = <175>;
-            zephyr,input-positive = <1>;
-            zephyr,input-negative = <3>;
+            zephyr,gain = "ADC_GAIN_64";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <0>;
+            zephyr,input-negative = <1>;
             zephyr,current-source-pin = [05 00];
         };
 
@@ -187,7 +184,7 @@
             zephyr,gain = "ADC_GAIN_1";
             zephyr,reference = "ADC_REF_INTERNAL";
             zephyr,acquisition-time = <175>;
-            zephyr,input-positive = <1>;
+            zephyr,input-positive = <3>;
             zephyr,input-negative = <4>;
             zephyr,current-source-pin = [05 00];
         };
