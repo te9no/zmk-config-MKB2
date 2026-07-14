@@ -140,7 +140,8 @@
         // drdy-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /*
-         * The LPPS six-wire bridge is reduced to badjeff's four-wire topology:
+         * Assumes the traced LPPS resistance matrix has been verified. The
+         * six-wire bridge is then reduced to badjeff's four-wire topology:
          * J6.3+J6.4 form Y_SIG on AIN0, J6.5+J6.6 form X_SIG on AIN3,
          * AIN1/AIN2 are the 2.4 kohm reference midpoint, and REFP0/REFN0
          * excite the bridge. CH2/CH3 remain low-gain common-mode monitors.
