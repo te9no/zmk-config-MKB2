@@ -20,45 +20,45 @@ manifest:
     - name: zmk
       # remote: zmkfirmware
       remote: te9no
-      revision: v0.3-branch+dya
+      revision: 7fd6a70261963be9bc0cb4102e6bad339e115c39
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3-branch
+      revision: 8756cb7b8114069fa3c25c6f6c990f24988fceff
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: zmk-0.3
+      revision: 42e0a8557a3adc43231fef4234f23e530034e427
     - name: zmk-analog-input-driver
       remote: badjeff
-      revision: main
+      revision: 2684f22ee7e2168d4393f7e63676912210a796fc
     - name: zmk-nice-oled
       remote: te9no
-      revision: main
+      revision: 472c6cacd741a4e400dc7e3e36067a4564162cc9
     - name: zmk-layout-shift
       remote: kot149
-      revision: v1
+      revision: 4d71f7cb743256ac619873dd44f510e9e9562739
     - name: zmk-input-processor-keybind
       remote: te9no
-      revision: main
+      revision: 10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae
     - name: cirque-input-module
       remote: petejohanson
-      revision: main
+      revision: 0de55f36bc720b5be3d8880dc856d4d78baf5214
     - name: zmk-driver-MLX90393
       remote: te9no
-      revision: main
+      revision: ad89fd02a34703024295cfe809632b99619ed602
     - name: ads1220-zephyr-module
       remote: te9no
       revision: d618d1f3f198fd7e4ca3469da1683644be2d1b9f
 
     - name: zmk-module-runtime-input-processor
       remote: te9no
-      revision: zmk-v0.3.0.0
+      revision: dbf92f764de8b6ffd60bf5850514302875fe2570
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: zmk-v0.3.0.0
+      revision: 851661cd21f2aded8ec649da86e01a207dc4b973
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: te9no
       revision: 3570fa76ed9356afb48cceecd14c05d980a7c788
