@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: badjeff
+      url-base: https://github.com/badjeff
     - name: te9no
       url-base: https://github.com/te9no
     - name: kot149
@@ -14,49 +16,49 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: cormoran
       url-base: https://github.com/cormoran
-    - name: badjeff
-      url-base: https://github.com/badjeff
-    - name: sekigon-gonnoc
-      url-base: https://github.com/sekigon-gonnoc
   projects:
     - name: zmk
+      # remote: zmkfirmware
       remote: te9no
-      revision: 7fd6a70261963be9bc0cb4102e6bad339e115c39
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: v0.3
+      revision: v0.3-branch
     - name: zmk-pmw3610-driver
-      revision: 42e0a8557a3adc43231fef4234f23e530034e427
-      url: https://github.com/efogdev/zmk-pmw3610-driver
+      remote: badjeff
+      revision: zmk-0.3
     - name: zmk-analog-input-driver
       remote: badjeff
-      revision: 2684f22ee7e2168d4393f7e63676912210a796fc
+      revision: main
     - name: zmk-nice-oled
       remote: te9no
-      revision: 472c6cacd741a4e400dc7e3e36067a4564162cc9
+      revision: main
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
     - name: zmk-input-processor-keybind
       remote: te9no
-      revision: 10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae
+      revision: main
+    - name: cirque-input-module
+      remote: petejohanson
+      revision: main
     - name: zmk-driver-MLX90393
       remote: te9no
-      revision: ad89fd02a34703024295cfe809632b99619ed602
+      revision: main
     - name: ads1220-zephyr-module
       remote: te9no
       revision: d618d1f3f198fd7e4ca3469da1683644be2d1b9f
 
     - name: zmk-module-runtime-input-processor
-      remote: cormoran
+      remote: te9no
       revision: zmk-v0.3.0.0
     - name: zmk-module-ble-management
       remote: cormoran
       revision: zmk-v0.3.0.0
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
+      revision: main
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: te9no
       revision: 3570fa76ed9356afb48cceecd14c05d980a7c788
