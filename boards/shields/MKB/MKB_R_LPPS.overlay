@@ -1,0 +1,124 @@
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/spi/spi.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 4)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 12)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 13)>;
+        };
+    };
+
+    spi0_sleep: spi0_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK,  0, 4)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 12)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 13)>;
+            low-power-enable;
+        };
+    };
+};
+
+&kscan1 {
+    /delete-property/ interrupt-gpios;
+    poll-period-ms = <10>;
+};
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        lpps_split: lpps_split@0 {
+            compatible = "zmk,input-split";
+            status = "okay";
+            device = <&lpps_axis>;
+            reg = <0>;
+        };
+    };
+
+    lpps_input: lpps_input {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&lpps_split>;
+    };
+
+    lpps_axis: analog_axis_hires_0 {
+        compatible = "analog-axis-hires";
+        status = "okay";
+        poll-period-downshift-ms = <8 5000 100>;
+
+        axis-x {
+            status = "okay";
+            io-channels = <&adc_ads1220 0>;
+            in-min = <(0 - 12000)>;
+            in-max = <(0 + 12000)>;
+            in-calib-cycle = <100>;
+            in-deadzone = <600>;
+            out-min = <(-20)>;
+            out-max = <20>;
+            skip-change-comparator;
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_X>;
+        };
+
+        axis-y {
+            status = "okay";
+            io-channels = <&adc_ads1220 1>;
+            in-min = <(0 - 12000)>;
+            in-max = <(0 + 12000)>;
+            in-calib-cycle = <100>;
+            in-deadzone = <600>;
+            out-min = <(-20)>;
+            out-max = <20>;
+            invert-output;
+            skip-change-comparator;
+            zephyr,axis-type = <INPUT_EV_REL>;
+            zephyr,axis = <INPUT_REL_Y>;
+        };
+    };
+};
+
+&spi0 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    adc_ads1220: adc_ads1220@0 {
+        compatible = "ti,ads1220";
+        status = "okay";
+        spi-max-frequency = <1000000>;
+        reg = <0>;
+        idac-ua = <100>;
+        pga-bypass;
+        #io-channel-cells = <1>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        adc_ads1220_ch0: channel@0 {
+            reg = <0>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_4";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <3>;
+            zephyr,input-negative = <2>;
+            zephyr,current-source-pin = [05 00];
+        };
+
+        adc_ads1220_ch1: channel@1 {
+            reg = <1>;
+            zephyr,resolution = <24>;
+            zephyr,gain = "ADC_GAIN_4";
+            zephyr,reference = "ADC_REF_EXTERNAL0";
+            zephyr,acquisition-time = <330>;
+            zephyr,input-positive = <0>;
+            zephyr,input-negative = <1>;
+            zephyr,current-source-pin = [05 00];
+        };
+    };
+};

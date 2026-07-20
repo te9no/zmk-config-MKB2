@@ -1,0 +1,6 @@
+/ {
+    bootloader_trigger: bootloader_trigger {
+        compatible = "zmk,cdc-acm-bootloader-trigger";
+        cdc-port = <&snippet_zmk_usb_logging_uart>;
+    };
+};
