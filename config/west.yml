@@ -48,7 +48,7 @@ manifest:
       revision: ad89fd02a34703024295cfe809632b99619ed602
     - name: ads1220-zephyr-module
       remote: te9no
-      revision: d618d1f3f198fd7e4ca3469da1683644be2d1b9f
+      revision: 68071687cc7ea41e3eacc60521cb26b4311206e2
 
     - name: zmk-module-runtime-input-processor
       remote: te9no

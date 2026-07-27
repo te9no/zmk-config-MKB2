@@ -30,6 +30,19 @@
     lpps_input: lpps_input {
         compatible = "zmk,input-listener";
         device = <&lpps_axis>;
+        input-processors = <&lpps_scroll_processor>;
+    };
+
+    lpps_scroll_processor: lpps_scroll_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "LPPSScr";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        xy-to-scroll-enabled;
+        track-remainders;
+        scale-divisor = <8>;
+        #input-processor-cells = <0>;
     };
 
     lpps_axis: analog_axis_hires_0 {
@@ -41,6 +54,7 @@
          * ADS1220 between reads for dry-cell operation.
          */
         poll-period-downshift-ms = <8 5000 100>;
+        dominant-axis-lock;
 
         axis-x {
             status = "okay";
