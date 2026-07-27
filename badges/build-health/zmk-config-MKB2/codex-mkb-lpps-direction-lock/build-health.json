@@ -1,0 +1,13 @@
+{
+  "repository": "te9no/zmk-config-MKB2",
+  "branch": "codex/mkb-lpps-direction-lock",
+  "target": "all",
+  "status": "passing",
+  "raw_status": "success",
+  "color": "#2ea44f",
+  "sha": "94b674273ed0ea9ddd8f40692deb8376833f05ea",
+  "run_id": "30257344846",
+  "run_number": "103",
+  "run_url": "https://github.com/te9no/zmk-config-MKB2/actions/runs/30257344846",
+  "generated_at": "2026-07-27T10:27:47Z"
+}
