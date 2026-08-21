@@ -47,12 +47,43 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: te9no
       revision: 72387b5212264d26d704dbc43c765f6485470a77
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: 8b1125ed676c1f5e14145d217984f33d0ebdcef4
     - name: zmk-module-ble-management
       remote: cormoran
       revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
     - name: zmk-module-settings-rpc
       remote: cormoran
       revision: 083a299dd8d31c275809c5a249b12486be24a7d2
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: d9490e7b5d41c516221d131241009e81740efcee
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: 38530962eb7061b60efcb98e84585cfb1f0cb6de
+      import:
+        name-blocklist:
+          - zmk-feature-custom-settings
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f
+      path: zmk-feature-custom-settings
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: 8cedd2dd9f04e19ea5a17b94914dd47a09d8db11
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: 84ad14c6c3645dc40b23f45d08ab45418655f912
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
+      revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e
+    - name: zmk-module-devtool
+      remote: cormoran
+      revision: 9938a2c73c06d6e65ba2c0b68c9aa044a467eafc
     - name: zmk-feature-cdc-acm-bootloader-trigger
       remote: te9no
       revision: 1850754d269aab9ba73e4639371bfe59a4130e65

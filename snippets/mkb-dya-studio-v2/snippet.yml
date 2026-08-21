@@ -1,0 +1,3 @@
+name: mkb-dya-studio-v2
+append:
+  EXTRA_CONF_FILE: mkb-dya-studio-v2.conf

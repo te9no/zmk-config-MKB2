@@ -1,0 +1,3 @@
+name: mkb-dya-peripheral
+append:
+  EXTRA_CONF_FILE: mkb-dya-peripheral.conf

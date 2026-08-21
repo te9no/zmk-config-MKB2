@@ -3,32 +3,32 @@ include:
 # Left Shields / Default - with AML
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_TB rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TB
 
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_JOY rgbled_adapter nice_oled
-    snippet: Default battery-voltage-divider-oversampling cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 battery-voltage-divider-oversampling cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_JOY
 
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_ENC rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_ENC
 
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_RZT rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_RZT
 
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_TPD rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_TPD
 
   - board: xiao_ble//zmk
     shield: MKB_L_Base MKB_L_KEY rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart
+    snippet: Default mkb-dya-studio-v2 cdc-boot zmk-usb-logging studio-rpc-usb-uart
     artifact-name: MKB_L_MODULE_KEY
 
   - board: xiao_ble//zmk
@@ -39,35 +39,42 @@ include:
 # Right Shields
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_TB rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_TBv4
     
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_TBv3 rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_TBv3
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_JOY rgbled_adapter nice_oled
-    snippet: battery-voltage-divider-oversampling
+    snippet: mkb-dya-peripheral battery-voltage-divider-oversampling
     artifact-name: MKB_R_MODULE_JOY
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_ENC rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_ENC
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_RZT rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_RZT
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_TPD rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_TPD
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_KEY rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_KEY
 
   - board: xiao_ble//zmk
     shield: MKB_R_Base MKB_R_LPPS rgbled_adapter nice_oled
+    snippet: mkb-dya-peripheral
     artifact-name: MKB_R_MODULE_LPPS
 
 # Settings Reset
