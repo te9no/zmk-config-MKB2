@@ -39,7 +39,7 @@ manifest:
       revision: 10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae
     - name: zmk-driver-MLX90393
       remote: te9no
-      revision: ad89fd02a34703024295cfe809632b99619ed602
+      revision: 42297df2ce839556eaee94e5ddcb8494355e1312
     - name: ads1220-zephyr-module
       remote: te9no
       revision: d618d1f3f198fd7e4ca3469da1683644be2d1b9f
