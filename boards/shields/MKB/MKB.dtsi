@@ -135,3 +135,7 @@
       sensors = <&left_encoder &right_encoder>;
    };
 };
+
+&uicr {
+   nfct-pins-as-gpios;
+};
