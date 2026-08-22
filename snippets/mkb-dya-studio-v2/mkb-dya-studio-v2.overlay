@@ -1,0 +1,8 @@
+/*
+ * The board-level CDC ACM instance is not used by MKB. Keep the dedicated
+ * USB logging/CDC boot and Studio RPC instances, while avoiding a third CDC
+ * function competing for the nRF52840 USB endpoints.
+ */
+&board_cdc_acm_uart {
+    status = "disabled";
+};
