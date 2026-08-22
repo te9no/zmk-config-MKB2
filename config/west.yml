@@ -33,7 +33,7 @@ manifest:
       revision: 5c34ea0eec246a1c986111417cd779b53144629a
     - name: zmk-nice-oled
       remote: te9no
-      revision: 537666b5aca8c04276f3d2e9d614eb31c6d5be7e
+      revision: ee4333911aa32a401db8bdf5cdb4740640a6da78
     - name: zmk-layout-shift
       remote: kot149
       revision: 4d71f7cb743256ac619873dd44f510e9e9562739
