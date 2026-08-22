@@ -28,6 +28,9 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: 2684f22ee7e2168d4393f7e63676912210a796fc
+    - name: zmk-driver-pmw3610-with-custom-studio-rpc
+      remote: cormoran
+      revision: 5c34ea0eec246a1c986111417cd779b53144629a
     - name: zmk-nice-oled
       remote: te9no
       revision: 537666b5aca8c04276f3d2e9d614eb31c6d5be7e
