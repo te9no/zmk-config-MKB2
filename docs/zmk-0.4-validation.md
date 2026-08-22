@@ -13,8 +13,9 @@ hardware validation.
   Zephyr 4.1 `pixart,pmw3610` and `cirque,pinnacle` input drivers.
 - PMW3610 and Cirque devicetree properties are migrated to their Zephyr 4.1
   bindings.
-- USB logging, CDC boot control, and custom Studio RPC remain on the left
-  split central. The right split peripheral builds without those transports.
+- USB logging, CDC boot control with ZMK debug-level output, and custom Studio
+  RPC remain on the left split central. The right split peripheral builds
+  without those transports.
 - Joystick builds enable the pinned battery voltage-divider oversampling
   snippet on both halves.
 - The DYA analog-input RPC transport is enabled only on the split central.
@@ -43,7 +44,7 @@ promote the branch while any required item is blank or failed.
 | DYA Studio V2 | non-LPPS left central | device info, settings, BLE management, runtime processor | pending |
 | Runtime features | non-LPPS left central | create/use combo and macro, then verify persistence | pending |
 | Diagnostics | central + peripheral | key-scan and watchdog data visible through Studio | pending |
-| CDC | non-LPPS left central | serial logging and UF2 boot trigger | pending |
+| CDC Debug | left central | debug serial output plus the 1200-baud UF2 boot trigger | pending |
 
 Only after every applicable row passes should the result be recorded in
 `zmk-shield-fleet` and this branch be considered for merging into `main`.
