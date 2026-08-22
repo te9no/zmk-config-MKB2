@@ -44,7 +44,7 @@ promote the branch while any required item is blank or failed.
 | DYA Studio V2 | non-LPPS left central | device info, settings, BLE management, runtime processor | pending |
 | Runtime features | non-LPPS left central | create/use combo and macro, then verify persistence | pending |
 | Diagnostics | central + peripheral | key-scan and watchdog data visible through Studio | pending |
-| CDC Debug | left central | debug serial output plus the 1200-baud UF2 boot trigger | pending |
+| CDC Debug | left central | debug serial output plus the 1200-baud UF2 boot trigger | passed 2026-08-22 (`MKB_L_MODULE_KEY`, COM3 debug output and UF2 re-entry) |
 
 Only after every applicable row passes should the result be recorded in
 `zmk-shield-fleet` and this branch be considered for merging into `main`.
