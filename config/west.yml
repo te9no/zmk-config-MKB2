@@ -18,9 +18,8 @@ manifest:
       url-base: https://github.com/cormoran
   projects:
     - name: zmk
-      # remote: zmkfirmware
-      remote: te9no
-      revision: afe241df80b05c3f4e0cc95ada7584d24422a893
+      remote: cormoran
+      revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
@@ -33,7 +32,7 @@ manifest:
       revision: 5c34ea0eec246a1c986111417cd779b53144629a
     - name: zmk-nice-oled
       remote: te9no
-      revision: 2b8233c2cf9854b5ec859e8b9a2dd6b54f0f9399
+      revision: c511d7f64ba0f186051943d027333d247ad8e206
     - name: zmk-layout-shift
       remote: kot149
       revision: 4d71f7cb743256ac619873dd44f510e9e9562739

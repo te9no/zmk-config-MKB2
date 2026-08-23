@@ -51,6 +51,9 @@
             compatible = "zmk,input-split";
             status = "okay";
             device = <&trackball>;
+            /* TBv4 is mounted 180 degrees from the shared Central transform. */
+            input-processors = <&zip_xy_transform
+                                (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
             reg = <0>;
         };
     };
