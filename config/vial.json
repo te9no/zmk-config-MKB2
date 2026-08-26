@@ -13,7 +13,13 @@
     { "name": "ZMK_BT_NXT", "title": "Select next Bluetooth profile", "shortName": "BT Next" },
     { "name": "ZMK_BT_PRV", "title": "Select previous Bluetooth profile", "shortName": "BT Prev" },
     { "name": "ZMK_STUDIO_UNLOCK", "title": "Unlock ZMK Studio", "shortName": "Studio" },
-    { "name": "MKB_LAYOUT_SHIFT", "title": "Toggle MKB layout shift", "shortName": "Layout Shift" }
+    { "name": "MKB_LAYOUT_SHIFT", "title": "Toggle MKB layout shift", "shortName": "Layout Shift" },
+    { "name": "ZMK_CAPS_WORD", "title": "Toggle ZMK Caps Word", "shortName": "Caps Word" },
+    { "name": "ZMK_KEY_REPEAT", "title": "Repeat the last ZMK key press", "shortName": "Repeat" },
+    { "name": "ZMK_OUT_TOG", "title": "Toggle between USB and Bluetooth output", "shortName": "Out Toggle" },
+    { "name": "ZMK_OUT_USB", "title": "Select USB output", "shortName": "Out USB" },
+    { "name": "ZMK_OUT_BLE", "title": "Select Bluetooth output", "shortName": "Out BLE" },
+    { "name": "ZMK_SYS_RESET", "title": "Reset the keyboard", "shortName": "Reset" }
   ],
   "matrix": {
     "rows": 7,

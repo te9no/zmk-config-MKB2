@@ -63,6 +63,12 @@ class MkbVialDefinitionTest(unittest.TestCase):
             "ZMK_BT_PRV",
             "ZMK_STUDIO_UNLOCK",
             "MKB_LAYOUT_SHIFT",
+            "ZMK_CAPS_WORD",
+            "ZMK_KEY_REPEAT",
+            "ZMK_OUT_TOG",
+            "ZMK_OUT_USB",
+            "ZMK_OUT_BLE",
+            "ZMK_SYS_RESET",
         ]
         self.assertEqual([item["name"] for item in self.definition["customKeycodes"]], expected)
 
