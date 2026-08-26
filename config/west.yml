@@ -95,7 +95,7 @@ manifest:
       revision: 1850754d269aab9ba73e4639371bfe59a4130e65
     - name: zmk-feature-via
       remote: te9no
-      revision: 17cd6db29c7fd288d1df1c5b76b6d74888830bd4
+      revision: c4d630c393ccac447a08acd4ef60ce4a1fcff286
     - name: zmk-module-analoginput-rpc
       remote: te9no
       revision: e065461e907fa924c0029e1d4c94cec1d9093e17
