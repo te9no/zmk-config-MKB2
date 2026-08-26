@@ -30,6 +30,10 @@ manifest:
     - name: zmk-driver-pmw3610-with-custom-studio-rpc
       remote: cormoran
       revision: 5c34ea0eec246a1c986111417cd779b53144629a
+    - name: zmk-driver-spi-three-wire
+      remote: te9no
+      revision: 4362133dbfbf66788b66b0a3e3c410b9232c06cb
+      path: modules/zmk-driver-spi-three-wire
     - name: zmk-nice-oled
       remote: te9no
       revision: c511d7f64ba0f186051943d027333d247ad8e206

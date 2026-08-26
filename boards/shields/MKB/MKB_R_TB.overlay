@@ -1,49 +1,38 @@
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
-        };
-    };
-};
-
-
-&spi0 {
-    status = "okay";
-    cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>;
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    compatible = "nordic,nrf-spim";
-
-    trackball: pd@0 {
-        status = "okay";
-        compatible = "cormoran,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <1500000>;
-        irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <800>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        settings-id = "mkb-rtb";
-        force-awake;
-    };
-};
-
 /*input-split*/
 / {
-    split_inputs {
+	pmw3610_spi: spi-three-wire {
+		compatible = "te9no,spi-three-wire-gpio";
+		status = "okay";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		/* MKB right TBv4 wiring: SCK=P1.13 (D8), shared SDIO=P0.04 (D4). */
+		sck-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
+		sdio-gpios = <&xiao_d 4 GPIO_ACTIVE_HIGH>;
+		cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+
+		turnaround-delay-us = <4>;
+		select-delay-us = <1>;
+		deselect-delay-us = <4>;
+		recovery-delay-us = <30>;
+
+		trackball: pd@0 {
+			status = "okay";
+			compatible = "cormoran,pmw3610";
+			reg = <0>;
+			spi-max-frequency = <1500000>;
+			irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			cpi = <800>;
+			evt-type = <INPUT_EV_REL>;
+			x-input-code = <INPUT_REL_X>;
+			y-input-code = <INPUT_REL_Y>;
+			disable-burst-read;
+			settings-id = "mkb-rtb";
+			force-awake;
+		};
+	};
+
+	split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
@@ -64,4 +53,8 @@
         device = <&trackball_split>;
     };
 
+};
+
+&spi0 {
+	status = "disabled";
 };
