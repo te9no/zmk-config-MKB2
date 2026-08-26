@@ -61,6 +61,24 @@ Thrives in collaborative environments, particularly hackathons and technical con
 ### Current Keymap Configuration | 現在のキーマップ構成
 ![Keymap](keymap-svg/MKB.svg)
 
+### Pipette keymap editing | Pipetteキーマップ編集
+
+The left/central firmware exposes a VIA/Vial Raw HID interface for
+[Pipette](https://github.com/darakuneko/pipette-desktop). The keyboard definition is stored in
+[`config/vial.json`](config/vial.json) and embedded into the firmware during the build.
+
+左側（Central）のファームウェアは、Pipette用のVIA/Vial Raw HIDインターフェースを公開します。
+左側をUSB接続してPipetteを開くと、基本的なキーコードを編集できます。変更はZMK settingsへ
+保存されます。
+
+Current limitations / 現在の制限:
+
+- `&kp`, `&none`, and `&trans` are editable.
+- Hold-tap, layer-tap, mouse, Bluetooth, and other ZMK-specific bindings appear as `KC_NO`.
+  Do not overwrite those cells unless replacing them with a basic key.
+- Macros, encoders, lighting, and Vial dynamic entries are not exposed through Pipette yet.
+- The current Vial unlock mode is intentionally insecure and intended for local firmware use.
+
 ## Etymology | 語源
 The name "MeKaBu" encompasses multiple meanings:
 - Mechanical Components (メカニカルな部品群)
