@@ -50,6 +50,22 @@ class MkbVialDefinitionTest(unittest.TestCase):
                 self.assertIn(row, range(rows))
                 self.assertIn(col, range(cols))
 
+    def test_zmk_custom_keycodes_match_firmware_user_range(self):
+        expected = [
+            "ZMK_BT_CLR",
+            "ZMK_BT_SEL_0",
+            "ZMK_BT_SEL_1",
+            "ZMK_BT_SEL_2",
+            "ZMK_BT_SEL_3",
+            "ZMK_BT_SEL_4",
+            "ZMK_BT_CLR_ALL",
+            "ZMK_BT_NXT",
+            "ZMK_BT_PRV",
+            "ZMK_STUDIO_UNLOCK",
+            "MKB_LAYOUT_SHIFT",
+        ]
+        self.assertEqual([item["name"] for item in self.definition["customKeycodes"]], expected)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,6 +2,19 @@
   "name": "MeKaBu",
   "vendorId": "0x1D50",
   "productId": "0x615E",
+  "customKeycodes": [
+    { "name": "ZMK_BT_CLR", "title": "Clear current Bluetooth profile", "shortName": "BT CLR" },
+    { "name": "ZMK_BT_SEL_0", "title": "Select Bluetooth profile 0", "shortName": "BT 0" },
+    { "name": "ZMK_BT_SEL_1", "title": "Select Bluetooth profile 1", "shortName": "BT 1" },
+    { "name": "ZMK_BT_SEL_2", "title": "Select Bluetooth profile 2", "shortName": "BT 2" },
+    { "name": "ZMK_BT_SEL_3", "title": "Select Bluetooth profile 3", "shortName": "BT 3" },
+    { "name": "ZMK_BT_SEL_4", "title": "Select Bluetooth profile 4", "shortName": "BT 4" },
+    { "name": "ZMK_BT_CLR_ALL", "title": "Clear all Bluetooth profiles", "shortName": "BT CLR ALL" },
+    { "name": "ZMK_BT_NXT", "title": "Select next Bluetooth profile", "shortName": "BT Next" },
+    { "name": "ZMK_BT_PRV", "title": "Select previous Bluetooth profile", "shortName": "BT Prev" },
+    { "name": "ZMK_STUDIO_UNLOCK", "title": "Unlock ZMK Studio", "shortName": "Studio" },
+    { "name": "MKB_LAYOUT_SHIFT", "title": "Toggle MKB layout shift", "shortName": "Layout Shift" }
+  ],
   "matrix": {
     "rows": 7,
     "cols": 12
