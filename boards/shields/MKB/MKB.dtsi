@@ -139,3 +139,16 @@
 &uicr {
    nfct-pins-as-gpios;
 };
+
+/*
+ * Release XIAO connector defaults shared with the matrix, module and OLED
+ * pins. i2c1 remains owned by the left/right OLED overlays; module overlays
+ * enable their own i2c0 or spi0 controller as needed.
+ */
+&xiao_serial {
+    status = "disabled";
+};
+
+&xiao_spi {
+    status = "disabled";
+};
