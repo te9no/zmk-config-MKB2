@@ -1274,29 +1274,32 @@ svg.physical-layout { font-family: ui-monospace, SFMono-Regular, Consolas, monos
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
 <text class="tap" x="26" y="26">TRANS</text>
 </g>
-<g class="key keypos-12 transparent" transform="translate(30 116) rotate(0 0 -52)">
+<g class="key keypos-12 " transform="translate(30 116) rotate(0 0 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="26">caps_word</text>
 </g>
-<g class="key keypos-13 transparent" transform="translate(82 116) rotate(0 -52 -52)">
+<g class="key keypos-13 " transform="translate(82 116) rotate(0 -52 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="26">key_repeat</text>
 </g>
-<g class="key keypos-14 transparent" transform="translate(134 116) rotate(0 -104 -52)">
+<g class="key keypos-14 " transform="translate(134 116) rotate(0 -104 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="20">OUT_TOG</text>
+<text class="hold" x="26" y="37">out</text>
 </g>
-<g class="key keypos-15 transparent" transform="translate(186 116) rotate(0 -156 -52)">
+<g class="key keypos-15 " transform="translate(186 116) rotate(0 -156 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="20">OUT_USB</text>
+<text class="hold" x="26" y="37">out</text>
 </g>
-<g class="key keypos-16 transparent" transform="translate(238 116) rotate(0 -208 -52)">
+<g class="key keypos-16 " transform="translate(238 116) rotate(0 -208 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="20">OUT_BLE</text>
+<text class="hold" x="26" y="37">out</text>
 </g>
-<g class="key keypos-17 transparent" transform="translate(290 116) rotate(0 -260 -52)">
+<g class="key keypos-17 " transform="translate(290 116) rotate(0 -260 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
-<text class="tap" x="26" y="26">TRANS</text>
+<text class="tap" x="26" y="26">sys_reset</text>
 </g>
 <g class="key keypos-18 transparent" transform="translate(602 116) rotate(0 -572 -52)">
 <rect x="0" y="0" width="52" height="52" rx="6" ry="6"/>
