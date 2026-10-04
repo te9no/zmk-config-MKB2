@@ -1,0 +1,502 @@
+{
+  "artifact": {
+    "name": "MKB_R_MODULE_JOY.uf2",
+    "sha256": "f2a3ef38a5d3edbbf7ff94b4055425ad5e3e577b9732308fa44b1a05b96a0359"
+  },
+  "generated": {
+    ".config": "276c07c89dded8b1c282447dce04d138bd98da0beea58d1a161d6d0217b63c87",
+    "zephyr.dts": "61466149ff6a489f967c9a8ccad74acc126c92a9d81e847001e54075c77fcd4c"
+  },
+  "inputs": {
+    "dependencies": {
+      "acpica": {
+        "commit": "8d24867bc9c9d81c81eeac59391cda59333affd4",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "ads1220-zephyr-module": {
+        "commit": "d618d1f3f198fd7e4ca3469da1683644be2d1b9f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "canopennode": {
+        "commit": "dec12fa3f0d790cafa8414a4c2930ea71ab72ffd",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "chre": {
+        "commit": "3b32c76efee705af146124fb4190f71be5a4e36e",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "cmsis": {
+        "commit": "d1b8b20b6278615b00e136374540eb1c00dcabe7",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "cmsis-dsp": {
+        "commit": "d80a49b2bb186317dc1db4ac88da49c0ab77e6e7",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "cmsis-nn": {
+        "commit": "e9328d612ea3ea7d0d210d3ac16ea8667c01abdd",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "cmsis_6": {
+        "commit": "783317a3072554acbac86cca2ff24928cbf98d30",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "fatfs": {
+        "commit": "16245c7c41d2b79e74984f49b5202551786b8a9b",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_adi": {
+        "commit": "633fcecf3717aaa22079cf6121627a879f24df51",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_ambiq": {
+        "commit": "87a188b91aca22ce3ce7deb4a1cbf7780d784673",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_atmel": {
+        "commit": "da767444cce3c1d9ccd6b8a35fd7c67dc82d489c",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_espressif": {
+        "commit": "202c59552dc98e5cd02386313e1977ecb17a131f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_ethos_u": {
+        "commit": "50ddffca1cc700112f25ad9bc077915a0355ee5d",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_gigadevice": {
+        "commit": "2994b7dde8b0b0fa9b9c0ccb13474b6a486cddc3",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_intel": {
+        "commit": "0355bb816263c54eed23c7781034447af5d8200c",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_nordic": {
+        "commit": "37ca068d7b013fb65a2acc9306bffa48a3e72839",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_nuvoton": {
+        "commit": "466c3eed9c98453fb23953bf0e0427fea01924be",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_quicklogic": {
+        "commit": "bad894440fe72c814864798c8e3a76d13edffb6c",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_renesas": {
+        "commit": "3204903bdc5eda6869a40363560a69369c8d0e22",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_rpi_pico": {
+        "commit": "7b57b24588797e6e7bf18b6bda168e6b96374264",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_silabs": {
+        "commit": "8a173e9e566a396a19d18da4661cb54ce098f268",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_stm32": {
+        "commit": "4fcc3a3f32abe1c4cb76d9d1cef967728dd03908",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_tdk": {
+        "commit": "6727477af1e46fa43878102489b9672a9d24e39f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_telink": {
+        "commit": "4226c7fc17d5a34e557d026d428fc766191a0800",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_wch": {
+        "commit": "1de9d3e406726702ce7cfc504509a02ecc463554",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hal_wurthelektronik": {
+        "commit": "e3e2797b224fc48fdef1bc3e5a12a7c73108bba2",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "hostap": {
+        "commit": "697fd2cf5cbbd0c5375fc34761b6a9d7489a67d2",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "liblc3": {
+        "commit": "48bbd3eacd36e99a57317a0a4867002e0b09e183",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "libmctp": {
+        "commit": "b97860e78998551af99931ece149eeffc538bdb1",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "libmetal": {
+        "commit": "3e8781aae9d7285203118c05bc01d4eb0ca565a7",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "littlefs": {
+        "commit": "ed0531d59ee37f5fb2762bcf2fc8ba4efaf82656",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "lvgl": {
+        "commit": "f1db87ee98f1810328a8419572fa42a3b5f352ae",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "lz4": {
+        "commit": "11b8a1e22fa651b524494e55d22b69d3d9cebcfd",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "mbedtls": {
+        "commit": "4952e1328529ee549d412b498ea71c54f30aa3b1",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "mipi-sys-t": {
+        "commit": "33e5c23cbedda5ba12dbe50c4baefb362a791001",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "nanopb": {
+        "commit": "7307ce399b81ddcb3c3a5dc862c52d4754328d38",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "nrf_hw_models": {
+        "commit": "73a5d5827a94820be65b7d276d28173ec10bab9f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "nrf_wifi": {
+        "commit": "e35f707a782b7c4c0eb83a3b06ca4e6eb693f29f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "open-amp": {
+        "commit": "52bb1783521c62c019451cee9b05b8eda9d7425f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "percepio": {
+        "commit": "49e6dc202aa38c2a3edbafcc2dab85dec6aee973",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "picolibc": {
+        "commit": "82d62ed1ac55b4e34a12d0390aced2dc9af13fc9",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "psa-arch-tests": {
+        "commit": "2cadb02a72eacda7042505dcbdd492371e8ce024",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "segger": {
+        "commit": "cf56b1d9c80f81a26e2ac5727c9cf177116a4692",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "sof": {
+        "commit": "bc08c9c606324cfba0c104f4ffaf5dd456cb11d6",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "tf-m-tests": {
+        "commit": "502ea90105ee18f20c78f710e2ba2ded0fc0756e",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "tflite-micro": {
+        "commit": "8d404de73acf7687831e16d88e86e4f73cfddf8e",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "thrift": {
+        "commit": "10023645a0e6cb7ce23fcd7fd3dbac9f18df6234",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "tinycrypt": {
+        "commit": "1012a3ebee18c15ede5efc8332ee2fc37817670f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "trusted-firmware-a": {
+        "commit": "713ffbf96c5bcbdeab757423f10f73eb304eff07",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "uoscore-uedhoc": {
+        "commit": "54abc109c9c0adfd53c70077744c14e454f04f4a",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zcbor": {
+        "commit": "9b07780aca6fb21f82a241ba386ad9b379809337",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zephyr": {
+        "commit": "10ba6d0cb38bc3d258775d27982f707599320085",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zephyr-lang-rust": {
+        "commit": "37dc7fac3fb0372bc0e78e022bef87fcce68c48d",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk": {
+        "commit": "e5c9b6915b56801193e359dd9bad4a167ce0d1b8",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-analog-input-driver": {
+        "commit": "2684f22ee7e2168d4393f7e63676912210a796fc",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-behavior-runtime-sensor-rotate": {
+        "commit": "8b1125ed676c1f5e14145d217984f33d0ebdcef4",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-driver-MLX90393": {
+        "commit": "42297df2ce839556eaee94e5ddcb8494355e1312",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-driver-pmw3610-with-custom-studio-rpc": {
+        "commit": "5c34ea0eec246a1c986111417cd779b53144629a",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-cdc-acm-bootloader-trigger": {
+        "commit": "1850754d269aab9ba73e4639371bfe59a4130e65",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-custom-settings": {
+        "commit": "c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-device-info": {
+        "commit": "8cedd2dd9f04e19ea5a17b94914dd47a09d8db11",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-kscan-diagnostics": {
+        "commit": "1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-runtime-combo": {
+        "commit": "d9490e7b5d41c516221d131241009e81740efcee",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-runtime-macro": {
+        "commit": "38530962eb7061b60efcb98e84585cfb1f0cb6de",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-feature-watchdog": {
+        "commit": "84ad14c6c3645dc40b23f45d08ab45418655f912",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-input-processor-keybind": {
+        "commit": "10ad463f2e3c7a7dfb4b7cffd6bddd0e9e8b5bae",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-layout-shift": {
+        "commit": "4d71f7cb743256ac619873dd44f510e9e9562739",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-analoginput-rpc": {
+        "commit": "e065461e907fa924c0029e1d4c94cec1d9093e17",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-battery-nrf-vddh-oversampling": {
+        "commit": "59fc126f859d4e7700186c9906e4645379763c34",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-ble-management": {
+        "commit": "57738cc4fc6ba80e82a7ac57741a0339cb186cd4",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-devtool": {
+        "commit": "9938a2c73c06d6e65ba2c0b68c9aa044a467eafc",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-runtime-input-processor": {
+        "commit": "72387b5212264d26d704dbc43c765f6485470a77",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-module-settings-rpc": {
+        "commit": "083a299dd8d31c275809c5a249b12486be24a7d2",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-nice-oled": {
+        "commit": "c511d7f64ba0f186051943d027333d247ad8e206",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-rgbled-widget": {
+        "commit": "e6b467792a1dabef8cfa5c9fd26bfefc9c16662b",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zmk-studio-messages": {
+        "commit": "89b81d2e587fce807b668dff2a6967a40beef421",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
+      "zscilib": {
+        "commit": "ee1b287d9dd07208d2cc52284240ac25bb66eae3",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      }
+    },
+    "source": {
+      "commit": "d49fab5b6738935da15ea404f6858a87f887ad30",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "untracked": {}
+    },
+    "workspace_tools": {
+      "commit": "a49f67f5ab5392d45bb3209d68f0f17594f62d9a",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "untracked": {}
+    }
+  },
+  "run_id": "37187346754",
+  "schema": 1,
+  "target": {
+    "artifact-name": "MKB_R_MODULE_JOY",
+    "board": "xiao_ble//zmk",
+    "shield": "MKB_R_Base MKB_R_JOY rgbled_adapter nice_oled",
+    "snippet": "mkb-dya-peripheral battery-voltage-divider-oversampling cdc-boot zmk-usb-logging"
+  }
+}
