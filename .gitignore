@@ -7,3 +7,4 @@ result
 .vscode/launch.json
 .vscode/settings.json
 /tests/__pycache__/
+/scripts/__pycache__/

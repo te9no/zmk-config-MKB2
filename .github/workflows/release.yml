@@ -1,0 +1,82 @@
+name: Release firmware
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'New release tag (zmk-0.4-...)'
+        required: true
+        type: string
+  push:
+    tags:
+      - 'zmk-0.4-*'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: release-${{ github.repository }}-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.check.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: check
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$TAG" =~ ^zmk-0\.4-[A-Za-z0-9][A-Za-z0-9._-]*$ ]]
+          git check-ref-format "refs/tags/$TAG"
+          if git rev-parse --verify "refs/tags/$TAG" >/dev/null 2>&1; then
+            test "$(git rev-parse "refs/tags/$TAG^{commit}")" = "$GITHUB_SHA"
+          fi
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo 'Release already exists; use a new tag. Never overwrite published assets.' >&2
+            exit 1
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: preflight
+    uses: te9no/zmk-workspace/.github/workflows/build-zmk-firmware.yml@a49f67f5ab5392d45bb3209d68f0f17594f62d9a
+    with:
+      target: all
+      commit_firmware: false
+      update_build_health: false
+      fail_on_no_targets: true
+      tool_ref: a49f67f5ab5392d45bb3209d68f0f17594f62d9a
+
+  release:
+    needs: [preflight, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: artifact-*
+          path: release-input
+      - name: Validate and package every target
+        env:
+          MATRIX: ${{ needs.build.outputs.matrix }}
+          TAG: ${{ needs.preflight.outputs.tag }}
+        run: python3 scripts/package_release.py release-input release-output
+      - name: Publish complete release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.preflight.outputs.tag }}
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" --target "$GITHUB_SHA" --draft --prerelease \
+            --title "MeKaBu $TAG / 全構成" --notes-file release-output/README.md
+          gh release upload "$TAG" release-output/*.uf2 release-output/*.zip release-output/SHA256SUMS
+          gh release edit "$TAG" --draft=false --prerelease
+          echo "https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_STEP_SUMMARY"
