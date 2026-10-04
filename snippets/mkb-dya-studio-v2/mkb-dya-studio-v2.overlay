@@ -1,3 +1,5 @@
+#include <behaviors/runtime_macro.dtsi>
+
 /*
  * The board-level CDC ACM instance is not used by MKB. Keep the dedicated
  * USB logging/CDC boot and Studio RPC instances, while avoiding a third CDC

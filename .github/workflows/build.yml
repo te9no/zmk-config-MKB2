@@ -22,6 +22,8 @@ on:
       - "snippets/**"
       - "build.yaml"
       - "zephyr/module.yml"
+      - "CMakeLists.txt"
+      - "src/**"
       - ".github/workflows/build.yml"
 
 permissions:
