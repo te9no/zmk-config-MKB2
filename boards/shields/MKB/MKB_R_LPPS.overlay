@@ -56,7 +56,7 @@
             in-min = <(0 - 12000)>;
             in-max = <(0 + 12000)>;
             in-calib-cycle = <100>;
-            in-deadzone = <600>;
+            in-deadzone = <1500>;
             out-min = <(-20)>;
             out-max = <20>;
             skip-change-comparator;
@@ -70,7 +70,7 @@
             in-min = <(0 - 12000)>;
             in-max = <(0 + 12000)>;
             in-calib-cycle = <100>;
-            in-deadzone = <600>;
+            in-deadzone = <1500>;
             out-min = <(-20)>;
             out-max = <20>;
             invert-output;
