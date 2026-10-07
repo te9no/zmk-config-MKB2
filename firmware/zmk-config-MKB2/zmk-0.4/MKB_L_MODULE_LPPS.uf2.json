@@ -1,11 +1,11 @@
 {
   "artifact": {
     "name": "MKB_L_MODULE_LPPS.uf2",
-    "sha256": "797b0398fea213d727aaaacc7f6febef229ec2e319243414eee87353e4d922f8"
+    "sha256": "7994d035dc6b3363c016c194089f0d50909eb9ccdb41fc27805ed8bc646c4655"
   },
   "generated": {
     ".config": "e7dfc25bd54c1e32313d71b3ade48e0c7dff356220ec33f85aec6c151689d74e",
-    "zephyr.dts": "dde9cd0f04c58e0128a5bae4f7d36b0e4d48ccbe10d76206ea320e43b3376579"
+    "zephyr.dts": "dae4e2412d18c068b0d56e821c9c32af00f9faacd1aa94d3ff1cb2fc766f327c"
   },
   "inputs": {
     "dependencies": {
@@ -479,7 +479,7 @@
       }
     },
     "source": {
-      "commit": "e7894b71c94a124b160c153984644c202a1afaf4",
+      "commit": "3efccb00eec803db57dc6f79cad577465de526c1",
       "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "dirty": false,
       "untracked": {}
@@ -491,7 +491,7 @@
       "untracked": {}
     }
   },
-  "run_id": "37187850274",
+  "run_id": "37582163532",
   "schema": 1,
   "target": {
     "artifact-name": "MKB_L_MODULE_LPPS",
