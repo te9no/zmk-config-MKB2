@@ -17,6 +17,10 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
+    - name: zmk-module-bt-recovery
+      url: https://github.com/te9no/zmk-module-bt-recovery
+      revision: 7e76381d90856a42e739cebf66752afebbe78748
+      path: modules/zmk-module-bt-recovery
     - name: zmk
       remote: cormoran
       revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8

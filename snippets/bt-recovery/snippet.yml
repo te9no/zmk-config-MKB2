@@ -1,0 +1,3 @@
+name: bt-recovery
+append:
+  EXTRA_CONF_FILE: recovery.conf

@@ -1,0 +1,48 @@
+name: MeKaBu Bluetooth recovery prerelease build
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/bt-recovery]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: zmkfirmware/zmk-build-arm:4.1
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        target: [MKB_L_MODULE_TB, MKB_L_MODULE_JOY, MKB_L_MODULE_ENC, MKB_L_MODULE_RZT, MKB_L_MODULE_TPD, MKB_L_MODULE_KEY, MKB_L_MODULE_LPPS, MKB_R_MODULE_TBv4, MKB_R_MODULE_TBv3, MKB_R_MODULE_JOY, MKB_R_MODULE_ENC, MKB_R_MODULE_RZT, MKB_R_MODULE_TPD, MKB_R_MODULE_KEY, MKB_R_MODULE_LPPS, settings_reset]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: config-repo
+      - name: Prepare isolated dependencies
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE/config-repo"
+          mkdir -p west-workspace/manifest
+          cp config-repo/config/west.yml west-workspace/manifest/west.yml
+          cd west-workspace
+          west init -l manifest
+          west update --narrow
+      - name: Test keyboard configuration
+        if: matrix.target == 'MKB_L_MODULE_TB'
+        run: python3 -m unittest discover -s config-repo/tests
+      - name: Test actual recovery bridge and policy
+        if: matrix.target == 'MKB_L_MODULE_TB'
+        working-directory: west-workspace
+        run: |
+          python3 ../config-repo/scripts/apply-bt-recovery.py zmk
+          sh modules/zmk-module-bt-recovery/tests/run.sh
+          python3 modules/zmk-module-bt-recovery/tests/test_bridge.py zmk
+      - name: Build and verify
+        working-directory: west-workspace
+        run: python3 ../config-repo/scripts/build-bt-recovery.py ${{ matrix.target }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bt-recovery-${{ matrix.target }}
+          path: west-workspace/release-artifacts/*
+          if-no-files-found: error
