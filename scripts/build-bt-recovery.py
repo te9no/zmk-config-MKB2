@@ -40,6 +40,9 @@ assert ("CONFIG_ZMK_BT_RECOVERY=y\n" in config) == (not reset)
 if not reset:
     assert "CONFIG_ZMK_BT_RECOVERY_BRIDGE_V1=y\n" in config
     assert ("CONFIG_ZMK_SPLIT_ROLE_CENTRAL=y\n" in config) == args.target.startswith("MKB_L_")
+    if args.target.startswith("MKB_R_"):
+        for option in ("ZMK_SETTINGS_RPC", "ZMK_SPLIT_RELAY_EVENT", "SETTINGS"):
+            assert f"CONFIG_{option}=y\n" in config, option
 data = (build / "zephyr/zmk.uf2").read_bytes()
 assert data and len(data) % 512 == 0
 for offset in range(0, len(data), 512):
