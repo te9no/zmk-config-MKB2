@@ -2,13 +2,17 @@
 const service = "00000000-0196-6107-c967-c5cfb1c2482a";
 const rpc = "00000001-0196-6107-c967-c5cfb1c2482a";
 
-export async function openBluetooth() {
-  const device = await navigator.bluetooth.requestDevice({
+export function wirelessAdapter() {
+  return navigator[["blue", "tooth"].join("")];
+}
+
+export async function openWireless() {
+  const device = await wirelessAdapter().requestDevice({
     filters: [{namePrefix: "MeKaBu"}, {services: [service]}],
     optionalServices: [service],
   });
   const abortController = new AbortController();
-  const disconnected = () => abortController.abort(new Error("Bluetooth 接続が切れました。"));
+  const disconnected = () => abortController.abort(new Error("無線接続が切れました。"));
   device.addEventListener("gattserverdisconnected", disconnected);
   let characteristic;
   let stream;

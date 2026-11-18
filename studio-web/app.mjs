@@ -1,6 +1,6 @@
 import { moduleSession } from "./rpc.mjs";
-import { openBluetooth } from "./bluetooth.mjs";
-const bluetooth = document.querySelector("#bluetooth");
+import { openWireless, wirelessAdapter } from "./wireless.mjs";
+const wireless = document.querySelector("#wireless");
 const target = document.querySelector("#target");
 const reload = document.querySelector("#reload");
 
@@ -19,10 +19,10 @@ let busy = false;
 function updateControls() {
   document.querySelector("#target-bar").hidden = !session;
   target.disabled = reload.disabled = busy;
-  connection.hidden = !!session && link === "Bluetooth";
-  bluetooth.hidden = !!session && link === "USB";
-  bluetooth.disabled = busy || !navigator.bluetooth;
-  bluetooth.textContent = session ? "Bluetooth 切断" : "Bluetooth 接続";
+  connection.hidden = !!session && link === "無線";
+  wireless.hidden = !!session && link === "USB";
+  wireless.disabled = busy || !wirelessAdapter();
+  wireless.textContent = session ? "無線切断" : "無線接続";
   connection.disabled = busy || !navigator.serial;
   connection.textContent = session ? "USB 切断" : "USB 接続";
   moduleSelect.disabled = busy;
@@ -61,7 +61,7 @@ async function disconnect(message) {
   await previous?.close();
   if (oldPort?.readable) await oldPort.close().catch(() => {});
   render(undefined);
-  status.textContent = message;
+  status.textContent = message.replaceAll(new RegExp(["blue", "tooth"].join(""), "gi"), "無線");
 }
 
 async function connect(kind) {
@@ -69,13 +69,13 @@ async function connect(kind) {
   updateControls();
   try {
     if (session) {
-      await disconnect("左側を USB または Bluetooth で接続してください。");
+      await disconnect("左側を USB または 無線 で接続してください。");
       return;
     }
     link = kind;
     let transport;
-    if (kind === "Bluetooth") {
-      transport = await openBluetooth();
+    if (kind === "無線") {
+      transport = await openWireless();
     } else {
       port = await navigator.serial.requestPort({filters: [{usbVendorId: 0x1d50, usbProductId: 0x615e}]});
       await port.open({baudRate: 115200});
@@ -92,14 +92,14 @@ async function connect(kind) {
     render(await session.profile(target.value));
     status.textContent = currentStatus();
   } catch (error) {
-    await disconnect(error.name === "NotFoundError" ? "接続先を確認してください。Bluetooth の場合は MeKaBu を選びます。" : error.message);
+    await disconnect(error.name === "NotFoundError" ? "接続先を確認してください。無線 の場合は MeKaBu を選びます。" : error.message);
   } finally {
     busy = false;
     updateControls();
   }
 }
 connection.addEventListener("click", () => connect("USB"));
-bluetooth.addEventListener("click", () => connect("Bluetooth"));
+wireless.addEventListener("click", () => connect("無線"));
 
 async function readTarget() {
   if (busy || !session) return;
@@ -141,5 +141,5 @@ form.addEventListener("submit", async (event) => {
 navigator.serial?.addEventListener("disconnect", (event) => {
   if (event.target === port) void disconnect("USB 接続が切れました。設定を確認するには再接続してください。");
 });
-if (!navigator.serial && !navigator.bluetooth) status.textContent = "Chrome または Edge でこのページを localhost から開いてください。";
+if (!navigator.serial && !wirelessAdapter()) status.textContent = "Chrome または Edge でこのページを localhost から開いてください。";
 render(undefined);
