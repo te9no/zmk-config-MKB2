@@ -8,3 +8,8 @@
 &spi2 { zephyr,deferred-init; };
 &adc_ads1220 { zephyr,deferred-init; };
 &lpps_axis { zephyr,deferred-init; };
+/* The optional 1u key reports through module_key; only the physical matrix
+ * belongs to the layout's scanner. */
+&layout_MKB { kscan = <&kscan1>; };
+&kscan0 { status = "disabled"; };
+&kscan2 { status = "disabled"; };

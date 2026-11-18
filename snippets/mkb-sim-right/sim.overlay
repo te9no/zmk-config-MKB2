@@ -1,0 +1,3 @@
+#include "../../tests/renode/uart.overlay"
+#include "../../tests/renode/wired.dtsi"
+&oled { status = "disabled"; };

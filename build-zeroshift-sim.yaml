@@ -1,0 +1,9 @@
+include:
+  - board: xiao_ble//zmk
+    shield: MKB_L_Base MKB_L_ZS
+    snippet: Default mkb-zeroshift mkb-sim-left
+    artifact-name: MKB-ZeroShift-sim-left
+  - board: xiao_ble//zmk
+    shield: MKB_R_Base MKB_R_ZS
+    snippet: mkb-zeroshift mkb-sim-right
+    artifact-name: MKB-ZeroShift-sim-right

@@ -1,0 +1,4 @@
+#include "../../tests/renode/uart.overlay"
+#include "../../tests/renode/wired.dtsi"
+/ { chosen { zmk,studio-rpc-uart = &uart0; }; };
+&oled { status = "disabled"; };

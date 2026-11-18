@@ -20,3 +20,7 @@ if(CONFIG_SHIELD_MKB_L_ZS OR CONFIG_SHIELD_MKB_R_ZS)
   endif()
 endif()
 
+
+if(CONFIG_ZMK_STUDIO_RPC AND SNIPPET MATCHES "mkb-sim-left")
+  target_sources(app PRIVATE tests/renode/uart_endpoint.c)
+endif()
