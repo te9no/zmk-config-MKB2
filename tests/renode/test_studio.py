@@ -2,6 +2,7 @@
 import argparse
 import subprocess
 import tempfile
+import time
 from pathlib import Path
 from board import APP_START, SETTINGS_SIZE, SETTINGS_START, board_model, port_number, read_application
 
@@ -38,35 +39,39 @@ connector Connect sysbus.uart1 split
         script += f'''mach set "left"
 emulation CreateServerSocketTerminal {port} "studio" false
 connector Connect sysbus.uart0 studio
+emulation RunFor "2.2"
 start
+log "MKB: ready"
 '''
         (root / "test.resc").write_text(script)
         with args.log.open("w") as log, subprocess.Popen(
                 [renode, "--disable-xwt", "--console", "--plain", root / "test.resc"],
                 stdin=subprocess.PIPE, stdout=log, stderr=subprocess.STDOUT, text=True) as emu:
             try:
-                import time
-                for _ in range(300):
-                    if "Machine started" in args.log.read_text(errors="replace"):
+                for _ in range(1200):
+                    if "Script: MKB: ready" in args.log.read_text(errors="replace"):
                         break
                     time.sleep(0.05)
+                else:
+                    raise TimeoutError("Renode did not finish booting")
                 with subprocess.Popen(["node", Path(__file__).with_suffix(".mjs"), str(port)],
                                       stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True) as client:
                     for line in client.stdout:
                         if line.strip() in ("RESET left", "RESET right"):
                             side = line.split()[1]
                             offset = args.log.stat().st_size
-                            emu.stdin.write(f'pause\nmach set "{side}"\nmachine Reset\nsysbus.cpu VectorTableOffset {APP_START:#x}\nstart\n')
+                            emu.stdin.write(f'pause\nmach set "{side}"\nmachine Reset\nsysbus.cpu VectorTableOffset {APP_START:#x}\nemulation RunFor "2.2"\nstart\nlog "MKB: ready"\n')
                             emu.stdin.flush()
                             with args.log.open() as events:
                                 events.seek(offset)
                                 trace = ""
-                                for _ in range(200):
+                                for _ in range(1200):
                                     trace += events.read()
-                                    if f"{side}/cpu: Setting initial values:" in trace:
+                                    if "Script: MKB: ready" in trace:
                                         break
                                     time.sleep(0.05)
                                 else:
+                                    client.kill()
                                     raise TimeoutError(f"{side}: reset was not observed")
                             client.stdin.write("ok\n")
                             client.stdin.flush()
