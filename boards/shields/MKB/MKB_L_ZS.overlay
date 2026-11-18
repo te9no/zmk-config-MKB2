@@ -1,0 +1,38 @@
+/* Reuse each module's established calibration, pinout and input processors. */
+#include "zeroshift_devices.dtsi"
+#define left_encoder joy_encoder
+#include "MKB_L_JOY.overlay"
+#undef left_encoder
+#define magnet_listener local_magnet_listener
+#include "MKB_L_RZT.overlay"
+#undef magnet_listener
+#include "MKB_L_TPD.overlay"
+/* TWIM0 and SPIM0 share an nRF peripheral; use SPIM2 for the LPPS bus. */
+#define spi0 spi2
+#include "MKB_L_LPPS.overlay"
+#undef spi0
+#include "zeroshift_common.dtsi"
+&glidepoint_L { zephyr,deferred-init; };
+
+/ {
+    tb_bus: bus-tb {
+        #include "zeroshift_tb_bus.dtsi"
+        sck-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
+        tb: trackball@0 {
+            #include "zeroshift_tb_sensor.dtsi"
+            spi-max-frequency = <2000000>;
+            settings-id = "mkb-ltb";
+            irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        };
+    };
+    local_trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&tb>;
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+                           <&zip_xy_to_scroll_mapper &scroll_runtime_input_processor>;
+    };
+    split_inputs {
+        remote_lpps: lpps@4 { compatible = "zmk,input-split"; reg = <4>; };
+    };
+    remote_lpps_listener { compatible = "zmk,input-listener"; device = <&remote_lpps>; };
+};

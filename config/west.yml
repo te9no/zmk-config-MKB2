@@ -17,6 +17,12 @@ manifest:
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
+    - name: zmk-feature-zeroshift
+      remote: te9no
+      revision: 08b785e94d49afff36fbaea16672b5fafaa09c0c
+    - name: zmk-driver-spi-three-wire
+      remote: te9no
+      revision: 4362133dbfbf66788b66b0a3e3c410b9232c06cb
     - name: zmk
       remote: cormoran
       revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8

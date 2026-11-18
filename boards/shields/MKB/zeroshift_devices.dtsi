@@ -1,0 +1,22 @@
+/ {
+    module_encoder: module-encoder {
+        compatible = "mkb,deferred-ec11", "alps,ec11";
+        zephyr,deferred-init;
+        a-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <24>;
+    };
+    joy_encoder: stick-encoder {
+        compatible = "mkb,deferred-ec11", "alps,ec11";
+        zephyr,deferred-init;
+    };
+    module_key: module-key {
+        compatible = "gpio-keys";
+        zephyr,deferred-init;
+        key {
+            gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            zephyr,code = <INPUT_KEY_A>;
+        };
+    };
+};
+

@@ -1,0 +1,37 @@
+/* Reuse each module's established calibration, pinout and input processors. */
+#include "zeroshift_devices.dtsi"
+#define right_encoder joy_encoder
+#include "MKB_R_JOY.overlay"
+#undef right_encoder
+#include "MKB_R_RZT.overlay"
+#include "MKB_R_TPD.overlay"
+/* TWIM0 and SPIM0 share an nRF peripheral; use SPIM2 for the LPPS bus. */
+#define spi0 spi2
+#include "MKB_R_LPPS.overlay"
+#undef spi0
+#include "zeroshift_common.dtsi"
+&glidepoint_R { zephyr,deferred-init; };
+&magnet_split { reg = <1>; };
+&lpps_split { reg = <4>; };
+
+/ {
+    tb_bus: bus-tb {
+        #include "zeroshift_tb_bus.dtsi"
+        sck-gpios = <&xiao_d 8 GPIO_ACTIVE_HIGH>;
+        tb: trackball@0 {
+            #include "zeroshift_tb_sensor.dtsi"
+            spi-max-frequency = <1500000>;
+            settings-id = "mkb-rtb";
+            irq-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            force-awake;
+        };
+    };
+    split_inputs {
+        tb4_split: tb4@0 {
+            compatible = "zmk,input-split";
+            device = <&tb>;
+            reg = <0>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+        };
+    };
+};

@@ -1,0 +1,8 @@
+compatible = "cormoran,pmw3610";
+zephyr,deferred-init;
+reg = <0>;
+cpi = <800>;
+evt-type = <INPUT_EV_REL>;
+x-input-code = <INPUT_REL_X>;
+y-input-code = <INPUT_REL_Y>;
+disable-burst-read;

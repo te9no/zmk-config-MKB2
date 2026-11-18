@@ -1,0 +1,7 @@
+compatible = "te9no,spi-three-wire-gpio";
+zephyr,deferred-init;
+#address-cells = <1>;
+#size-cells = <0>;
+sdio-gpios = <&xiao_d 4 GPIO_ACTIVE_HIGH>;
+cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+recovery-delay-us = <30>;

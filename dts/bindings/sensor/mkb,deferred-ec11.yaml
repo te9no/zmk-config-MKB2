@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: MIT
+
+description: EC11 encoder on a MeKaBu slot initialized from the saved module selection
+compatible: "mkb,deferred-ec11"
+
+include:
+  - name: alps,ec11.yaml
+  - name: base.yaml
+    property-allowlist:
+      - zephyr,deferred-init

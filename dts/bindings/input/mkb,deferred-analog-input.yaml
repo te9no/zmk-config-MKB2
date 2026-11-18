@@ -1,0 +1,7 @@
+description: MeKaBu analog stick initialized when selected
+compatible: "mkb,deferred-analog-input"
+include:
+  - name: zmk,analog-input.yaml
+  - name: base.yaml
+    property-allowlist:
+      - zephyr,deferred-init

@@ -1,0 +1,28 @@
+:root {
+  color-scheme: light;
+  font: 16px/1.5 "Atkinson Hyperlegible Next", "Yu Gothic UI", Meiryo, system-ui, sans-serif;
+  color: #1d2423;
+  background: #f0f3ef;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: clamp(1rem, 5vw, 3.5rem) 1rem; }
+main { margin: 0 auto; max-width: 36rem; }
+header { margin-bottom: 1.75rem; }
+h1 { font: 650 clamp(2.8rem, 10vw, 4.25rem)/1 "Geist", system-ui, sans-serif; letter-spacing: -.065em; }
+h1, p { margin: 0; }
+header p { margin-top: .5rem; color: #465b55; }
+section, form { padding: 1.15rem; border: 1px solid #cedad3; border-radius: .8rem; background: #fff; }
+form { margin-top: .8rem; }
+.bar, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; justify-content: space-between; }
+.actions { justify-content: flex-end; margin-top: 1rem; }
+#status { margin-top: .8rem; color: #465b55; font-size: .9rem; }
+.slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .9rem; }
+.slot { display: grid; align-content: start; gap: .5rem; padding: .85rem; border: 1px solid #dce4de; border-radius: .55rem; }
+label { font-weight: 700; }
+label span, small { color: #465b55; font-weight: 400; }
+select, button { min-height: 2.7rem; padding: .45rem .75rem; border-radius: .4rem; font: inherit; }
+select { min-width: 0; border: 1px solid #849a90; background: #fff; color: #1d2423; }
+button { border: 1px solid #154e41; background: #154e41; color: #fff; cursor: pointer; }
+button:enabled:hover { background: #226957; }
+button:disabled, select:disabled { opacity: .65; cursor: default; }
+:focus-visible { outline: 3px solid #28745f; outline-offset: 3px; }

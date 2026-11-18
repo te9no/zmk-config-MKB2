@@ -1,0 +1,10 @@
+&default_transform { rows = <7>; };
+&sensors { triggers-per-rotation = <10>; };
+/* 30 edges at 10 triggers/turn gives the JOY module's original 3 edges/trigger. */
+&joy_encoder { steps = <30>; };
+&anin0 { compatible = "mkb,deferred-analog-input", "zmk,analog-input"; zephyr,deferred-init; };
+&i2c0 { zephyr,deferred-init; };
+&mlx90393_input { zephyr,deferred-init; };
+&spi2 { zephyr,deferred-init; };
+&adc_ads1220 { zephyr,deferred-init; };
+&lpps_axis { zephyr,deferred-init; };
