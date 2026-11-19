@@ -6,16 +6,9 @@
 
 このブランチの自動ビルドで生成される `MKB-ZeroShift-left.uf2` と `MKB-ZeroShift-right.uf2` を対応する側に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
 
-## Firmware download
+## ファームウェア
 
-[ファームウェアをダウンロード / GitHub Releases](https://github.com/te9no/zmk-config-MKB2/releases)
-
-ZMK 0.4版はプレリリースとして配布します。全構成の一括ZIPまたは左右・モジュール別UF2を選択してください。
-実機確認範囲と書き込み手順は各リリースに記載しています。`settings_reset`は設定消去用で、通常更新には使用しません。
-
-管理者向け: `zmk-0.4-*`タグをpushするとRelease firmwareワークフローが全構成をビルド・検証して公開します。
-Actionsで手動実行できる場合は、対象ブランチと未使用の同形式タグを指定することもできます。
-既存リリースは上書きしません。アップロード途中で失敗した場合は非公開draftに留まります。
+[ZeroShift 左右のUF2](firmware/zmk-config-MKB2/feat-zeroshift-modules/)から、左手には `MKB-ZeroShift-left.uf2`、右手には `MKB-ZeroShift-right.uf2` を使用してください。両側とも、装着するモジュールは共通の設定画面で選びます。
 
 ```
                                                                                          

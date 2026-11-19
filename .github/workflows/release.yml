@@ -76,7 +76,7 @@ jobs:
         run: |
           set -euo pipefail
           gh release create "$TAG" --target "$GITHUB_SHA" --draft --prerelease \
-            --title "MeKaBu $TAG / 全構成" --notes-file release-output/README.md
+            --title "MeKaBu ZeroShift $TAG" --notes-file release-output/README.md
           gh release upload "$TAG" release-output/*.uf2 release-output/*.zip release-output/SHA256SUMS
           gh release edit "$TAG" --draft=false --prerelease
           echo "https://github.com/$GITHUB_REPOSITORY/releases/tag/$TAG" >> "$GITHUB_STEP_SUMMARY"
