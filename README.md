@@ -4,7 +4,7 @@
 
 ## ZeroShift モジュール設定
 
-このブランチの ZeroShift 対応ファームを左右に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
+このブランチの自動ビルドで生成される `MKB-ZeroShift-left.uf2` と `MKB-ZeroShift-right.uf2` を対応する側に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
 
 ## Firmware download
 

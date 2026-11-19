@@ -25,6 +25,7 @@ on:
       - "build.yaml"
       - "zephyr/module.yml"
       - "CMakeLists.txt"
+      - "proto/**"
       - "src/**"
       - ".github/workflows/build.yml"
 

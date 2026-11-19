@@ -1,9 +1,0 @@
-include:
-  - board: xiao_ble//zmk
-    shield: MKB_L_Base MKB_L_ZS rgbled_adapter nice_oled
-    snippet: Default cdc-boot zmk-usb-logging studio-rpc-usb-uart mkb-zeroshift
-    artifact-name: MKB-ZeroShift-left
-  - board: xiao_ble//zmk
-    shield: MKB_R_Base MKB_R_ZS rgbled_adapter nice_oled
-    snippet: cdc-boot zmk-usb-logging mkb-zeroshift
-    artifact-name: MKB-ZeroShift-right
