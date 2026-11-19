@@ -4,7 +4,7 @@
     "sha256": "3892074aa8b8e341a587e37893532a8bb99ad7c99d33bcd52f315f087b9f3bf0"
   },
   "generated": {
-    ".config": "e78c9a5847f042650e69cb2a4e1a033e2ef60e3e6097e12c82cef47e647efbb4",
+    ".config": "22d4e1ca379fd0244f5f4eb56ca48d1793538a0d7534574857559fe0c6770bb6",
     "zephyr.dts": "a97a1826b1116fb691ce4999d7bc762f768943652dd4d69186c56e41651f5aa5"
   },
   "inputs": {
@@ -491,38 +491,23 @@
       }
     },
     "source": {
-      "commit": "7ed25ead19ba0889b9237d265d8b3cd843c627f6",
+      "commit": "b5a1e767a48dfd21784d1211d98edb06e2d9f276",
       "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "dirty": false,
       "untracked": {}
     },
     "workspace_tools": {
-      "commit": "359af181a2161c341e44d0f14fa90611bd8811af",
-      "diff_sha256": "7732e7e4a6dde760c60961dd4dbc925047e9acadd486b58ebfd064a0fb0c20f8",
-      "dirty": true,
-      "untracked": {
-        "scripts/audit_esb_dongle_concurrent.py": "0455a92ed9b7391787cbf6b6532e2a729e805fadefce228000f28bac485344a3",
-        "scripts/audit_esb_dongle_esb.py": "8692a15545c7a5f7136a109c02bf4605a9257e39e50fdfef04f355f446c36029",
-        "scripts/audit_esb_dongle_multi.py": "80545abdde9bf6054a397f62ead911a5ce0309610fd1fc73ad2f22785de31af0",
-        "scripts/build_esb_dongle.py": "9be54718385d70519208cccc20d4de0de205b83acd9745187e33dff621aeb97c",
-        "scripts/build_esb_dongle_board_smoke.py": "a26881dfd93fbb2573190553e4a4103c4d83575b5369ddb3e5bf6a150a327ae9",
-        "scripts/build_esb_dongle_peripheral.py": "4df9ab9aebfcf1e09577d6f8cdbe665c965f3434cdd590dddf139ea527aa23c8",
-        "scripts/flash_esb_dongle_ananta_concurrent.ps1": "22332979e5955099f0e013f912e6cb79f4ed4ae876b4dee3be95cd355140d607",
-        "scripts/inventory_esb_dongle_profiles.py": "a5fccd1c1eb91725129790ba9593f68216b9fa9cef8e9ec3fbe13530de564da1",
-        "scripts/package_esb_dongle_dfu.ps1": "4f251a5120a153ac655187a4d708b3446b77c9b003bb59a2c872cbb3ec1cfd76",
-        "scripts/probe_esb_dongle_profiles.py": "b9b47499f6066f88ec854fecd139a32506f37666af2c42a95c526b331fcb3636",
-        "scripts/stage_esb_dongle_concurrent.py": "a1abf8131088941124d454c038f3891a6fd9d2ab04755da143acdb75292947df",
-        "scripts/stage_esb_dongle_layout_shift.py": "fde17fc3d965abfd2ad9b792859522d31e595dd25f77e9b2c4950ac07c9b370d",
-        "scripts/stage_esb_dongle_multi.py": "66307cd3c9743c0f3fcc498210180631df179b5155dded743c2304ae4bd85500",
-        "scripts/stage_esb_dongle_oled.py": "4fbf1833f095b29fdc2d87ae2d803e9834d9aa32092ea7eba363abd11d56217b"
-      }
+      "commit": "a49f67f5ab5392d45bb3209d68f0f17594f62d9a",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "untracked": {}
     }
   },
+  "run_id": "44484574506",
   "schema": 1,
   "target": {
     "artifact-name": "MKB-ZeroShift-left",
     "board": "xiao_ble//zmk",
-    "cmake-argv": [],
     "shield": "MKB_L_Base MKB_L_ZS rgbled_adapter nice_oled",
     "snippet": "Default cdc-boot zmk-usb-logging studio-rpc-usb-uart mkb-zeroshift"
   }
