@@ -2,6 +2,10 @@
 
 [![Build Health](badges/build-health/zmk-config-MKB2/main/build-health.svg)](https://github.com/te9no/zmk-config-MKB2/actions/workflows/build.yml?query=branch%3Amain)
 
+## ZeroShift モジュール設定
+
+このブランチの ZeroShift 対応ファームを左右に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
+
 ## Firmware download
 
 [ファームウェアをダウンロード / GitHub Releases](https://github.com/te9no/zmk-config-MKB2/releases)

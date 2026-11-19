@@ -8,6 +8,7 @@ Renode 1.17.0 で nRF52840 を2台起動し、Web UI と同じ Studio クライ�
 
 ```sh
 ZMK_CONFIG_ROOT=work/mekabu-zeroshift ZMK_BUILD_MATRIX=build-zeroshift-sim.yaml ZMK_CONFIG_NAME=mekabu ZMK_FIRMWARE_TEST_PURPOSE=renode-zeroshift-v1 CMAKE_BUILD_PARALLEL_LEVEL=4 ./just.sh --profile mekabu-zeroshift build-parallel MKB-ZeroShift-sim 2
-(cd work/mekabu-zeroshift/studio-web && npm ci && npm run build)
+(cd config/zmk-feature-zeroshift/studio-web && npm ci && npm run build)
+export ZEROSHIFT_SHARED_RPC="$PWD/config/zmk-feature-zeroshift/studio-web/dist/rpc.mjs"
 python3 -B work/mekabu-zeroshift/tests/renode/test_studio.py --renode .zmk-workspace/tools/renode-1.17.0/renode --firmware-dir firmware/testing/mekabu/renode-zeroshift-v1 --log /tmp/mkb-renode.log
 ```

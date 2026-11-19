@@ -5,13 +5,14 @@ import {once} from "node:events";
 import {createInterface} from "node:readline/promises";
 import {setTimeout as delay} from "node:timers/promises";
 const sharedClient = process.env.ZEROSHIFT_SHARED_RPC;
-const {moduleSession} = await import(sharedClient || "../../studio-web/dist/rpc.mjs");
+if (!sharedClient) throw new Error("Set ZEROSHIFT_SHARED_RPC to the built ZeroShift rpc.mjs path.");
+const {moduleSession} = await import(sharedClient);
 
 const socket = net.connect(Number(process.argv[2]), "127.0.0.1");
 await once(socket, "connect");
 const transport = {...Duplex.toWeb(socket), abortController: new AbortController()};
 const client = moduleSession(transport);
-const session = sharedClient ? {
+const session = {
   close: () => client.close(),
   async profile(side, mode) {
     const state = await client.profile(side, mode === undefined ? undefined : [mode]);
@@ -19,7 +20,7 @@ const session = sharedClient ? {
     assert.equal(state.innerEnabled, false);
     return {saved: state.lower, active: state.activeLower};
   },
-} : client;
+};
 const monitor = createInterface({input: process.stdin, output: process.stdout});
 async function reset(side) {
   await monitor.question("RESET " + side + "\n");
