@@ -4,12 +4,22 @@ import {Duplex} from "node:stream";
 import {once} from "node:events";
 import {createInterface} from "node:readline/promises";
 import {setTimeout as delay} from "node:timers/promises";
-import {moduleSession} from "../../studio-web/dist/rpc.mjs";
+const sharedClient = process.env.ZEROSHIFT_SHARED_RPC;
+const {moduleSession} = await import(sharedClient || "../../studio-web/dist/rpc.mjs");
 
 const socket = net.connect(Number(process.argv[2]), "127.0.0.1");
 await once(socket, "connect");
 const transport = {...Duplex.toWeb(socket), abortController: new AbortController()};
-const session = moduleSession(transport);
+const client = moduleSession(transport);
+const session = sharedClient ? {
+  close: () => client.close(),
+  async profile(side, mode) {
+    const state = await client.profile(side, mode === undefined ? undefined : [mode]);
+    assert.equal(state.model, "MeKaBu");
+    assert.equal(state.innerEnabled, false);
+    return {saved: state.lower, active: state.activeLower};
+  },
+} : client;
 const monitor = createInterface({input: process.stdin, output: process.stdout});
 async function reset(side) {
   await monitor.question("RESET " + side + "\n");
