@@ -1,0 +1,23 @@
+/* PAT9125 R02 uses FPC signal pads 4=SCL, 2=SDA, 3=MOTION, 1=PUSH. */
+/ {
+    dial_bus: dial-bus {
+        compatible = "gpio-i2c";
+        zephyr,deferred-init;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        clock-frequency = <100000>;
+        scl-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+        sda-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+        module_dial: encoder@75 {
+            compatible = "pixart,pat912x";
+            zephyr,deferred-init;
+            reg = <0x75>;
+            motion-gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            res-x-cpi = <1275>;
+            res-y-cpi = <0>;
+            zephyr,axis-x = <INPUT_REL_X>;
+            sleep1-enable;
+            sleep2-enable;
+        };
+    };
+};

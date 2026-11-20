@@ -35,3 +35,5 @@
         };
     };
 };
+
+#include "zeroshift_dial.dtsi"
