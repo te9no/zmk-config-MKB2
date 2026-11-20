@@ -24,3 +24,7 @@ endif()
 if(CONFIG_ZMK_STUDIO_RPC AND SNIPPET MATCHES "mkb-sim-left")
   target_sources(app PRIVATE tests/renode/uart_endpoint.c)
 endif()
+
+if(CONFIG_ZMK_ZEROSHIFT AND (CONFIG_SHIELD_MKB_L_ZS OR CONFIG_SHIELD_MKB_R_ZS) AND NOT CONFIG_ZMK_SETTINGS_RESET_ON_START)
+  zephyr_linker_sources(ROM_START SORT_KEY 0x2volume src/uf2_volume_id.ld)
+endif()
