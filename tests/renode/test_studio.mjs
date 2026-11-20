@@ -45,15 +45,16 @@ await delay(1500);
 for (const side of ["right", "left"]) {
   let previous = "off";
   check(await readAfterBoot(side), previous, previous);
-  for (const mode of ["key", "encoder", "stick", "pmw3610", "rzt", "tpd", "lpps", "off"]) {
+  for (const mode of ["key", "encoder", "stick", "pmw3610", "rzt", "pat9125", "tpd", "lpps", "off"]) {
     console.log(side, "set", mode);
     check(await session.profile(side, mode), mode, previous);
     check(await readAfterBoot(side === "left" ? "right" : "left"), "off", "off");
     await reset(side);
     const state = await readAfterBoot(side);
     console.log(side, "saved:", state.saved, "active:", state.active);
-    check(state, mode, mode);
-    previous = mode;
+    const active = mode === "pat9125" ? "off" : mode;
+    check(state, mode, active);
+    previous = active;
   }
 }
 check(await session.profile("left", "encoder"), "encoder", "off");
@@ -64,7 +65,7 @@ check(await readAfterBoot("left"), "encoder", "off");
 await reset("left");
 check(await readAfterBoot("left"), "encoder", "encoder");
 check(await readAfterBoot("right"), "key", "key");
-console.log("16/16 reboot cases passed; independent left encoder and right key passed");
+console.log("18/18 reboot cases passed; independent left encoder and right key passed");
 await session.close();
 socket.destroy();
 process.exit(0);

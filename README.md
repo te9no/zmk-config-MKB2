@@ -1,10 +1,14 @@
 ﻿# Futhesia Moduora (MeKaBu) - フセシア・モデュオラ（メカブ）
 
+[今回の左右 UF2 を ZIP でダウンロード](firmware/downloads/MeKaBu-ZeroShift-common-r01.zip)。同じ ZIP の左右を対応する側に書き込み、設定した側を再起動してください。
+
 [![Build Health](badges/build-health/zmk-config-MKB2/main/build-health.svg)](https://github.com/te9no/zmk-config-MKB2/actions/workflows/build.yml?query=branch%3Amain)
 
 ## ZeroShift モジュール設定
 
 このブランチの自動ビルドで生成される `MKB-ZeroShift-left.uf2` と `MKB-ZeroShift-right.uf2` を対応する側に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
+
+左右とも PMW3610、エンコーダ、PAT9125（R02 I²C）、LPPS（ADS1220）、アナログスティック、1u キー、Cirque タッチパッド、RZT、オフから選べます。
 
 ## ファームウェア
 
