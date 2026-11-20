@@ -8,7 +8,7 @@
 
 このブランチの自動ビルドで生成される `MKB-ZeroShift-left.uf2` と `MKB-ZeroShift-right.uf2` を対応する側に書き込み、左側を PC に接続して[共通の設定画面](https://te9no.github.io/zmk-feature-zeroshift/)を開きます。左右それぞれの拡張ソケットにモジュールを選び、保存後に設定した側を再起動してください。
 
-左右とも PMW3610、エンコーダ、PAT9125（R02 I²C）、LPPS（ADS1220）、アナログスティック、1u キー、Cirque タッチパッド、RZT、オフから選べます。
+左右とも PMW3610、エンコーダ、PAT9125（R02 I²C、回転は縦スクロール）、LPPS（ADS1220）、アナログスティック、1u キー、Cirque タッチパッド、RZT、オフから選べます。
 
 ## ファームウェア
 

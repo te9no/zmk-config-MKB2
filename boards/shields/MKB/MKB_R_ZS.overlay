@@ -37,3 +37,18 @@
 };
 
 #include "zeroshift_dial.dtsi"
+
+/ {
+    module_scroll: module-dial-scroll {
+        compatible = "zmk,optical-dial-scroll";
+        #input-processor-cells = <0>;
+    };
+    split_inputs {
+        module_dial_split: module-dial@6 {
+            compatible = "zmk,input-split";
+            reg = <6>;
+            device = <&module_dial>;
+            input-processors = <&module_scroll>;
+        };
+    };
+};

@@ -1,6 +1,8 @@
+#include "../dial_steps.h"
 // SPDX-License-Identifier: MIT
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/input/input.h>
+#include <drivers/input_processor.h>
 #include <zmk/events/position_state_changed.h>
 #include <zmk/events/sensor_event.h>
 #include <zmk/matrix_transform.h>
@@ -38,21 +40,7 @@ static int start_encoder(const struct device *dev) {
     return err ? err : sensor_trigger_set(dev, &trigger, rotation);
 }
 
-/* The R02 optical dial reports X counts. Keep fractional degrees across reports. */
-static void dial_event(struct input_event *event, void *unused) {
-    static int32_t remainder;
-    if (event->type != INPUT_EV_REL || event->code != INPUT_REL_X) return;
-    int64_t scaled = (int64_t)event->value * 360 + remainder;
-    int32_t degrees = scaled / 1892;
-    remainder = scaled % 1892;
-    if (degrees) {
-        raise_zmk_sensor_event((struct zmk_sensor_event){
-            .sensor_index = IS_ENABLED(CONFIG_SHIELD_MKB_R_ZS), .channel_data_size = 1,
-            .channel_data = {{.value = {.val1 = degrees}, .channel = SENSOR_CHAN_ROTATION}},
-            .timestamp = k_uptime_get()});
-    }
-}
-INPUT_CALLBACK_DEFINE(DEV(module_dial), dial_event, NULL);
+
 
 static int start_on_bus(const struct device *bus, const struct device *device) {
     int err = device_init(bus);
@@ -89,3 +77,21 @@ int zeroshift_start_mode(size_t slot, uint8_t mode) {
     default: return -EINVAL;
     }
 }
+
+static int optical_scroll_event(const struct device *dev, struct input_event *event,
+                               uint32_t param1, uint32_t param2,
+                               struct zmk_input_processor_state *state) {
+    if (event->type != INPUT_EV_REL || event->code != INPUT_REL_X) return ZMK_INPUT_PROC_STOP;
+    int32_t steps = optical_dial_steps(event->value, *(const int32_t *)dev->config, dev->data);
+    if (!steps) return ZMK_INPUT_PROC_STOP;
+    event->code = INPUT_REL_WHEEL;
+    event->value = -steps;
+    return ZMK_INPUT_PROC_CONTINUE;
+}
+
+static const struct zmk_input_processor_driver_api optical_scroll_api = {.handle_event = optical_scroll_event};
+
+static int32_t module_remainder;
+static const int32_t module_counts = 1892;
+DEVICE_DT_DEFINE(DT_NODELABEL(module_scroll), NULL, NULL, &module_remainder, &module_counts,
+                 POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &optical_scroll_api);
