@@ -29,6 +29,7 @@ static bool handle(const zmk_custom_CallRequest *raw, pb_callback_t *encode) {
     resp->error = req.right ? mkb_remote_profile(write ? modes : NULL, &state)
                             : zeroshift_profile(write ? modes : NULL, &state);
     if (!resp->error) {
+        resp->supported = BIT(9) - 1;
         resp->saved = state.saved[0];
         resp->active = state.active[0];
     }
