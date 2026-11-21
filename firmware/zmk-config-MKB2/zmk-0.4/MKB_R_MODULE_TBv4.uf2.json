@@ -1,10 +1,10 @@
 {
   "artifact": {
     "name": "MKB_R_MODULE_TBv4.uf2",
-    "sha256": "523b0970bc318ba310ef3b4da38bfb8a698f32703870b5b930a0c2284a20023e"
+    "sha256": "08c88a28d4a3966c51e86f5f328ae0d57f79f6dec23075247eafc277eb19177a"
   },
   "generated": {
-    ".config": "2cfaa31f5ec732a327b830a2a575bc1a795d9f0ff8ac07f49f445efa9890a000",
+    ".config": "dddd067f37c777dbedc218eddc7f56954b7700810772c6db650a5f1839491455",
     "zephyr.dts": "d64a27df83788df91498e01f0d8f37cd5cd258783695633c8941dd1bdc84aa2f"
   },
   "inputs": {
@@ -435,6 +435,12 @@
         "dirty": false,
         "untracked": {}
       },
+      "zmk-module-bt-recovery": {
+        "commit": "7e76381d90856a42e739cebf66752afebbe78748",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
       "zmk-module-devtool": {
         "commit": "9938a2c73c06d6e65ba2c0b68c9aa044a467eafc",
         "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -479,7 +485,7 @@
       }
     },
     "source": {
-      "commit": "3efccb00eec803db57dc6f79cad577465de526c1",
+      "commit": "507c0b505267a9ec1f71639e3163cbef99abb3e4",
       "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "dirty": false,
       "untracked": {}
@@ -491,7 +497,7 @@
       "untracked": {}
     }
   },
-  "run_id": "37582163532",
+  "run_id": "44961660531",
   "schema": 1,
   "target": {
     "artifact-name": "MKB_R_MODULE_TBv4",
