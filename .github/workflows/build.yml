@@ -35,6 +35,7 @@ permissions:
 
 jobs:
   build:
+    if: github.ref != 'refs/heads/feat/bt-recovery'
     uses: te9no/zmk-workspace/.github/workflows/build-zmk-firmware.yml@main
     permissions:
       contents: write
