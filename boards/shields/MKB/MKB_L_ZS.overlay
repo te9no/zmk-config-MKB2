@@ -1,15 +1,15 @@
 /* Reuse each module's established calibration, pinout and input processors. */
 #include "zeroshift_devices.dtsi"
 #define left_encoder joy_encoder
-#include "MKB_L_JOY.overlay"
+#include "joy_l.dtsi"
 #undef left_encoder
 #define magnet_listener local_magnet_listener
-#include "MKB_L_RZT.overlay"
+#include "rzt_l.dtsi"
 #undef magnet_listener
-#include "MKB_L_TPD.overlay"
+#include "tpd_l.dtsi"
 /* TWIM0 and SPIM0 share an nRF peripheral; use SPIM2 for the LPPS bus. */
 #define spi0 spi2
-#include "MKB_L_LPPS.overlay"
+#include "lpps_l.dtsi"
 #undef spi0
 #include "zeroshift_common.dtsi"
 &glidepoint_L { zephyr,deferred-init; };
