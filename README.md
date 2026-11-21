@@ -1,6 +1,8 @@
 ﻿# Futhesia Moduora (MeKaBu) - フセシア・モデュオラ（メカブ）
 
-[今回の左右 UF2 を ZIP でダウンロード](firmware/downloads/MeKaBu-ZeroShift-unified-r01.zip)。同じ ZIP の左右を対応する側に書き込み、設定した側を再起動してください。
+[今回の左右 UF2 を ZIP でダウンロード](firmware/downloads/MeKaBu-ZeroShift-recovery-r02.zip)。同じ ZIP の左右を対応する側に書き込み、設定した側を再起動してください。
+
+左右間の無線接続で、親機がスキャンを開始できない場合や子機が広告を開始できない場合は、1・2・4・8・16秒の間隔で最大5回再試行します。スリープ中は再試行を休止します。
 
 スロット名と選択肢はキーボードの [config/zeroshift.json](config/zeroshift.json) に定義しています。親機に接続すると、共通 Web UI がその定義を読み込みます。
 
@@ -14,7 +16,7 @@
 
 ## ファームウェア
 
-[ZeroShift 左右のUF2](firmware/downloads/MeKaBu-ZeroShift-unified-r01.zip)から、左手には `MKB-ZeroShift-left.uf2`、右手には `MKB-ZeroShift-right.uf2` を使用してください。両側とも、装着するモジュールは共通の設定画面で選びます。
+[ZeroShift 左右のUF2](firmware/downloads/MeKaBu-ZeroShift-recovery-r02.zip)から、左手には `MKB-ZeroShift-left.uf2`、右手には `MKB-ZeroShift-right.uf2` を使用してください。両側とも、装着するモジュールは共通の設定画面で選びます。
 
 ```
                                                                                          
