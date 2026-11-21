@@ -1,10 +1,10 @@
 {
   "artifact": {
     "name": "MKB-ZeroShift-left.uf2",
-    "sha256": "dfc1372f0a05a38966b7a5f18b9771cfa44a892ff13d62a5433b3cc532e3a749"
+    "sha256": "1c1c1b35a3820f8304d7cd4ea17cfc31f746c83dee49fe1073b008e4d706b105"
   },
   "generated": {
-    ".config": "b9811a289d7027a747b060f2831b5437035d207fe58636568adec911cdd91123",
+    ".config": "8700180442e6a80ee57ef67f75cdf6ab4fe255abecce2add9fc30e712e987d94",
     "zephyr.dts": "e40c538967533da492e539eab8fea587d12ed6c030639c89e3d06d62590df9fc"
   },
   "inputs": {
@@ -334,7 +334,7 @@
         "untracked": {}
       },
       "zmk": {
-        "commit": "e5c9b6915b56801193e359dd9bad4a167ce0d1b8",
+        "commit": "7687cece804d509e70da98e16d963e3f7c88ac71",
         "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "dirty": false,
         "untracked": {}
@@ -447,6 +447,12 @@
         "dirty": false,
         "untracked": {}
       },
+      "zmk-module-bt-recovery": {
+        "commit": "7e76381d90856a42e739cebf66752afebbe78748",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "untracked": {}
+      },
       "zmk-module-devtool": {
         "commit": "9938a2c73c06d6e65ba2c0b68c9aa044a467eafc",
         "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -491,7 +497,7 @@
       }
     },
     "source": {
-      "commit": "3f3cce5b96c22785a5b8df9aea9488ecb0fb3d8f",
+      "commit": "04d0f615020617671d36dcce863bf3d210f411cc",
       "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "dirty": false,
       "untracked": {}
@@ -503,7 +509,7 @@
       "untracked": {}
     }
   },
-  "run_id": "44908628052",
+  "run_id": "44963608427",
   "schema": 1,
   "target": {
     "artifact-name": "MKB-ZeroShift-left",
