@@ -1,6 +1,6 @@
-# MeKaBu Bluetooth recovery
+# MeKaBu BLE recovery
 
-専用ブランチ: `feat/bt-recovery`。Anantaで使用した復旧機構を、
+統合先は `zmk-0.4` です。Anantaで使用した復旧機構を、
 MeKaBuの左central・右peripheral構成へ適用しています。
 
 ## 対象と動作
@@ -9,16 +9,16 @@ MeKaBuの左central・右peripheral構成へ適用しています。
 - 復旧モジュール: `7e76381d90856a42e739cebf66752afebbe78748`
 - スキャン／広告開始失敗に対し、1・2・4・8・16秒の制限付き再試行。
 - PCとの切断と子機との切断を区別し、通常の再接続はZMKに任せます。
-- ボンディング削除、定期再起動、Bluetoothスタックの再初期化は行いません。
+- ボンディング削除、定期再起動、BLEスタックの再初期化は行いません。
 - 左右とも既存の30秒アイドル・30分DeepSleep設定を維持します。
   Sleep時には復旧処理を止め、復帰後に猶予を設けます。
 - 接続が成立したまま通信だけ停止する問題やMCU停止は検出対象外です。
 
 ## ビルド
 
-`Bluetooth recovery`の専用Actionsがbuild.yamlの全16ターゲットをビルドします。
+`BLE recovery`の専用Actionsがbuild.yamlの全16ターゲットをビルドします。
 左右15構成では`bt-recovery` snippetを追加し、settings_resetでは有効にしません。
-専用ブランチでは通常ビルドを停止し、復旧処理なしの成果物との混同を防ぎます。
+`zmk-0.4` では通常版もビルドします。復旧版のUF2は `MeKaBu BLE recovery build` の `bt-recovery-*` 成果物から取得してください。
 各UF2とJSONにソース・依存コミットとSHA256を記録します。
 
 ローカルでは、config/west.ymlを別のwestワークスペースのmanifest/west.ymlへ

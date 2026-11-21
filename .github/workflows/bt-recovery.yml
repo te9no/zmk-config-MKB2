@@ -1,8 +1,12 @@
-name: MeKaBu Bluetooth recovery prerelease build
+name: MeKaBu BLE recovery build
 on:
   workflow_dispatch:
   push:
-    branches: [feat/bt-recovery]
+    branches: [feat/bt-recovery, zmk-0.4]
+    paths-ignore:
+      - 'firmware/**'
+      - 'badges/**'
+      - 'keymap-svg/**'
 permissions:
   contents: read
 jobs:
