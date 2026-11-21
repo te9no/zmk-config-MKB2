@@ -1,4 +1,0 @@
-/* Keep one dedicated CDC ACM function for peripheral debug and boot entry. */
-&board_cdc_acm_uart {
-    status = "disabled";
-};

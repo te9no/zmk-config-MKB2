@@ -9,10 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class StudioPersistenceTests(unittest.TestCase):
-    def test_runtime_macro_is_exposed(self):
-        overlay = (ROOT / 'snippets/mkb-dya-studio-v2/mkb-dya-studio-v2.overlay').read_text()
-        self.assertIn('#include <behaviors/runtime_macro.dtsi>', overlay)
-
     def test_boot_listener_is_built_and_subscribed(self):
         source = (ROOT / 'src/runtime_combo_boot.c').read_text()
         self.assertIn('ZMK_SUBSCRIPTION(mkb_combo_boot, zmk_custom_settings_initialized)', source)

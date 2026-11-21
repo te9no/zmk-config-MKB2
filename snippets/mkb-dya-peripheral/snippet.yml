@@ -1,4 +1,0 @@
-name: mkb-dya-peripheral
-append:
-  EXTRA_CONF_FILE: mkb-dya-peripheral.conf
-  EXTRA_DTC_OVERLAY_FILE: mkb-dya-peripheral.overlay
