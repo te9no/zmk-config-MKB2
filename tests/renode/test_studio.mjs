@@ -8,6 +8,18 @@ const sharedClient = process.env.ZEROSHIFT_SHARED_RPC;
 if (!sharedClient) throw new Error("Set ZEROSHIFT_SHARED_RPC to the built ZeroShift rpc.mjs path.");
 const {moduleSession} = await import(sharedClient);
 
+const Mode = {
+  off: 0,
+  pmw3610: 1,
+  stick: 2,
+  encoder: 3,
+  key: 4,
+  rzt: 5,
+  tpd: 6,
+  lpps: 7,
+  pat9125: 8,
+};
+
 const socket = net.connect(Number(process.argv[2]), "127.0.0.1");
 await once(socket, "connect");
 const transport = {...Duplex.toWeb(socket), abortController: new AbortController()};
@@ -17,8 +29,8 @@ const session = {
   async profile(side, mode) {
     const state = await client.profile(side, mode === undefined ? undefined : [mode]);
     assert.equal(state.model, "MeKaBu");
-    assert.equal(state.innerEnabled, false);
-    return {saved: state.lower, active: state.activeLower};
+    assert.equal(state.slots.length, 1);
+    return state.slots[0];
   },
 };
 const monitor = createInterface({input: process.stdin, output: process.stdout});
@@ -43,28 +55,28 @@ async function readAfterBoot(side) {
 }
 await delay(1500);
 for (const side of ["right", "left"]) {
-  let previous = "off";
+  let previous = Mode.off;
   check(await readAfterBoot(side), previous, previous);
-  for (const mode of ["key", "encoder", "stick", "pmw3610", "rzt", "pat9125", "tpd", "lpps", "off"]) {
+  for (const mode of [Mode.key, Mode.encoder, Mode.stick, Mode.pmw3610, Mode.rzt, Mode.pat9125, Mode.tpd, Mode.lpps, Mode.off]) {
     console.log(side, "set", mode);
     check(await session.profile(side, mode), mode, previous);
-    check(await readAfterBoot(side === "left" ? "right" : "left"), "off", "off");
+    check(await readAfterBoot(side === "left" ? "right" : "left"), Mode.off, Mode.off);
     await reset(side);
     const state = await readAfterBoot(side);
     console.log(side, "saved:", state.saved, "active:", state.active);
-    const active = mode === "pat9125" ? "off" : mode;
+    const active = mode === Mode.pat9125 ? Mode.off : mode;
     check(state, mode, active);
     previous = active;
   }
 }
-check(await session.profile("left", "encoder"), "encoder", "off");
-check(await session.profile("right", "key"), "key", "off");
+check(await session.profile("left", Mode.encoder), Mode.encoder, Mode.off);
+check(await session.profile("right", Mode.key), Mode.key, Mode.off);
 await reset("right");
-check(await readAfterBoot("right"), "key", "key");
-check(await readAfterBoot("left"), "encoder", "off");
+check(await readAfterBoot("right"), Mode.key, Mode.key);
+check(await readAfterBoot("left"), Mode.encoder, Mode.off);
 await reset("left");
-check(await readAfterBoot("left"), "encoder", "encoder");
-check(await readAfterBoot("right"), "key", "key");
+check(await readAfterBoot("left"), Mode.encoder, Mode.encoder);
+check(await readAfterBoot("right"), Mode.key, Mode.key);
 console.log("18/18 reboot cases passed; independent left encoder and right key passed");
 await session.close();
 socket.destroy();
