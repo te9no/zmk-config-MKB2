@@ -19,7 +19,7 @@ manifest:
   projects:
     - name: zmk-feature-zeroshift
       remote: te9no
-      revision: 666ec6e8f91a2130e32c30cfc805c555de6a1d47
+      revision: 66248aa540c3897c154183848272eb32732e9781
     - name: zmk-driver-spi-three-wire
       remote: te9no
       revision: 4362133dbfbf66788b66b0a3e3c410b9232c06cb
