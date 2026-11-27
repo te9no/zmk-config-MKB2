@@ -1,7 +1,7 @@
 {
   "artifact": {
     "name": "MKB-ZeroShift-left.uf2",
-    "sha256": "1c1c1b35a3820f8304d7cd4ea17cfc31f746c83dee49fe1073b008e4d706b105"
+    "sha256": "cc92632ea5765186248b7af033d5c3f8bcebf00a1ce9fe0b19e563b115acdf7d"
   },
   "generated": {
     ".config": "8700180442e6a80ee57ef67f75cdf6ab4fe255abecce2add9fc30e712e987d94",
@@ -412,7 +412,7 @@
         "untracked": {}
       },
       "zmk-feature-zeroshift": {
-        "commit": "666ec6e8f91a2130e32c30cfc805c555de6a1d47",
+        "commit": "66248aa540c3897c154183848272eb32732e9781",
         "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "dirty": false,
         "untracked": {}
@@ -497,7 +497,7 @@
       }
     },
     "source": {
-      "commit": "04d0f615020617671d36dcce863bf3d210f411cc",
+      "commit": "b0072dd851b8aaa367b1fa784498d8e7eea2fa9b",
       "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "dirty": false,
       "untracked": {}
@@ -509,7 +509,7 @@
       "untracked": {}
     }
   },
-  "run_id": "44963608427",
+  "run_id": "45936761905",
   "schema": 1,
   "target": {
     "artifact-name": "MKB-ZeroShift-left",
